@@ -62,6 +62,8 @@
             <div class="card-body">
                 <h3 class="card-title" >Agregar Producto en Merma</h3><br><br>
                 <!--INICIO CUESTIONARIO-->
+                <label class="card-text">Ingrese id merma:</label><br>
+                <input type="text" id="mcl" name="mcl" class="form-control form-control-sm" />
                 <label class="card-text">Ingrese la clave de merma:</label><br>
                 <input type="text" id="mcl" name="mcl" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese el id del producto:</p>
@@ -72,8 +74,6 @@
                 <input type="text" id="md" name="md" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese la fecha</p>
                 <input type="text" id="mf" name="mf" class="form-control form-control-sm" />
-                <label class="card-text">Ingrese el id del proveedor:</label><br>
-                <input type="text" id="mip" name="mip" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese tipo de merma</p>
                 <input type="text" id="mt" name="mt" class="form-control form-control-sm" /><br><br>
                 <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
