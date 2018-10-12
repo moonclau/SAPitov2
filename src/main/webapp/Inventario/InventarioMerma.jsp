@@ -90,13 +90,12 @@
                         <table class="tablas table">
                             <tr>                                
                                 <th>ID merma</th>
+                                <th>Clave merma</th>
                                 <th>ID producto</th>
-                                <th>Nombre</th>
-                                <th>Proveedor</th>
                                 <th>Cantidad</th>
-                                <th>Fecha</th>
                                 <th>Descripcion</th>
-                                <th>Tipo merma</th>
+                                <th>Fecha</th>
+                                <th>Tipo merma</th>                               
                             </tr>
                            <%
                     LinkedList<Merma> lista =Consultas.consultasmerma();

@@ -65,23 +65,13 @@
                 <label class="card-text">Ingrese el id de merma:</label><br>
                 <input type="text" id="mip" name="mim" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese el id del producto:</p>
-                <input type="text" id="mipr" name="mpr" class="form-control form-control-sm" />
-                <label class="card-text">Ingrese el Nombre del producto:</label><br>
-                <input type="text" id="mip" name="mnp" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese el tipo o grupo del producto:</p>
-                <input type="text" id="mipr" name="mtp" class="form-control form-control-sm" />
-                <label class="card-text">Ingrese el id del proveedor:</label><br>
-                <input type="text" id="mip" name="mip" class="form-control form-control-sm" />
+                <input type="text" id="mipr" name="mpr" class="form-control form-control-sm" />               
                 <label class="card-text">Ingrese la cantidad:</label><br>
                 <input type="text" id="mc" name="mc" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese la unidad:</p>
-                <input type="text" id="mipr" name="mu" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese la fecha</p>
-                <input type="text" id="mf" name="mf" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese el costo unitario:</p>
-                <input type="text" id="mipr" name="mcu" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese la descripcion</p>
                 <input type="text" id="md" name="md" class="form-control form-control-sm" />
+                <p class="card-text">Ingrese la fecha</p>
+                <input type="text" id="mf" name="mf" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese tipo de merma</p>
                 <input type="text" id="mt" name="mt" class="form-control form-control-sm" /><br><br>
                 <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
