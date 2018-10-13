@@ -10,47 +10,46 @@ package com.sap.inventario.clases;
  * @author claudia
  */
 public class Inventario {
-    String clave;
-    String nombre;
-    String tipo;
-    String proveedor;
+    String clavemerma;
+    String clavep;
+    String nombrep;
+    String tipop;
     int cantidad;
     String unidad;
-    Double costounitario;
-    Double costoventa;
-    Double iva;
+    int costounit;
     String fecha;
+    String descripcion;
 
-    public String getClave() {
-        return clave;
+    public String getClavemerma() {
+        return clavemerma;
     }
 
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setClavemerma(String clavemerma) {
+        this.clavemerma = clavemerma;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getClavep() {
+        return clavep;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setClavep(String clavep) {
+        this.clavep = clavep;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getNombrep() {
+        return nombrep;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setNombrep(String nombrep) {
+        this.nombrep = nombrep;
     }
 
-    public String getProveedor() {
-        return proveedor;
+    public String getTipop() {
+        return tipop;
     }
 
-    public void setProveedor(String proveedor) {
-        this.proveedor = proveedor;
+    public void setTipop(String tipop) {
+        this.tipop = tipop;
     }
 
     public int getCantidad() {
@@ -69,28 +68,12 @@ public class Inventario {
         this.unidad = unidad;
     }
 
-    public Double getCostounitario() {
-        return costounitario;
+    public int getCostounit() {
+        return costounit;
     }
 
-    public void setCostounitario(Double costounitario) {
-        this.costounitario = costounitario;
-    }
-
-    public Double getCostoventa() {
-        return costoventa;
-    }
-
-    public void setCostoventa(Double costoventa) {
-        this.costoventa = costoventa;
-    }
-
-    public Double getIva() {
-        return iva;
-    }
-
-    public void setIva(Double iva) {
-        this.iva = iva;
+    public void setCostounit(int costounit) {
+        this.costounit = costounit;
     }
 
     public String getFecha() {
@@ -100,6 +83,12 @@ public class Inventario {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-    
-    
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 }

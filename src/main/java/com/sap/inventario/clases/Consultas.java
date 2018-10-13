@@ -27,20 +27,18 @@ public class Consultas {
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-       ResultSet rs = stmt.executeQuery("select m.clave,p.clave,p.nombre,p.tipo,\n" +
-",pv.proveedor,p.cantidad,p.unidad,p.costou,\n" +
-"m.fecha,m.descripcion\n" +
-"from Merma m, producto p, Proveedor pv where p.id=m.producto and m.proveedor=pv.id;  ");
+       ResultSet rs = stmt.executeQuery("select *from merprod");
            while (rs.next()) {
                 Merma im=new Merma();
-                im.setClave(rs.getString("clave"));
-                im.setClavep(rs.getString("claveproducto"));
-                im.setNombrep(rs.getString("producto"));
-                im.setClavepv(rs.getString("proveedor"));
-                im.setCantidad(rs.getInt("cantidad"));
-                im.setFecha(rs.getString("fecha")); 
-                im.setDescripcion(rs.getString("descripcion"));   
-                im.setTipom(rs.getString("merma"));  
+                im.setClavemerma(rs.getString("clave merma"));
+                im.setClavep(rs.getString("Clave producto"));
+                im.setNombrep(rs.getString("Nombre productp"));
+                im.setTipop(rs.getString("Tipo producto"));
+                im.setCantidad(rs.getInt("Cantidad"));
+                im.setUnidad("Unidad");
+                im.setCostounit(rs.getInt("Costo unitario"));
+                im.setFecha(rs.getString("Fecha"));
+                im.setDescripcion(rs.getString("descripcion"));
                 l.add(im);
             }                    
         conn.close();
@@ -56,22 +54,19 @@ public class Consultas {
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-       ResultSet rs = stmt.executeQuery("select m.clave,p.clave,p.nombre,p.tipo,\n" +
-",pv.proveedor,p.cantidad,p.unidad,p.costou,\n" +
-"m.fecha,m.descripcion\n" +
-"from Merma m, producto p, Proveedor pv where p.id=m.producto and m.proveedor=pv.id;  ");
+       ResultSet rs = stmt.executeQuery("select * from merprod");
            while (rs.next()) {
                 Inventario inv=new Inventario();
-                inv.setClave(rs.getString("claveproducto"));
-                inv.setNombre(rs.getString("producto"));
-                inv.setTipo(rs.getString("grupo"));
-                inv.setProveedor(rs.getString("proveedor"));
-                inv.setCantidad(rs.getInt("cantidad"));
-                inv.setUnidad(rs.getString("que es"));
-                inv.setCostounitario(rs.getDouble("costo"));
-                inv.setCostoventa(rs.getDouble("costo de venta"));
-                inv.setIva(rs.getDouble("iva"));  
-                inv.setFecha(rs.getString("fecha"));    
+                 inv.setClavemerma(rs.getString("clave merma"));
+                inv.setClavep(rs.getString("Clave producto"));
+                inv.setNombrep(rs.getString("Nombre productp"));
+                inv.setTipop(rs.getString("Tipo producto"));
+                inv.setCantidad(rs.getInt("Cantidad"));
+                inv.setUnidad("Unidad");
+                inv.setCostounit(rs.getInt("Costo unitario"));
+                inv.setFecha(rs.getString("Fecha"));
+                inv.setDescripcion(rs.getString("descripcion"));
+ 
                 l.add(inv);
             }                    
         conn.close();

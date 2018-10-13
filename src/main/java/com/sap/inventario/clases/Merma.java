@@ -10,37 +10,22 @@ package com.sap.inventario.clases;
  * @author claudia
  */
 public class Merma {
-    String clave;
+    String clavemerma;
     String clavep;
     String nombrep;
-    String clavepv;
+    String tipop;
     int cantidad;
+    String unidad;
+    int costounit;
     String fecha;
     String descripcion;
 
-    public String getClavepv() {
-        return clavepv;
+    public String getClavemerma() {
+        return clavemerma;
     }
 
-    public void setClavepv(String clavepv) {
-        this.clavepv = clavepv;
-    }
-    String tipom;
-
-    public String getTipom() {
-        return tipom;
-    }
-
-    public void setTipom(String tipom) {
-        this.tipom = tipom;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public void setClave(String clave) {
-        this.clave = clave;
+    public void setClavemerma(String clavemerma) {
+        this.clavemerma = clavemerma;
     }
 
     public String getClavep() {
@@ -59,12 +44,36 @@ public class Merma {
         this.nombrep = nombrep;
     }
 
+    public String getTipop() {
+        return tipop;
+    }
+
+    public void setTipop(String tipop) {
+        this.tipop = tipop;
+    }
+
     public int getCantidad() {
         return cantidad;
     }
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+
+    public String getUnidad() {
+        return unidad;
+    }
+
+    public void setUnidad(String unidad) {
+        this.unidad = unidad;
+    }
+
+    public int getCostounit() {
+        return costounit;
+    }
+
+    public void setCostounit(int costounit) {
+        this.costounit = costounit;
     }
 
     public String getFecha() {
@@ -82,6 +91,6 @@ public class Merma {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-
+    
     
 }
