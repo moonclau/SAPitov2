@@ -31,6 +31,7 @@ public class AgregarMerma extends HttpServlet{
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+        String mid=request.getParameter("mid");
         String mclave = request.getParameter("mcl");
         String mproducto = request.getParameter("mipr");
         String mcantidad = request.getParameter("mc");
@@ -41,19 +42,19 @@ public class AgregarMerma extends HttpServlet{
         Conexion c = new Conexion();
         usuario usu = new usuario();
  
-        c.insertar("MERMA", "clave_merma,"
+        c.insertar("MERMA", "id" 
+                +"clave_merma,"
                 + "produto,"
                 + "cantidad,"
                 + "descripcion,"
                 + "fecha,"
-                + "proveedor,"
                 + "tipo_merma",
-                "'" + mclave
+                "'" + mid
+                +"',"+mclave        
                 + "'," + mproducto
                 + "," + mcantidad
                 + ",'" + mdescripcion
                 + "','" + mfecha
-                + "'," + mproveedor
                 + ",'" + mtipo + "'"
         );
 
