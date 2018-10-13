@@ -20,7 +20,7 @@
 </head>
 <body><header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a href=" " class="navbar-brand text-white">Inventario</a>
+            <a href="Inventario.jsp" class="navbar-brand text-white">Inventario</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#inv_navbar" aria-controls="inv_navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -67,12 +67,12 @@
                 <h4>Consulta</h4>
                  <div class="col-xs-offset-1 col-md-offset-1 central">
                   <form>
-                  <h5>Buscar ID Compra</h5>
+                  <h5>Buscar ID de producto</h5>
                   </form>
                 </div>
                     <div class="col-xs-10 col-md-10 central">
                     <form action="" method="post">
-                    <input name="clave" type="text" placeholder="ID Compra"/> 
+                    <input name="clave" type="text" placeholder="ID producto"/> 
                     <input type="submit" value="Buscar"/>
                     <h4>Reporte</h4>
                     <div class="col-xs-offset-0 col-md-offset-0 central">
