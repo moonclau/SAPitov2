@@ -94,11 +94,7 @@
     <table class="table-striped table table-bordered table-hover">
       <tr>
         <th>
-          ID Compra
-        </th>
-      
-        <th>
-          ID Producto
+          clave Producto
         </th>
       
         <th>
@@ -106,23 +102,27 @@
         </th>
       
         <th>
-          Tipo
-        </th>
-      
-        <th>
-          Proveedor
-        </th>
-        <th>
-          Cantidad
+          Costo unitario
         </th>
         <th>
           Unidad
         </th>
         <th>
-          Costo Unitario
+          Tipo
+        </th>
+      
+        <th>
+          Costo de venta
         </th>
         <th>
-          Lote
+          iva
+        </th>
+        
+        <th>
+          fecha de entrada 
+        </th>
+        <th>
+          fecha de salida
         </th>
       </tr>
 
