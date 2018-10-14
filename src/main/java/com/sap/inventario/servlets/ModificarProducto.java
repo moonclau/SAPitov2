@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author claudia
  */
-@WebServlet(name = "AgregarProducto", urlPatterns = {"/AgregarProducto"})
-public class AgregarProducto extends HttpServlet {
+@WebServlet(name = "ModificarProducto", urlPatterns = {"/ModificarProducto"})
+public class ModificarProducto extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,7 +36,7 @@ public class AgregarProducto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        Conexion c = new Conexion();
+        Conexion c=new Conexion();
         String clave = request.getParameter("clave");
         String nombre = request.getParameter("nombre");
         String tipo = request.getParameter("tipo");
@@ -45,11 +45,12 @@ public class AgregarProducto extends HttpServlet {
         String costounitario = request.getParameter("costo");
         String iva = request.getParameter("iva");
         String fecha= request.getParameter("fecha");
-        
-         c.insertar("clave,nombre,tipo,unidad,cantidad,costounitario,iva,fecha,operacion", "producto",
-                    "'"+clave+"','"+nombre+"','"+tipo+"','"+unidad+"',"+cantidad+","+costounitario+","+iva+",'"+fecha+"','exitente'");
-         response.sendRedirect("Inventario/InventarioProductoAgregar.jsp");
+        String operacion= request.getParameter("operacion");
+        c.insertar("clave,nombre,tipo,unidad,cantidad,costounitario,iva,fecha,operacion", "producto",
+                    "'"+clave+"','"+nombre+"','"+tipo+"','"+unidad+"',"+cantidad+","+costounitario+","+iva+",'"+fecha+"','"+operacion+"'");
+         response.sendRedirect("Inventario/InventarioProductoModificar.jsp");
     }
+
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -65,9 +66,9 @@ public class AgregarProducto extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ModificarProducto.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ModificarProducto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

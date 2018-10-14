@@ -69,18 +69,19 @@
             <div class="card-body">
                 <h4>Consulta</h4>
                  <div class="col-xs-offset-1 col-md-offset-1 central">
-                  <form>
-                  <h5>Buscar ID de producto</h5>
-                  </form>
+                  
                 </div>
                     <div class="col-xs-10 col-md-10 central">
                     <form action="" method="post">
-                    <input name="clave" type="text" placeholder="ID producto"/> 
-                    <input type="submit" value="Buscar"/>
+                        <h5>Buscar ID de producto</h5>
+                        <input name="clave" type="text" placeholder="ID producto"/><br><br> 
+                    <h5>Agregar producto</h5>
+                    <input type="submit" value="Agregar"/> <br><br>
+                    <h5>Modificar producto</h5>
+                    <input type="submit" value="modificar"/><br> <br><br>
                     <h4>Reporte</h4>
-                    <div class="col-xs-offset-0 col-md-offset-0 central">
-                    <input type="submit" value="Generar"/>
-                    </div>  
+                    <input type="submit" value="Generar"/><br>  
+                     
                 </form>
               </div>
             </div>
