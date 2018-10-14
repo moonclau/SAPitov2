@@ -5,7 +5,6 @@
 --%>
 
 <%@page import="java.util.LinkedList"%>
-<%@page import="com.sap.inventario.clases.Inventario"%>
 <%@page import="com.sap.inventario.clases.Consultas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -71,19 +70,28 @@
             <div class="card-body">
               <h4>Consulta</h4>
               
-                 <div class="col-xs-offset-1 col-md-offset-1 central">
-                  <form>
-                  <h5>Buscar ID</h5>
-                  </form>
-                </div>
+                 
                     <div class="col-xs-10 col-md-10 central">
                     <form action="" method="post">
-                    <input name="clave" type="text" placeholder="ID"/> 
-                    <input type="submit" value="Consultar"/>
-                    <h4>Reporte</h4>
+                        <h5>Buscar clave</h5>
+                    <input name="clave" type="text" /> 
+                    <input type="submit" value="Consultar"/><br><br>
+                    <table class="tabla">
+                	
+                        <tr><td>
+                    <label>Reporte</label>
                     <div class="col-xs-offset-0 col-md-offset-0 central">
                     <input type="submit" value="Generar"/>
-                    </div>  
+                    </td>
+</tr>
+<tr>
+                    	<td>
+                            <hr>
+                     <a href="InventarioHacerPedido.jsp"><h4>Hacer pedido</h4></a>
+                        </td>
+                        </tr>
+                    </div> 
+                    </table>
                 </form>
               </div>
 
@@ -105,58 +113,28 @@
     <table class="table-striped table table-bordered table-hover">
       <tr>
         <th>
-          clave productp
+          clave producto
         </th>
       
         <th>
-          Nombre
+          Existencias iniciales
         </th>
       
         <th>
-          Tipo
+          Salidas
         </th>
       
         <th>
-          Proveedor
+          Entradas
         </th>
       
         <th>
-          Cantidad
+          stock
         </th>
         <th>
-          Unidad
-        </th>
-        <th>
-          Costo Unitario
-        </th>
-        <th>
-          Costo de venta
-        </th>
-        <th>
-          IVA
-        </th>
-        <th>
-          Fecha
+          fecha
         </th>
       </tr>
-<%
-                    LinkedList<Inventario> lista =Consultas.consultasinventariogenerales();
-                    for (int i=0;i<lista.size();i++)
-                    {
-                       out.println("<tr>");
-                       out.println("<td>"+lista.get(i).getClave()+"</td>");
-                       out.println("<td>"+lista.get(i).getNombre()+"</td>");
-                       out.println("<td>"+lista.get(i).getTipo()+"</td>");                                                                                           
-                       out.println("<td>"+lista.get(i).getProveedor()+"</td>");                                                                  
-                       out.println("<td>"+lista.get(i).getCantidad()+"</td>");                                                               
-                       out.println("<td>"+lista.get(i).getUnidad()+"</td>");      
-                       out.println("<td>"+lista.get(i).getCostounitario()+"</td>");                                                                 
-                       out.println("<td>"+lista.get(i).getCostoventa()+"</td>");      
-                       out.println("<td>"+lista.get(i).getIva()+"</td>");                                                                                                                                  
-                       out.println("<td>"+lista.get(i).getFecha()+"</td>");    
-                       out.println("</tr>");
-                    }
-               %>
     </table>
         </div>
         </div>

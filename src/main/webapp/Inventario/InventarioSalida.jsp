@@ -4,6 +4,9 @@
     Author     : claudia
 --%>
 
+<%@page import="com.sap.inventario.clases.Producto"%>
+<%@page import="com.sap.inventario.clases.Consultas"%>
+<%@page import="java.util.LinkedList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -67,21 +70,18 @@
             <div class="card-body">
               <h4>Consulta</h4>
               
-                 <div class="col-xs-offset-1 col-md-offset-1 central">
-                  <form>
-                  <h5>Buscar ID Compra</h5>
-                  </form>
-                </div>
                     <div class="col-xs-10 col-md-10 central">
                     <form action="" method="post">
-                    <input name="clave" type="text" placeholder="ID Compra"/> 
-                    <input type="submit" value="Buscar"/>
-                    <input name="clave" type="text" placeholder="ID Producto"/> 
-                    <input type="submit" value="Buscar"/>
-
-                    <h4>Reporte</h4>
-                    <div class="col-xs-offset-0 col-md-offset-0 central">
+                  <h5>Buscar clave producto</h5>
+                    <input name="clave" type="text" placeholder="clave"/> 
+                    <input type="submit" value="Buscar"/><br><br>
+                    
+                    <label>Reporte</label>
                     <input type="submit" value="Generar"/>
+                    <hr>
+                    <a href="InventarioIngresarSalida.jsp"> <label>Ingresar salida de producto</label></a>
+                    <div class="col-xs-offset-0 col-md-offset-0 central">
+                    
                     </div>  
                 </form>
               </div>
@@ -103,64 +103,46 @@
     <table class="table-striped table table-bordered table-hover">
       <tr>
         <th>
-          ID Producto
+          Clave Producto
         </th>
-      
-        <th>
-          ID Venta
-        </th>
-      
         <th>
           Nombre Producto
         </th>
-      
         <th>
-          Tipo
+          Costo unitario
         </th>
-      
         <th>
           Cantidad
-        </th>
-        <th>
-          Costo de venta
         </th>
         <th>
           IVA
         </th>
         <th>
-          Fecha de salida
+          Costo de venta
         </th>
         <th>
           Monto Total
         </th>
+        <th>
+          Fecha de salida
+        </th>
       </tr>
-
-
-      <tr>
-        <td>12345</td>
-        <td>123</td>
-        <td>Reloj</td>
-        <td>Accesorio</td>
-        <td>3</td>
-        <td>$1500</td>
-        <td>$20</td>
-        <td>24/02/2018</td>
-        <td>$1520</td>
-        
-
-      </tr>
-      <tr>
-        <td>12345</td>
-        <td>123</td>
-        <td>Mochila</td>
-        <td>Accesorio</td>
-        <td>3</td>
-        <td>$1500</td>
-        <td>$20</td>
-        <td>24/02/2018</td>
-        <td>$1520</td>
-        
-      </tr>
+<%
+                        LinkedList<Producto> lista =Consultas.consultaSalidas();
+                        for (int i=0;i<lista.size();i++)
+                        {
+                           out.println("<tr>");                               
+                           out.println("<td>"+lista.get(i).getClave()+"</td>");
+                           out.println("<td>"+lista.get(i).getNombre()+"</td>");
+                           out.println("<td>"+lista.get(i).getCostounitario()+"</td>");
+                           out.println("<td>"+lista.get(i).getCantidad()+"</td>");
+                           out.println("<td>"+lista.get(i).getIva()+"</td>");
+                           out.println("<td>"+lista.get(i).getCostototal()+"</td>");
+                           out.println("<td>"+lista.get(i).getMontototal()+"</td>");
+                           out.println("<td>"+lista.get(i).getFecha()+"</td>");
+                           out.println("</tr>");
+                        }
+                    %>
     </table>
         </div>
         </div>
@@ -170,10 +152,5 @@
         </div>
     </div>
     
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="js/jQuery.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="js/bootstrap.js"></script>
     </body>
 </html>

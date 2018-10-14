@@ -75,10 +75,11 @@
                 <p class="card-text">Eliminar producto de merma</p>
                 <input type="text" id="emerma" name="emerma" class="form-control form-control-sm" />
                 <input id="boemerma" type="submit" value="Eliminar" class="btn btn-success"/><br><br>
-                <p class="card-text">Nuevo producto de merma</p>
-                <input id="boamerma" type="submit" value="Agregar" class="btn btn-success"/><br><br>
-                <p class="card-text">Modificar producto de merma</p>
-                <input id="bommerma" type="submit" value="Modificar" class="btn btn-success"/><br><br>
+                
+                            <hr>
+                     <a href="InventarioMermaAgregar.jsp"> <p class="card-text">Nuevo producto de merma</p></a>
+               
+                     <a href="InventarioMermaModificar.jsp"><p class="card-text">Modificar producto de merma</p></a>
                 <p class="card-text">Reporte</p>
                 <input id="bogmerma" type="submit" value="Generar" class="btn btn-success"/>
             </div>
@@ -94,30 +95,27 @@
                 <div class="col-xs-12 col-md-12 central table-responsive">              
                         <table class="tablas table">
                             <tr>                                
-                                <th>ID merma</th>
                                 <th>Clave merma</th>
-                                <th>ID producto</th>
+                                <th>Clave producto</th>
                                 <th>Cantidad</th>
                                 <th>Descripcion</th>
                                 <th>Fecha</th>
                                 <th>Tipo merma</th>                               
                             </tr>
-                           <%
-                    LinkedList<Merma> lista =Consultas.consultasmerma();
-                    for (int i=0;i<lista.size();i++)
-                    {
-                       out.println("<tr>");
-                       out.println("<td>"+lista.get(i).getClave()+"</td>");
-                       out.println("<td>"+lista.get(i).getClavep()+"</td>");
-                       out.println("<td>"+lista.get(i).getNombrep()+"</td>");                                                                                           
-                       out.println("<td>"+lista.get(i).getClavepv()+"</td>");                                                                  
-                       out.println("<td>"+lista.get(i).getCantidad()+"</td>");                                                                                                                                    
-                       out.println("<td>"+lista.get(i).getFecha()+"</td>");                                                                   
-                       out.println("<td>"+lista.get(i).getDescripcion()+"</td>");      
-                       out.println("<td>"+lista.get(i).getTipom()+"</td>");
-                       out.println("</tr>");
-                    }
-               %>
+                            <%
+                        LinkedList<Merma> lista =Consultas.consultaMerma();
+                        for (int i=0;i<lista.size();i++)
+                        {
+                           out.println("<tr>");                               
+                           out.println("<td>"+lista.get(i).getClavemerma()+"</td>");
+                           out.println("<td>"+lista.get(i).getClavep()+"</td>");
+                           out.println("<td>"+lista.get(i).getCantidad()+"</td>");
+                           out.println("<td>"+lista.get(i).getDescripcion()+"</td>");
+                           out.println("<td>"+lista.get(i).getFecha()+"</td>");
+                           out.println("<td>"+lista.get(i).getTipoMerma()+"</td>");
+                           out.println("</tr>");
+                        }
+                    %>
                         </table>               
             </div>
                 <!--FIN TABLA MN-->

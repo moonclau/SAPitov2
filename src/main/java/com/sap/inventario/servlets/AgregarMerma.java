@@ -5,60 +5,80 @@
  */
 package com.sap.inventario.servlets;
 
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-
-/**
- *
- * @author claudia
- */
 import com.sap.conexion.Conexion;
-import com.sap.gerencia.clases.usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+/**
+ *
+ * @author claudia
+ */
 @WebServlet(name = "AgregarMerma", urlPatterns = {"/AgregarMerma"})
+public class AgregarMerma extends HttpServlet {
 
-public class AgregarMerma extends HttpServlet{
-   
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        String mid=request.getParameter("mid");
-        String mclave = request.getParameter("mcl");
-        String mproducto = request.getParameter("mipr");
-        String mcantidad = request.getParameter("mc");
-        String mdescripcion = request.getParameter("md");
-        String mfecha = request.getParameter("mf");
-        String mproveedor = request.getParameter("mip");
-        String mtipo = request.getParameter("mt");
-        Conexion c = new Conexion();
-        usuario usu = new usuario();
- 
-        c.insertar("MERMA", "id" 
-                +"clave_merma,"
-                + "produto,"
-                + "cantidad,"
-                + "descripcion,"
-                + "fecha,"
-                + "tipo_merma",
-                "'" + mid
-                +"',"+mclave        
-                + "'," + mproducto
-                + "," + mcantidad
-                + ",'" + mdescripcion
-                + "','" + mfecha
-                + ",'" + mtipo + "'"
+       Conexion c = new Conexion();
+        String mclave = request.getParameter("clavem");
+        String mproducto = request.getParameter("producto");
+        String mcantidad = request.getParameter("cantidad");
+    String mdescripcion = request.getParameter("descripcion");
+        String mfecha = request.getParameter("fecha");
+        String mtipo = request.getParameter("mermatipo");
+         c.insertar( 
+                "clave_merma,produto,cantidad,descripcion,fecha,tipo_merma","merma",
+                "'"+mclave+"','" + mproducto+"'," + mcantidad+",'" + mdescripcion+"','" + mfecha+"','" + mtipo + "'"
         );
 
         response.sendRedirect("Inventario/InventarioMermaAgregar.jsp");
     }
-    
+
+    /**
+     * Handles the HTTP <code>POST</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(AgregarMerma.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(AgregarMerma.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }// </editor-fold>
+
 }

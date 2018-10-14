@@ -78,7 +78,11 @@
                 <p class="card-text">Ingrese la fecha</p>
                 <input type="text" id="mf" name="mf" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese tipo de merma</p>
-                <input type="text" id="mt" name="mt" class="form-control form-control-sm" /><br><br>
+                <select id="mermatipo" name="mermatipo" class="form-control">
+                                    <option value="x">Seleccione...</option>
+                                    <option value="normal">Normal</option>
+                                    <option value="anormal">Anormal</option>
+                                </select>><br><br>
                 <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
             </div>
         </div>

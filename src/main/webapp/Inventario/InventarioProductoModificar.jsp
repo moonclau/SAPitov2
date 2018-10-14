@@ -92,9 +92,9 @@
                 <p class="card-text">Ingrese la operacion</p>
                 <select id="operacion" name="operacion" class="form-control">
                                     <option value="x">Seleccione...</option>
-                                    <option value="Existencia">Existente</option>
-                                    <option value="Entrada">Entrada</option>
-                                    <option value="Salida">Salida</option>
+                                    <option value="existencia">Existente</option>
+                                    <option value="entrada">Entrada</option>
+                                    <option value="salida">Salida</option>
                                 </select>
                 <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
                         </form>

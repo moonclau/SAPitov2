@@ -12,16 +12,21 @@ package com.sap.inventario.clases;
 public class Merma {
     String clavemerma;
     String clavep;
-    String nombrep;
-    String tipop;
     int cantidad;
-    String unidad;
-    int costounit;
     String fecha;
     String descripcion;
+    String tipoMerma;
 
     public String getClavemerma() {
         return clavemerma;
+    }
+
+    public String getTipoMerma() {
+        return tipoMerma;
+    }
+
+    public void setTipoMerma(String tipoMerma) {
+        this.tipoMerma = tipoMerma;
     }
 
     public void setClavemerma(String clavemerma) {
@@ -36,22 +41,6 @@ public class Merma {
         this.clavep = clavep;
     }
 
-    public String getNombrep() {
-        return nombrep;
-    }
-
-    public void setNombrep(String nombrep) {
-        this.nombrep = nombrep;
-    }
-
-    public String getTipop() {
-        return tipop;
-    }
-
-    public void setTipop(String tipop) {
-        this.tipop = tipop;
-    }
-
     public int getCantidad() {
         return cantidad;
     }
@@ -60,21 +49,6 @@ public class Merma {
         this.cantidad = cantidad;
     }
 
-    public String getUnidad() {
-        return unidad;
-    }
-
-    public void setUnidad(String unidad) {
-        this.unidad = unidad;
-    }
-
-    public int getCostounit() {
-        return costounit;
-    }
-
-    public void setCostounit(int costounit) {
-        this.costounit = costounit;
-    }
 
     public String getFecha() {
         return fecha;

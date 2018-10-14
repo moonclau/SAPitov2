@@ -1,19 +1,16 @@
 <%-- 
-    Document   : InventarioProducto
-    Created on : 12/10/2018, 02:10:17 PM
-    Author     : montse
+    Document   : InventarioIngresarSalida
+    Created on : 14/10/2018, 06:42:33 AM
+    Author     : claudia
 --%>
 
-<%@page import="com.sap.inventario.clases.Producto"%>
-<%@page import="java.util.LinkedList"%>
-<%@page import="com.sap.inventario.clases.Consultas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inventario Producto</title>
-    <!-- Bootstrap -->
+        <title>Ingresar salida</title>
+     <!-- Bootstrap -->
 <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -62,96 +59,32 @@
         </nav>
     </header>      
     <br/><br/>
-    <!--Panel-->
+    <!---------------------------------------------------------------fin de barra meni-->
+    <!--Panel---------------------------------------------------------------------------------->
     <div class="row">
-    <div class="col-sm-3 ">
+    <!--Panel-->
+    <div class="col-sm-9 central" style="width: auto; margin: auto auto;" >
         <div class="card" text-center>
             <div class="card-body">
-                <h4>Consulta</h4>
-                 <div class="col-xs-offset-1 col-md-offset-1 central">
-                  
-                </div>
-                    <div class="col-xs-10 col-md-10 central">
-                    <form action="" method="post">
-                        <h5>Buscar ID de producto</h5>
-                        <input name="clave" type="text" placeholder="ID producto"/><br><br> 
-                        
-                            <hr>
-                     <a href="InventarioProductoAgregar.jsp"><label>Agregar producto</label></a>
-                     <a href="InventarioProductoModificar.jsp"><label>Modificar producto</label></a>
-                    <h4>Reporte</h4>
-                    <input type="submit" value="Generar"/><br>  
-                     
-                </form>
-              </div>
+                
+                        <form  action="../ModificarProducto" method="post">
+                <h3 class="card-title" >Ingresar salida de producto </h3><br><br>
+                <!--INICIO CUESTIONARIO-->
+                <label class="card-text">Ingrese clave de producto:</label><br>
+                <input type="text" id="clave" name="clave" class="form-control form-control-sm" />
+                <p class="card-text">Ingrese el costo unitario:</p>
+                <input type="number" id="costounitario" name="costounitario" class="form-control form-control-sm" required="required"/>
+                <p class="card-text">Ingrese la cantidad a pedir</p>
+                <input type="number" id="cantidad" name="cantidad" step="0.01" class="form-control form-control-sm" />
+                <p class="card-text">Ingrese la fecha</p>
+                <input type="date" id="fecha" name="fecha" class="form-control form-control-sm" />
+                <p class="card-text">Ingrese el iva:</p>
+                <input type="number" id="iva" name="iva" class="form-control form-control-sm" required="required"/>
+                <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
+                        </form>
             </div>
         </div>
     </div>
-    <div class="col-sm-8">
-        <div class="card">
-            <div class="card-body">
-      <div class="col-xs-offset-6 col-md-offset-6 central">
-              <div class="container">
-                <h4>Productos</h4>
-              </div>
-            </div>
-    <table class="table-striped table table-bordered table-hover">
-      <tr>
-        <th>
-          clave Producto
-        </th>
-      
-        <th>
-          Nombre Producto
-        </th>
-      
-        <th>
-          tipo
-        </th>
-        <th>
-          Unidad
-        </th>
-        <th>
-          Cantidad
-        </th>
-      
-        <th>
-          Costo unitario
-        </th>
-        <th>
-          Costo de venta
-        </th>
-        
-        <th>
-          iva 
-        </th>
-      </tr>
-      <%
-                        LinkedList<Producto> lista =Consultas.consultaProducto();
-                        for (int i=0;i<lista.size();i++)
-                        {
-                           out.println("<tr>");                               
-                           out.println("<td>"+lista.get(i).getClave()+"</td>");
-                           out.println("<td>"+lista.get(i).getNombre()+"</td>");
-                           out.println("<td>"+lista.get(i).getTipo()+"</td>");
-                           out.println("<td>"+lista.get(i).getUnidad()+"</td>");
-                           out.println("<td>"+lista.get(i).getCantidad()+"</td>");
-                           out.println("<td>"+lista.get(i).getCostounitario()+"</td>");
-                           out.println("<td>"+lista.get(i).getCostototal()+"</td>");
-                           out.println("<td>"+lista.get(i).getIva()+"</td>");
-                           out.println("</tr>");
-                        }
-                    %>
-    </table>
-       </div>
-        </div>
-    </div>     
-    
-    </div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="js/jQuery.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="js/bootstrap.js"></script>
-</body>
+    <!--/.Panel-->
+    </body>
 </html>
