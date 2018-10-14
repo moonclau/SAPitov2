@@ -17,6 +17,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
+
 </head>
 <body><header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
@@ -60,39 +61,54 @@
     </header>      
     <br/><br/>
     <!--Panel-->
-    <div class="row">
-    
-      <div class="col-sm-9 central" style="width: auto; margin: auto auto;" >
-        <div class="card" text-center>
-            <div class="card-body">
-                <h3 class="card-title" >Agregar Nuevo Producto </h3><br><br>
-                <!--INICIO CUESTIONARIO-->
-                <label class="card-text">Ingrese la clave de producto:</label><br>
-                <input type="text" id="clp" name="clp" class="form-control form-control-sm" />
-                <label class="card-text">Ingrese el nombre del producto:</label><br>
-                <input type="text" id="np" name="np" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese tipo de producto</p>
-                <input type="text" id="tp" name="tp" class="form-control form-control-sm" />
-                <label class="card-text">Ingrese la unidad del producto:</label><br>
-                <input type="text" id="mc" name="mc" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese la cantidad del producto</p>
-                <input type="text" id="cp" name="cp" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese el costo del producto:</p>
-                <input type="text" id="cop" name="cop" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese el iva del producto</p>
-                <input type="text" id="iva" name="iva" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese la fecha</p>
-                <input type="text" id="mf" name="mf" class="form-control form-control-sm" /><br><br>
-                <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
+    <div class="col-xs-6 col-md-6 central" id="tabla">
+            <div class="jumbotron">
+                <div class="container">
+                    <h4 class="titulo">Agregar Nuevo Producto </h4>
+                    <div class="container">
+                        <form  action="../AgregarProducto" method="post">                                                                                              
+                            <div class="form-group">
+                                <label for="clave">Ingrese la clave de producto:</label><br>
+                                <input type="text" id="clave" name="clave" class="form-control" required="required" />
+                            </div>                                                        
+                            <div class="form-group">
+                                <label for="nombre">Ingrese el nombre del producto:</label><br>
+                                <input type="text" id="nombre" name="nombre" class="form-control" required="required" />    
+                            </div>                                                        
+                            <div class="form-group">
+                                <label for="tipo">Ingrese tipo de producto</label>
+                                 <input type="text" id="tipo" name="tipo" class="form-control" required="required"/>                                    
+                            </div>
+                            <div class="form-group">
+                                <label for="unidad">Ingrese la unidad del producto:</label><br>
+                                 <input type="text" id="unidad" name="unidad" class="form-control" required="required"/>
+                                                                                  
+                            <div class="form-group">
+                <label for="cantidad">Ingrese la cantidad del producto</label>
+                <input type="number" id="cantidad" name="cantidad" class="form-control " required="required" />                                   
+                            </div>    
+                                 <div class="form-group">
+                <label for="costo">Ingrese el costo del producto:</label>
+                <input type="number" id="costo" name="costo" class="form-control " required="required" />                                   
+                            </div>  
+                                 <div class="form-group">
+                <label for="iva">Ingrese el iva del producto</label>
+                <input type="text" id="iva" name="iva" class="form-control" required="required" />       
+                                 </div>
+                                 <div class="form-group">
+                                      <label for="fecha">Fecha :</label>
+                             <input id="fecha" name="fecha" class="form-control " type="date" required="required"/> </div> 
+                            </div>  
+                            <div class="form-group">
+                                <input type="reset" value="Cancelar" class="btn btn-default"/>                                                        
+                                <input type="submit" value="Agregar" class="btn btn-default"/>
+                            </div>                            
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
     
-    </div>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="js/jQuery.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="js/bootstrap.js"></script>
+   
 </body>
 </html>
