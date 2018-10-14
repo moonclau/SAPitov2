@@ -1,10 +1,9 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sap.inventario.servlets;
+package com.sap.ventas.servlets;
 
 import com.sap.conexion.Conexion;
 import java.io.IOException;
@@ -20,10 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author claudia
+ * @author asus
  */
-@WebServlet(name = "AgregarProducto", urlPatterns = {"/AgregarProducto"})
-public class AgregarProducto extends HttpServlet {
+@WebServlet(name = "OrdendeVenta", urlPatterns = {"/OrdendeVenta"})
+public class OrdendeVenta extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,23 +36,24 @@ public class AgregarProducto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+        String clave = request.getParameter("claveOrdendeVenta");
+        String fecha = request.getParameter("fechaOrdendeVenta");
+        String direccion = request.getParameter("direccionOrdendeVenta");
+        String cantidad = request.getParameter("cantidadOrdendeVenta");
+        String descripcion = request.getParameter("descripcionOrdendeVenta");
+        String vendedor = request.getParameter("vendedorOrdendeVenta");
+        String preciounitario = request.getParameter("preciounitarioOrdendeVenta");
+        String preciototal = request.getParameter("preciototalOrdendeVenta");
+        String idPOV = request.getParameter("idpedidoOrdendeVenta");
+       
         Conexion c = new Conexion();
-        String clave = request.getParameter("clave");
-        String nombre = request.getParameter("nombre");
-        String tipo = request.getParameter("tipo");
-        String unidad = request.getParameter("unidad");
-        String cantidad = request.getParameter("cantidad");
-        String costounitario = request.getParameter("costo");
-        String iva = request.getParameter("iva");
-        String fecha= request.getParameter("fecha");
-        String costov=request.getParameter("costov");
-        double vcosto=Double.parseDouble(costounitario);
-        double viva=Double.parseDouble(iva);
-        double monto=(vcosto*viva)+vcosto;
-         c.insertar("clave,nombre,tipo,unidad,cantidad,costounitario,iva,fecha,operacion,costo,monto_total", "producto",
-                    "'"+clave+"','"+nombre+"','"+tipo+"','"+unidad+"',"+cantidad+","+costounitario+","+iva+",'"+fecha+"','exitente',"+costov+","+monto);
-         response.sendRedirect("Inventario/InventarioProductoAgregar.jsp");
+        
+        c.insertar("clave_ordenventa,fecha,direccion,cantidad,descripcion_venta,vendedor,precio_unitario,precio_total,idpedido,","cliente","'"+clave+"','"+fecha+"','"+direccion+"',"+cantidad+",'"+descripcion+"','"+vendedor+"',"+preciounitario+","+preciototal+","+idPOV+"");
+       
+         response.sendRedirect("Ventas/Orden de Venta.jsp");
     }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -69,9 +69,9 @@ public class AgregarProducto extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OrdendeVenta.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OrdendeVenta.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

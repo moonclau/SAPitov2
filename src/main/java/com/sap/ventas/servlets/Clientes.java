@@ -1,12 +1,12 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sap.inventario.servlets;
+package com.sap.ventas.servlets;
 
 import com.sap.conexion.Conexion;
+import com.sap.gerencia.clases.usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -20,10 +20,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author claudia
+ * @author asus
  */
-@WebServlet(name = "AgregarProducto", urlPatterns = {"/AgregarProducto"})
-public class AgregarProducto extends HttpServlet {
+@WebServlet(name = "Clientes",urlPatterns = {"/Clientes"})
+public class Clientes extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,24 +37,33 @@ public class AgregarProducto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+        String clave = request.getParameter("claveClientes");
+        String nombre = request.getParameter("nombreClientes");
+        String paterno = request.getParameter("apClientes");
+        String materno = request.getParameter("amClientes");
+        String direccion = request.getParameter("direccionClientes");
+        String cp = request.getParameter("cpClientes");
+        String municipio = request.getParameter("municipioClientes");
+        String estado = request.getParameter("estadoClientes");
+        String pais = request.getParameter("paisClientes");
+        String rfc = request.getParameter("rfcClientes");
+        String cuentacontable = request.getParameter("cuentacontableClientes");
+        String cuentabancaria = request.getParameter("cuentabancariaClientes");
+        String razonsocial= request.getParameter("razonsocialClientes");
         Conexion c = new Conexion();
-        String clave = request.getParameter("clave");
-        String nombre = request.getParameter("nombre");
-        String tipo = request.getParameter("tipo");
-        String unidad = request.getParameter("unidad");
-        String cantidad = request.getParameter("cantidad");
-        String costounitario = request.getParameter("costo");
-        String iva = request.getParameter("iva");
-        String fecha= request.getParameter("fecha");
-        String costov=request.getParameter("costov");
-        double vcosto=Double.parseDouble(costounitario);
-        double viva=Double.parseDouble(iva);
-        double monto=(vcosto*viva)+vcosto;
-         c.insertar("clave,nombre,tipo,unidad,cantidad,costounitario,iva,fecha,operacion,costo,monto_total", "producto",
-                    "'"+clave+"','"+nombre+"','"+tipo+"','"+unidad+"',"+cantidad+","+costounitario+","+iva+",'"+fecha+"','exitente',"+costov+","+monto);
-         response.sendRedirect("Inventario/InventarioProductoAgregar.jsp");
+        //usuario usu = new usuario();
+        c.insertar("clave_cliente,nombre,apellido_paterno,apellido_materno,direccion,cp,municipio,estado,pais,rfc,cuenta_contable,"
+                + "cuenta_bancaria,razon_social","cliente","'"+clave+"','"+nombre+"','"+paterno+"','"+materno+"','"+direccion+"',"+cp+",'"+municipio+"','"+estado+"','"+pais+"','"+rfc+"','"+cuentacontable+"','"+cuentabancaria+"','"+razonsocial+"'");
+        
+        
+//        int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Contratacion de empleado empleado");
+        
+        response.sendRedirect("Ventas/Clientes.jsp");
+        
+        
     }
 
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -69,9 +78,9 @@ public class AgregarProducto extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Clientes.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
