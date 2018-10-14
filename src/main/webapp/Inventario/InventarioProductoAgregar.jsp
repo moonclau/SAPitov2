@@ -89,7 +89,10 @@
                             </div>    
                                  <div class="form-group">
                 <label for="costo">Ingrese el costo del producto:</label>
-                <input type="number" id="costo" name="costo" class="form-control " required="required" />                                   
+                <input type="number" id="costo" name="costo" class="form-control " required="required" />  
+                
+                <label for="costo">Ingrese el costo de venta:</label>
+                <input type="number" id="costov" name="costov" class="form-control " required="required" /> 
                             </div>  
                                  <div class="form-group">
                 <label for="iva">Ingrese el iva del producto</label>

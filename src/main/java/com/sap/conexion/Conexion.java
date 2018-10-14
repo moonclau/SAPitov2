@@ -190,5 +190,9 @@ public class Conexion {
         closeDB();        
         return r;
     }
+
+    public PreparedStatement prepareStatement(String query) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
