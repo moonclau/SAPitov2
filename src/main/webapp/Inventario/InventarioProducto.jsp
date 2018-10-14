@@ -4,6 +4,9 @@
     Author     : montse
 --%>
 
+<%@page import="com.sap.inventario.clases.Producto"%>
+<%@page import="java.util.LinkedList"%>
+<%@page import="com.sap.inventario.clases.Consultas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -102,56 +105,42 @@
         </th>
       
         <th>
-          Costo unitario
+          tipo
         </th>
         <th>
           Unidad
         </th>
         <th>
-          Tipo
+          Cantidad
         </th>
       
         <th>
+          Costo unitario
+        </th>
+        <th>
           Costo de venta
         </th>
-        <th>
-          iva
-        </th>
         
         <th>
-          fecha de entrada 
-        </th>
-        <th>
-          fecha de salida
+          iva 
         </th>
       </tr>
-
-
-      <tr>
-        <td>12345</td>
-        <td>Reloj</td>
-        <td>Accesorio</td>
-        <td>Jose</td>
-        <td>3</td>
-        <td>Pieza</td>
-        <td>$1500</td>
-        <td>$2000</td>
-        <td>150</td>
-        
-
-      </tr>
-      <tr>
-        <td>87653</td>
-        <td>Mochila</td>
-        <td>Accesorio</td>
-        <td>Jose</td>
-        <td>3</td>
-        <td>Pieza</td>
-        <td>$1500</td>
-        <td>$2000</td>
-        <td>150</td>
-        
-      </tr>
+      <%
+                        LinkedList<Producto> lista =Consultas.consultaProducto();
+                        for (int i=0;i<lista.size();i++)
+                        {
+                           out.println("<tr>");                               
+                           out.println("<td>"+lista.get(i).getClave()+"</td>");
+                           out.println("<td>"+lista.get(i).getNombre()+"</td>");
+                           out.println("<td>"+lista.get(i).getTipo()+"</td>");
+                           out.println("<td>"+lista.get(i).getUnidad()+"</td>");
+                           out.println("<td>"+lista.get(i).getCantidad()+"</td>");
+                           out.println("<td>"+lista.get(i).getCostounitario()+"</td>");
+                           out.println("<td>"+lista.get(i).getCostototal()+"</td>");
+                           out.println("<td>"+lista.get(i).getIva()+"</td>");
+                           out.println("</tr>");
+                        }
+                    %>
     </table>
        </div>
         </div>

@@ -17,6 +17,32 @@ import java.util.Properties;
  * @author claudia
  */
 public class Consultas {
+    public static LinkedList consultaProducto() throws SQLException,ClassNotFoundException{
+        Connection conn;
+        Class.forName("org.postgresql.Driver");
+        LinkedList <Producto> l=new LinkedList<Producto>();
+        Properties connProp = new Properties();
+        connProp.put("user", "postgres");
+        connProp.put("password", "root");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        Statement stmt;        
+        stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("select clave,nombre,tipo,unidad,cantidad,costounitario,costo,iva from producto");
+        while (rs.next()) {
+            Producto p=new Producto();
+            p.setClave(rs.getString("clave"));
+            p.setNombre(rs.getString("nombre"));
+            p.setTipo(rs.getString("tipo"));
+            p.setUnidad(rs.getString("unidad"));
+            p.setCantidad(rs.getInt("cantidad"));
+            p.setCostounitario(rs.getDouble("costounitario"));
+            p.setCostototal(rs.getDouble("costo"));
+            p.setIva(rs.getDouble("iva"));
+            l.add(p);
+        }
+        conn.close();
+        return l;
+    }
     public static LinkedList consultasmerma() throws SQLException, ClassNotFoundException {        
         Connection conn;
         Class.forName("org.postgresql.Driver");
