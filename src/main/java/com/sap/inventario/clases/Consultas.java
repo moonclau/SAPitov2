@@ -142,27 +142,29 @@ public class Consultas {
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet res = stmt.executeQuery("select * from producto");
-        ResultSet rcl = stmt.executeQuery("select clave from producto");
-        ResultSet rex = stmt.executeQuery("select cantidad from producto where fecha=(select MAX(fecha) from producto)  and operacion='existente '");
-        ResultSet re = stmt.executeQuery("select cantidad from producto where fecha=(select MAX(fecha) from producto)  and operacion='entrada'");
-        ResultSet rs = stmt.executeQuery("select cantidad from producto where fecha=(select MAX(fecha) from producto)  and operacion='entrada'");
-        clave=rcl.getString("clave");
+//        ResultSet rcl = stmt.executeQuery("select clave from producto");
+//        ResultSet rex = stmt.executeQuery("select cantidad from producto where fecha=(select MAX(fecha) from producto)  and operacion='existente '");
+//        ResultSet re = stmt.executeQuery("select cantidad from producto where fecha=(select MAX(fecha) from producto)  and operacion='entrada'");
+//        ResultSet rs = stmt.executeQuery("select cantidad from producto where fecha=(select MAX(fecha) from producto)  and operacion='entrada'");
+        
         
         while(res.next()){
+            clave=res.getString("clave");
             do{
-                clavevieja=clave;
-        cantEx=rex.getInt("cantidad");
-        cantE=re.getInt("cantidad");
-        cantS=rs.getInt("cantidad");
-        vstock=(cantEx+cantE)-cantS;
+                
+//        cantEx=rex.getInt("cantidad");
+//        cantE=re.getInt("cantidad");
+//        cantS=rs.getInt("cantidad");
+//        vstock=(cantEx+cantE)-cantS;
         Stock p=new Stock();
-            p.setClave(rs.getString("clave"));
-            p.setCantidadExistente(rex.getInt("cantidad"));
-            p.setCantidadEntrada(re.getInt("cantidad"));
-            p.setCantidadSalida(rs.getInt("cantidad"));
-            p.setStock(vstock);
+            p.setClave(res.getString("clave"));
+//            p.setCantidadExistente(rex.getInt("cantidad"));
+//            p.setCantidadEntrada(re.getInt("cantidad"));
+//            p.setCantidadSalida(rs.getInt("cantidad"));
+//            p.setStock(vstock);
             l.add(p);
-            }while(!clavevieja.equals(clave));
+            clavevieja=clave;
+            }while(!clave.equals(clavevieja));
         }
         
         conn.close();

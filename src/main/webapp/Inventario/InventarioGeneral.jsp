@@ -133,6 +133,20 @@
           stock
         </th>
       </tr>
+      
+      <%
+                        LinkedList<Stock> lista =Consultas.consultaStock();
+                        for (int i=0;i<lista.size();i++)
+                        {
+                           out.println("<tr>");                               
+                           out.println("<td>"+lista.get(i).getClave()+"</td>");
+                           /*out.println("<td>"+lista.get(i).getCantidadExistente()+"</td>");
+                           out.println("<td>"+lista.get(i).getCantidadExistente()+"</td>");
+                           out.println("<td>"+lista.get(i).getCantidadSalida()+"</td>");
+                           out.println("<td>"+lista.get(i).getStock()+"</td>");
+                           */out.println("</tr>");
+                        }
+                    %>
     </table>
         </div>
         </div>
@@ -140,19 +154,6 @@
             </div>
         </div>
       </div>
-      <%
-                        LinkedList<Stock> lista =Consultas.consultaStock();
-                        for (int i=0;i<lista.size();i++)
-                        {
-                           out.println("<tr>");                               
-                           out.println("<td>"+lista.get(i).getClave()+"</td>");
-                           out.println("<td>"+lista.get(i).getCantidadExistente()+"</td>");
-                           out.println("<td>"+lista.get(i).getCantidadExistente()+"</td>");
-                           out.println("<td>"+lista.get(i).getCantidadSalida()+"</td>");
-                           out.println("<td>"+lista.get(i).getStock()+"</td>");
-                           out.println("</tr>");
-                        }
-                    %>
       <!--din panel 2-->
   </div>
     
