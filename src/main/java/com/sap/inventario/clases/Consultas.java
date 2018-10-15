@@ -37,7 +37,7 @@ public class Consultas {
             p.setNombre(rs.getString("nombre"));
             p.setTipo(rs.getString("tipo"));
             p.setUnidad(rs.getString("unidad"));
-            p.setCantidad(rs.getInt("cantidad"));
+            p.setCantidad(rs.getInt("existencia"));
             p.setCostounitario(rs.getDouble("costounitario"));
             p.setCostototal(rs.getDouble("costo"));
             p.setIva(rs.getDouble("iva"));
