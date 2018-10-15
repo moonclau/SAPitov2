@@ -84,7 +84,7 @@ public class Consultas {
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select * from producto where operacion='Entrada'");
+        ResultSet rs = stmt.executeQuery("select * from producto where operacion='entrada'");
         while (rs.next()) {
             Producto p=new Producto();
             p.setClave(rs.getString("clave"));
@@ -164,8 +164,8 @@ public class Consultas {
             l.add(p);
             }while(!clavevieja.equals(clave));
         }
+        
         conn.close();
         return l;
-
     }
 }
