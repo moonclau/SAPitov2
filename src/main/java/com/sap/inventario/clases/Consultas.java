@@ -122,4 +122,47 @@ public class Consultas {
         conn.close();
         return l;
     }
+    public static LinkedList consultaStock() throws SQLException,ClassNotFoundException{
+        String clave;
+    String clavevieja;
+    int cantEx;
+    int cantS;
+    int cantE;
+    int vstock;
+       Connection conn;
+        Class.forName("org.postgresql.Driver");
+        
+        LinkedList <Stock> l=new LinkedList<Stock>();
+        Properties connProp = new Properties();
+        connProp.put("user", "postgres");
+        connProp.put("password", "root");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        Statement stmt;        
+        stmt = conn.createStatement();
+        ResultSet rcl = stmt.executeQuery("select clave from producto");
+        ResultSet rex = stmt.executeQuery("select cantidad from producto where fecha=(select MAX(fecha) from producto)  and operacion='existente '");
+        ResultSet re = stmt.executeQuery("select cantidad from producto where fecha=(select MAX(fecha) from producto)  and operacion='entrada'");
+        ResultSet rs = stmt.executeQuery("select cantidad from producto where fecha=(select MAX(fecha) from producto)  and operacion='entrada'");
+        clave=rcl.getString("clave");
+        
+        while(rcl.next()){
+            do{
+                clavevieja=clave;
+        cantEx=rex.getInt("cantidad");
+        cantE=re.getInt("cantidad");
+        cantS=rs.getInt("cantidad");
+        vstock=(cantEx+cantE)-cantS;
+        Stock p=new Stock();
+            p.setClave(rs.getString("clave"));
+            p.setCantidadExistente(rex.getInt("cantidad"));
+            p.setCantidadEntrada(re.getInt("cantidad"));
+            p.setCantidadSalida(rs.getInt("cantidad"));
+            p.setStock(vstock);
+            l.add(p);
+            }while(!clavevieja.equals(clave));
+        }
+        conn.close();
+        return l;
+
+    }
 }

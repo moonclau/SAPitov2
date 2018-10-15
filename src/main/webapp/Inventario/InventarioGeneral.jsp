@@ -4,6 +4,7 @@
     Author     : claudia
 --%>
 
+<%@page import="com.sap.inventario.clases.Stock"%>
 <%@page import="java.util.LinkedList"%>
 <%@page import="com.sap.inventario.clases.Consultas"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -131,9 +132,6 @@
         <th>
           stock
         </th>
-        <th>
-          fecha
-        </th>
       </tr>
     </table>
         </div>
@@ -142,6 +140,19 @@
             </div>
         </div>
       </div>
+      <%
+                        LinkedList<Stock> lista =Consultas.consultaStock();
+                        for (int i=0;i<lista.size();i++)
+                        {
+                           out.println("<tr>");                               
+                           out.println("<td>"+lista.get(i).getClave()+"</td>");
+                           out.println("<td>"+lista.get(i).getCantidadExistente()+"</td>");
+                           out.println("<td>"+lista.get(i).getCantidadExistente()+"</td>");
+                           out.println("<td>"+lista.get(i).getCantidadSalida()+"</td>");
+                           out.println("<td>"+lista.get(i).getStock()+"</td>");
+                           out.println("</tr>");
+                        }
+                    %>
       <!--din panel 2-->
   </div>
     
