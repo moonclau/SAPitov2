@@ -19,10 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author claudia
+ * @author montse
  */
-@WebServlet(name = "AgregarMerma", urlPatterns = {"/AgregarMerma"})
-public class AgregarMerma extends HttpServlet {
+@WebServlet(name = "AgregarEntrada", urlPatterns = {"/AgregarEntrada"})
+public class AgregarEntrada extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,23 +37,23 @@ public class AgregarMerma extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         Conexion c = new Conexion();
-        String mclave = request.getParameter("clavem");
-        String mproducto = request.getParameter("producto");
-        String mcantidad = request.getParameter("cantidad");
-        String mdescripcion = request.getParameter("descripcion");
-        String mfecha = request.getParameter("fecha");
-        String mtipo = request.getParameter("mermatipo");
-        c.insertar(
-                "clave_merma,producto,cantidad,descripcion,fecha,tipo_merma", "merma",
-                "'" + mclave + "',"
-                + "'" + mproducto + "',"
-                + "" + mcantidad + ","
-                + "'" + mdescripcion + "',"
-                + "'" + mfecha + "',"
-                + "'" + mtipo + "'"
-        );
+        String eclave = request.getParameter("clavee");
+        
+    }
 
-        response.sendRedirect("Inventario/InventarioMermaAgregar.jsp");
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
     }
 
     /**
@@ -67,13 +67,7 @@ public class AgregarMerma extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AgregarMerma.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(AgregarMerma.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**

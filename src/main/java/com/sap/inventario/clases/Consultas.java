@@ -87,7 +87,7 @@ public class Consultas {
             Producto p=new Producto();
             p.setClave(rs.getString("clave"));
             p.setNombre(rs.getString("nombre"));
-            p.setCantidad(rs.getInt("cantidad"));
+            p.setCantidad(rs.getInt("existencia"));
             p.setCostounitario(rs.getDouble("costounitario"));
             p.setCostototal(rs.getDouble("costo"));
             p.setIva(rs.getDouble("iva"));
