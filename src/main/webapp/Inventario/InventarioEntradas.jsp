@@ -78,7 +78,7 @@
                     <h4>Reporte</h4>
                     <input type="submit" value="Generar"/>
                     <hr>
-                    <a href="InventarioHacerPedido.jsp"><label>Ingresar entrada de producto</label></a>
+                    <a href="InventarioAgregarEntrada.jsp"><label>Ingresar entrada de producto</label></a>
                     <div class="col-xs-offset-0 col-md-offset-0 central">
                     
                     </div>  

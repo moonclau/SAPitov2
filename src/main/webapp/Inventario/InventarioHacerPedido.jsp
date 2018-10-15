@@ -72,14 +72,14 @@
                 <!--INICIO CUESTIONARIO-->
                 <label class="card-text">Ingrese clave de producto:</label><br>
                 <input type="text" id="clave" name="clave" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese el costo unitario:</p>
+                <p class="card-text">Ingrese el costo:</p>
                 <input type="number" id="costounitario" name="costounitario" class="form-control form-control-sm" required="required"/>
                 <p class="card-text">Ingrese la cantidad a pedir</p>
                 <input type="number" id="cantidad" name="cantidad" step="0.01" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese la fecha</p>
+                <p class="card-text">Ingrese la fecha de hoy</p>
                 <input type="date" id="fecha" name="fecha" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese el iva:</p>
-                <input type="number" id="iva" name="iva" class="form-control form-control-sm" required="required"/>
+                <p class="card-text">Ingrese la fecha en la que se requiere el producto:</p>
+                <input type="date" id="fechae" name="fechae" class="form-control form-control-sm" required="required"/>
                 <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
                         </form>
             </div>
