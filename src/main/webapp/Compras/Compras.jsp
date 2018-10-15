@@ -31,7 +31,10 @@
             
             <nav class="navbar navbar-expand-lg navbar-light barra">
                 <div>
-                    <a class="navbar-brand" style="color: white" >Compras</a>              
+                    <a class="navbar-brand" style="color: white" >Compras</a>  
+                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
