@@ -7,7 +7,6 @@
 <%@page import="com.sap.inventario.clases.Producto"%>
 <%@page import="com.sap.inventario.clases.Consultas"%>
 <%@page import="java.util.LinkedList"%>
-<%@page import="java.util.LinkedList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
