@@ -46,12 +46,11 @@ public class ModificarProducto extends HttpServlet {
         String iva = request.getParameter("iva");
         String costov=request.getParameter("costo");
         String fecha= request.getParameter("fecha");
-        String operacion= request.getParameter("operacion");
         double vcosto=Double.parseDouble(costounitario);
         double viva=Double.parseDouble(iva);
         double monto=(vcosto*viva)+vcosto;
-         c.insertar("clave,nombre,tipo,unidad,cantidad,costounitario,iva,fecha,operacion,costo,monto_total", "producto",
-                    "'"+clave+"','"+nombre+"','"+tipo+"','"+unidad+"',"+cantidad+","+costounitario+","+iva+",'"+fecha+"','"+operacion+"',"+costov+","+monto);
+         c.insertar("clave,nombre,tipo,unidad,cantidad,costounitario,iva,fecha,costo,monto_total", "producto",
+                    "'"+clave+"','"+nombre+"','"+tipo+"','"+unidad+"',"+cantidad+","+costounitario+","+iva+",'"+fecha+"',"+costov+","+monto);
          response.sendRedirect("Inventario/InventarioProductoModificar.jsp");
     }
 

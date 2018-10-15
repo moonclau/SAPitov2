@@ -50,7 +50,7 @@ public class AgregarProducto extends HttpServlet {
         double vcosto=Double.parseDouble(costounitario);
         double viva=Double.parseDouble(iva);
         double monto=(vcosto*viva)+vcosto;
-         c.insertar("clave,nombre,tipo,unidad,cantidad,costounitario,iva,fecha,operacion,costo,monto_total", "producto",
+         c.insertar("clave,nombre,tipo,unidad,existencia,costounitario,iva,costo,fecha,monto_total", "producto",
                     "'"+clave+"','"+nombre+"','"+tipo+"','"+unidad+"',"+cantidad+","+costounitario+","+iva+",'"+fecha+"','existente ',"+costov+","+monto);
          response.sendRedirect("Inventario/InventarioProductoAgregar.jsp");
     }

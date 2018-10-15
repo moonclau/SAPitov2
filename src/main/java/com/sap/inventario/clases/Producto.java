@@ -19,7 +19,6 @@ public class Producto {
     double iva;
     double costototal;
     String fecha;
-    String operacion;
     double montototal;
 
     public String getClave() {
@@ -94,13 +93,6 @@ public class Producto {
         this.fecha = fecha;
     }
 
-    public String getOperacion() {
-        return operacion;
-    }
-
-    public void setOperacion(String operacion) {
-        this.operacion = operacion;
-    }
 
     public double getMontototal() {
         return montototal;

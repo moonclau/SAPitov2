@@ -18,7 +18,8 @@
 <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
 </head>
-<body><header class="sticky-top">
+<body>
+    <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <a href="Inventario.jsp" class="navbar-brand text-white">Inventario</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#inv_navbar" aria-controls="inv_navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,9 +27,13 @@
             </button>
             <div class="collapse navbar-collapse" id="int_navbar">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a href="InventarioGeneral.jsp" class="nav-link text-white">Inventario&nbsp;General</a>
-                    </li>                   
+                    <li class="nav-item dropdown">
+                        <a href="#InventarioProducto.jsp" class="nav-link dropdown-toggle text-white" id="producto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">General</a>
+                        <div class="dropdown-menu bg-primary" aria-labelledby="inventario">
+                            <a class="nav-link text-white" href="InventarioProducto.jsp">Producto</a>
+                            <a class="nav-link text-white" href="InventarioProductoAgregar.jsp">Agregar&nbsp;Producto</a>
+                            <a class="nav-link text-white" href="InventarioProductoModificar.jsp">Modificar&nbsp;Producto</a>                                  
+                        </div>                  
                     <li class="nav-item">
                         <a href="InventarioEntradas.jsp" class="nav-link text-white">Inventario&nbsp;Entradas</a>
                     </li>    
@@ -41,14 +46,6 @@
                             <a class="nav-link text-white" href="InventarioMerma.jsp">Merma</a>
                             <a class="nav-link text-white" href="InventarioMermaAgregar.jsp">Agregar&nbsp;Merma</a>
                             <a class="nav-link text-white" href="InventarioMermaModificar.jsp">Modificar&nbsp;Merma</a>                                  
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a href="#InventarioProducto.jsp" class="nav-link dropdown-toggle text-white" id="producto" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Producto</a>
-                        <div class="dropdown-menu bg-primary" aria-labelledby="inventario">
-                            <a class="nav-link text-white" href="InventarioProducto.jsp">Producto</a>
-                            <a class="nav-link text-white" href="InventarioProductoAgregar.jsp">Agregar&nbsp;Producto</a>
-                            <a class="nav-link text-white" href="InventarioProductoModificar.jsp">Modificar&nbsp;Producto</a>                                  
                         </div>
                     </li>                            
                 </ul>   

@@ -42,7 +42,6 @@ public class Consultas {
             p.setCostototal(rs.getDouble("costo"));
             p.setIva(rs.getDouble("iva"));
             p.setFecha(rs.getString("fecha"));
-            p.setOperacion(rs.getString("operacion"));
             p.setMontototal(rs.getDouble("monto_total"));
             l.add(p);
         }
@@ -67,7 +66,6 @@ public class Consultas {
             p.setCostototal(rs.getDouble("costo"));
             p.setIva(rs.getDouble("iva"));
             p.setFecha(rs.getString("fecha"));
-            p.setOperacion(rs.getString("operacion"));
             p.setMontototal(rs.getDouble("monto_total"));
             l.add(p);
         }
@@ -84,7 +82,7 @@ public class Consultas {
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select * from producto where operacion='entrada'");
+        ResultSet rs = stmt.executeQuery("select * from producto");
         while (rs.next()) {
             Producto p=new Producto();
             p.setClave(rs.getString("clave"));
@@ -126,7 +124,7 @@ public class Consultas {
     
     }
     public static LinkedList consultaStock() throws SQLException,ClassNotFoundException{
-        String clave;
+       
         String clavevieja;
         int cantEx;
         int cantS;
@@ -149,8 +147,8 @@ public class Consultas {
         
         
         while(res.next()){
-            clave=res.getString("clave");
-            do{
+//            clave=res.getString("clave");
+//            do{
                 
 //        cantEx=rex.getInt("cantidad");
 //        cantE=re.getInt("cantidad");
@@ -163,8 +161,8 @@ public class Consultas {
 //            p.setCantidadSalida(rs.getInt("cantidad"));
 //            p.setStock(vstock);
             l.add(p);
-            clavevieja=clave;
-            }while(!clave.equals(clavevieja));
+//            clavevieja=clave;
+//            }while(!clave.equals(clavevieja));
         }
         
         conn.close();
