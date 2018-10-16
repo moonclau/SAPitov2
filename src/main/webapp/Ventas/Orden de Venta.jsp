@@ -71,56 +71,96 @@
             </div>
         </nav>
     </header>
-    <section class="container">
-    <h1 class="text-uppercase text-center">Orden de Venta</h1>
-        <div class="row">
-        <div class="col-6">
-            <form method="POST" autocomplete="off" action="../OrdendeVenta"  id="OrdendeVenta" name="OrdendeVenta"  >
-                <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Clave de Orden de Venta:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="claveOrdendeVenta" id="claveOrdendeVenta" required="required">
+    <br>
+    <br>
+    <div class="col-sm-9 central" style="width: auto; margin: auto auto;" >
+        <div class="card" text-center>
+            <div class="card-body">
+    
+    <div class="row"><!-- INICIO DE SECCION PRINCIPAL -->
+                <div class="container-fluid">
+                    <center>
+                        <form method="POST" autocomplete="off" action="../ContratarEmpleado" onsubmit="return valida();" id="formContratarEmp" name="formContratarEmp">
+                            <table>
+                                 <h1 class="text-uppercase text-center">Orden de Venta</h1>
+                                
+                                <tr>
+                                    <td>
+                                        Clave de Orden Venta:
+                                    </td>
+                                    <td>
+                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="claveOrdendeVenta" id="claveOrdendeVenta" required="required">
+                                    </td>
+                                    <td>
+                                        Vendedor:
+                                    </td>
+                                    <td>
+                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="vendedorOrdendeVenta" id="vendedorOrdendeVenta" required="required">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Fecha:
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="fechaOrdendeVenta" id="fechaOrdendeVenta" required="required">
+                                    </td>
+                                    <td>
+                                        Precio Unitario:
+                                    </td>
+                                    <td>
+                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="preciounitarioOrdendeVenta" id="preciounitarioOrdendeVenta" required="required">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Direccion:
+                                    </td>
+                                    <td>
+                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="direccionOrdendeVenta" id="direccionOrdendeVenta" required="required">
+                                    </td>
+                                    <td>
+                                        Precio Total:
+                                    </td>
+                                    <td>
+                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="preciototalOrdendeVenta" id="preciototalOrdendeVenta" required="required">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Descripcion de Venta:
+                                    </td>
+                                    <td>
+                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="descripciondelaventaOrdendeVenta" id="descripciondelaventaOrdendeVenta" required="required">
+                                    </td>
+                                    <td>
+                                        Id. Pedido:
+                                    </td>
+                                    <td>
+                                        <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="idpedidoOrdendeVenta" id="idpedidoOrdendeVenta" required="required">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                       Cantidad:
+                                    </td>
+                                    <td>
+                                    <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="cantidadOrdendeVenta" id="cantidadOrdendeVenta" required="required">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    
+                                    <td colspan="4" align="center">
+                                        <input type="submit" value="Realizar Orden" class="btn btn-primary"/>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </center>
                 </div>
-                <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Fecha:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="fechaOrdendeVenta" id="fechaOrdendeVenta" required="required">
-                </div>
-                 <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Direccion:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="direccionOrdendeVenta" id="direccionOrdendeVenta" required="required">
-                </div>
-                <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Cantidad:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="cantidadOrdendeVenta" id="cantidadOrdendeVenta" required="required">
-                </div>
-                <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Descripcion de la venta:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="descripciondelaventaOrdendeVenta" id="descripciondelaventaOrdendeVenta" required="required">
-                </div>
-                <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Vendedor:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="vendedorOrdendeVenta" id="vendedorOrdendeVenta" required="required">
-                </div>
-                <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Precio Unitario:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="preciounitarioOrdendeVenta" id="preciounitarioOrdendeVenta" required="required">
-                </div>
-                <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Precio Total:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="preciototalOrdendeVenta" id="preciototalOrdendeVenta" required="required">
-                </div>
-                <div class="form-group row">
-                <label for="" class="col-4 col-form-label">Id Pedido:</label>
-                <input type="text" placeholder="Escribe aqui" class="form-control col-5" name="idpedidoOrdendeVenta" id="idpedidoOrdendeVenta" required="required">
-                </div>
-                
-                
-            <div class="form-group mx-2">
-                <button class="btn btn-primary" type="submit">Realizar orden</button>
-                </div>
-                
-            </form>
+            </div><!-- FIN DE SECCION PRINCIPAL -->
             </div>
         </div>
-    </section>
+    </div>
     </body>
 </html>
