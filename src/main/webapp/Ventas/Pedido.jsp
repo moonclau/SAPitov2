@@ -114,13 +114,13 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        Id.Cliente:
+                                        Id de Cliente:
                                     </td>
                                     <td>
                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="idclientePedido" id="idclientePedido" required="required">
                                     </td>
                                     <td>
-                                        Id.Producto:
+                                        Id de Producto:
                                     </td>
                                     <td>
                                        <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="idproductoPedido" id="idproductoPedido" required="required">
