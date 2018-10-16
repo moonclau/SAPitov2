@@ -124,15 +124,16 @@
                                     <h3>Eliminar Compra</h3>
                             </div></center>                       
                         <br>
+                        <form action="" method="post" onsubmit="return editar_prov();"> 
                          <div class="row">
                                <div class="col-xs-4"></div>
                                <div class="col-xs-3">
-                       <center><input type="text" name="rfcprov" placeholder="Folio Compra" class="form-control" id="codprod" required="Complete el campo"> 
+                       <center><input type="text" name="rfcprov" placeholder="Folio Compra" class="form-control" id="folelim" required="Complete el campo"> 
                            </div> 
                            <div class="col-xs-1">
                         <input type="submit" value="Buscar"  name="filtro" class="btn btn-success"></center>
                                </div>
-                                
+                         </div> </form>
                          </div><br>
                          
                        <div class="table-responsive"><table class="table table-bordered">
@@ -155,8 +156,10 @@
                                     </tbody>
                                 </table></div>
                         <br>
+                        <form action="/Eliminar_compra" method="post"> 
                         <center><input type="submit" value="Eliminar" style="background-color:#3366FF" name="buscar" class="btn btn-primary"></center>
-                    </div>
+                        </form>   
+                </div>
                 </div>
             </div>            
             

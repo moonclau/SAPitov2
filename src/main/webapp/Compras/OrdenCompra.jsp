@@ -66,31 +66,31 @@
                 </div>
                 <div class="row">
                     <div style="background-color:#F5F5F5;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
-                        <form method="POST" >
+                        <form method="POST" accion="../Consulta_orden">
                             <center><div id="titulo" class="col-12">
                                 <h3>Buscar&nbsp;Orden&nbsp;de&nbsp;Compra</h3>
                                 </div></center>
                            <br>
                            <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="todos">
                                     Todas
                             </label>
                            </div>
                            <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="folio_orden">
                                     Por&nbsp;Folio
                             </label>
                            </div><br>
-                           <center><input type="text" name="rfcprov" placeholder="Folio" class="form-control" id="codprod" required></center>
+                           <center><input type="text" name="folio_orden" placeholder="Folio" class="form-control" id="folio_orden" required></center>
                             <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="fecha_orden">
                                     Por&nbsp;Fecha
                             </label>
                            </div><br>
-                           <center><input type="date" name="rfcprov" placeholder="Fecha" class="form-control" id="codprod" required></center><div>
+                           <center><input type="date" name="fech_orden" placeholder="Fecha" class="form-control" id="fech_orden" required></center><div>
                                 <br>
                             </div>
                             <center><input type="submit" value="Buscar" style="background-color:#3366FF" name="buscar" class="btn btn-primary"></center>

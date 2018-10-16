@@ -117,18 +117,19 @@
                                     <h3>Eliminar Proveedor</h3>
                             </div></center>                       
                         <br>
-                        
+                        <form action="" method="post" onsubmit="return editar_prov();"> 
                            <div class="row">
                                <div class="col-xs-4"></div>
                                <div class="col-xs-3">
-                       <center><input type="text" name="rfcprov" placeholder="Clave" class="form-control" id="codprod" required="Complete el campo"> 
+                       <center><input type="text" name="rfcprov" placeholder="Clave" class="form-control" id="elim_prod" required="Complete el campo"> 
                            </div> 
                            <div class="col-xs-1">
                         <input type="submit" value="Buscar"  name="filtro" class="btn btn-success"></center>
                                </div>
                                
                                 
-                            </div>
+                           </div></form>
+                        
                                
                                <div><br><br></div>
                         
@@ -162,7 +163,9 @@
                                 </table></div></center>                      
                               
                         <br>
+                        <form action="Eliminar_producto" method="post" onsubmit="return editar_prov();"> 
                         <center><input type="submit" value="Eliminar" style="background-color:#3366FF" name="buscar" class="btn btn-primary"></center>
+                        </form>
                     </div>
                 </div>
             </div>            

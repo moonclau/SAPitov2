@@ -69,24 +69,24 @@
                 </div>
                 <div class="row">
                     <div style="background-color:#F5F5F5;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
-                        <form method="POST" >
+                        <form method="POST" accion="../Consulta_pod" >
                             <center><div id="titulo" class="col-12">
                                 <h3>Buscar&nbsp;Producto</h3>
                                 </div></center>
                            <br>
                            <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                <input type="radio" name="consulta" id="tod_pod" value="todos">
                                     Todos
                             </label>
                            </div>
                            <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                <input type="radio" name="consulta" id="id_pod" value="id">
                                     Por&nbsp;ID
                             </label>
                            </div><br>
-                           <center><input type="number" name="idprod" placeholder="ID" class="form-control" id="codprod" required></center>
+                           <center><input type="number" name="idprod" placeholder="ID" class="form-control" id="idprod" required></center>
                             <div>
                                 <br>
                             </div>

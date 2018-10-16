@@ -130,15 +130,15 @@
                              <div class="row">
                                  <div class="col-xs-2"></div>
                                <div class="col-xs-3">
-                          <center><input type="text" name="rfcprov" placeholder="Folio Orden de compra" id="codprod" class="form-control" required="complete el campo"></center>
+                          <center><input type="text" name="rfcprov" placeholder="Folio Orden de compra" id="folcompra" class="form-control" required="complete el campo"></center>
                            <br>
-                          <center><input type="date" name="dirprov" placeholder="Fecha Compra" id="codprod" class="form-control" required="complete el campo"></center>
+                          <center><input type="date" name="dirprov" placeholder="Fecha Compra" id="fecCompra" class="form-control" required="complete el campo"></center>
                           
                                </div>
                           <div class="col-xs-3"> 
-                              <center><input type="number" name="pago" placeholder="Total de pago" id="codprod" class="form-control" required="complete el campo"></center>
+                              <center><input type="number" name="pago" placeholder="Total de pago" id="total_pag" class="form-control" required="complete el campo"></center>
                                <br>
-                          <center><input type="text" name="nomprov" placeholder="Proveedor" id="codprod" class="form-control" required="complete el campo"></center>
+                          <center><input type="text" name="nomprov" placeholder="Proveedor" id="provComp" class="form-control" required="complete el campo"></center>
                          </div>
                           </div>
                             <div class="row">
