@@ -49,11 +49,24 @@ public class ModificarProducto extends HttpServlet {
         double vcosto=Double.parseDouble(costounitario);
         double viva=Double.parseDouble(iva);
         double monto=(vcosto*viva)+vcosto;
-         c.insertar("clave,nombre,tipo,unidad,cantidad,costounitario,iva,fecha,costo,monto_total", "producto",
-                    "'"+clave+"','"+nombre+"','"+tipo+"','"+unidad+"',"+cantidad+","+costounitario+","+iva+",'"+fecha+"',"+costov+","+monto);
+         c.actualizar("clave='"+clave+"',"
+                 + "nombre='"+nombre+"',"
+                 + "tipo='"+tipo+"',"
+                 + "unidad='"+unidad+"',"
+                 + "existencia="+cantidad+","
+                 + "costounitario="+costounitario+","
+                 + "iva="+iva+","
+                 + "costo="+costov+","
+                 + "fecha='"+fecha+"',"
+                 + "monto_total="+monto+""
+                 ,"producto"
+                 ,"clave='"+clave+"'and operacion='existente'");
+
          response.sendRedirect("Inventario/InventarioProductoModificar.jsp");
     }
 
+    
+ 
 
     /**
      * Handles the HTTP <code>POST</code> method.
