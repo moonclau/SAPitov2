@@ -9,13 +9,15 @@
 <html>
     <head>
         
-       <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
- <title>Compras</title>
+       <link href="../CSS/estilos.css" rel="stylesheet">
+        <script src="../JS/validaciones.js"></script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../Recursos/Bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+        <script src="../Recursos/Bootstrap/librerias/jquery-3.3.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed --> 
+        <script src="../Recursos/Bootstrap/js/bootstrap.js"></script>
+        <title>Compras</title>
         
     </head>
     
@@ -24,11 +26,10 @@
         <header class="sticky-top">
             
             <nav class="navbar navbar-expand-lg navbar-light barra">
-                <div>
-                    <a class="navbar-brand" style="color: white" >Compras</a> 
-                       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <a href="#" class="navbar-brand text-white">Compras</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
@@ -44,13 +45,12 @@
                             <a class="nav-link" href="List_com.jsp" style="color: white">Lista&nbsp;de&nbsp;Compras</a>
                         </li>                        
                     </ul>
-                     <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
                             <a class="nav-link" href="" style="color: white">Salir</a>
                         </li>                                              
                     </ul>
-                    </div> 
-                </div>
+                </div> 
             </nav>           
 
         </header>
@@ -115,19 +115,18 @@
                                     <h3>Eliminar Proveedor</h3>
                             </div></center>                       
                         <br>
-                        <form action="" method="post" onsubmit="return editar_prov();"> 
+                        
                            <div class="row">
                                <div class="col-xs-4"></div>
                                <div class="col-xs-3">
-                       <center><input type="text" name="rfcprov" placeholder="Clave" class="form-control" id="elim_prod" required="Complete el campo"> 
+                       <center><input type="text" name="rfcprov" placeholder="Clave" class="form-control" id="codprod" required="Complete el campo"> 
                            </div> 
                            <div class="col-xs-1">
                         <input type="submit" value="Buscar"  name="filtro" class="btn btn-success"></center>
                                </div>
                                
                                 
-                           </div></form>
-                        
+                            </div>
                                
                                <div><br><br></div>
                         
@@ -161,9 +160,7 @@
                                 </table></div></center>                      
                               
                         <br>
-                        <form action="Eliminar_producto" method="post" onsubmit="return editar_prov();"> 
                         <center><input type="submit" value="Eliminar" style="background-color:#3366FF" name="buscar" class="btn btn-primary"></center>
-                        </form>
                     </div>
                 </div>
             </div>            

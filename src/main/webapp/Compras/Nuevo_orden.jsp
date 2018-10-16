@@ -7,15 +7,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-         
-         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-<script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed --> 
-<script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
-        
+        <link href="../CSS/estilos.css" rel="stylesheet">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="../JS/validaciones.js"></script>
+        <link href="../Recursos/Bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+        <script src="../Recursos/Bootstrap/librerias/jquery-3.3.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed --> 
+        <script src="../Recursos/Bootstrap/js/bootstrap.js"></script>
         <title>Compras</title>
         
     </head>
@@ -25,12 +24,10 @@
         <header class="sticky-top">
             
             <nav class="navbar navbar-expand-lg navbar-light barra">
-               
-                <div >
-                    <a class="navbar-brand" style="color: white" >Compras</a> 
-                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <a href="#" class="navbar-brand text-white">Compras</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
@@ -46,17 +43,17 @@
                             <a class="nav-link" href="List_com.jsp" style="color: white">Lista&nbsp;de&nbsp;Compras</a>
                         </li>                        
                     </ul>
-                     <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
                             <a class="nav-link" href="" style="color: white">Salir</a>
                         </li>                                              
                     </ul>
-                    </div> 
-                </div>
-            </nav>           
+                </div> 
+            </nav>          
 
         </header>
-        <div id="principal" class="row">
+        
+        <div id="principal">
             <div class="container-fluid">
                  <div class="row">
                     <br>
@@ -90,25 +87,22 @@
                         
                         
                         
+                        
+                        
+                        
                     
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12"><!-- Seccion central --> 
                                                 
                             <center><div>
-                                    <h3>Nueva Orden compra</h3>
+                                    <h3>Generar Orden compra</h3>
                             </div></center>                       
                         <br>
                         <br>
                         
-                       <div class="container">
-                           
-                           
-                           
-                           <br>
-                           <br>
+                        <div class="container">
                         
-                        <form action="../Modificar_Orden" method="post" onsubmit="return requisicionCompra();">                
-                            
-                            <div class="row">
+                        <from action="" method="post" onsubmit="return generar_Ord();"><!--Cambiar action-->
+                             <div class="row">
                                  <div class="col-xs-2"></div>
                                <div class="col-xs-3">
                           <center><input type="number" name="folio_ord" placeholder="folio" id="fol_ord" class="form-control" required="complete el campo"></center>
@@ -117,7 +111,7 @@
                           <br>
                           <center><input type="date" name="fec_ent" placeholder="fecha de entrega" id="fec_ent" class="form-control" required="complete el campo"></center>
                           <br>
-                          <center><input type="text" name="comp" placeholder="comprador" id="proveedor" class="form-control" required="complete el campo"></center>
+                          <center><input type="text" name="comp" placeholder="comprador" id="codprod" class="form-control" required="complete el campo"></center>
                           <br>
                           
                           <input type="submit" value="Aceptar" style="background-color:#3366FF" name="filtro" class="btn btn-primary">
@@ -125,14 +119,7 @@
                           
                           
                                </div>
-                          
-                            
-                        </form>
-                            
-                            <form action="" method="post" onsubmit="return generar_Ord();">                
-                            
-                            <div class="row">
-                               <div class="col-xs-3"> 
+                          <div class="col-xs-3"> 
                               <center><input type="text" name="rfcprov" placeholder="Producto" id="codprod" class="form-control" required="complete el campo"></center>
                                <br>
                           <center><input type="text" name="nomprov" placeholder="cantidad" id="codprod" class="form-control" required="complete el campo"></center>
@@ -141,23 +128,56 @@
                           <br>
                           <select name="operacion" id="agr_est" class="form-control">
                                         <option>Proveedor</option>
+                                         <option>#FGEGJ212</option>
+                                         <option>#FGEGJ212</option>
+                                         <option>#FGEGJ212</option>
                                          
                                   </select>
                           <br>
                                 
                               <center><input type="submit" value="Agregar"   style="background-color:#3366FF" name="nuevo" class="btn btn-success"></center>  </div>
-                          </div>
-                            </div>
-                             
-                        </form>
-                            
-                        
-                        
-                    </div>
-                
-                        
-                        
+                          </div> </from>
                        
+                        <br>
+                        <br>
+                     <div class="table-responsive"><table class="table table-bordered">
+                                    <thead>
+                                        <tr class="active">
+                                            <th scope="col">ID</th>
+                                            <th scope="col">Producto</th>
+                                            <th scope="col">Cantidad</th>
+                                            <th scope="col">Precio unit</th>
+                                            <th scope="col">Total</th>
+                                            
+                                        </tr>
+                                    </thead>                                    
+                                    <tbody>                                       
+                                        <tr id="modalInter">
+                                        <td scope="col">0001</td>
+                                            <td scope="col">Reloj</td>
+                                            <td scope="col">100</td>
+                                            <td scope="col">$280.00</td>
+                                            <td scope="col">$14567.00</td>
+                                            
+                                        </tr>  
+                                        <tr id="modalInter">
+                                        <td scope="col">0002</td>
+                                            <td scope="col">Coche</td>
+                                            <td scope="col">100</td>
+                                            <td scope="col">$15000.00</td>
+                                            <td scope="col">$300000.00</td>
+                                          
+                                        </tr>  
+                                    </tbody>
+                                </table></div>    
+                        
+                        
+                            
+                            
+                
+                    
+                       </div>
+                      
                     </div>
                 </div>
             </div>            
