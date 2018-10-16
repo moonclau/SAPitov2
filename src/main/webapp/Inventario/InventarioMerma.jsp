@@ -61,6 +61,25 @@
     </header>      
     <br/><br/>
     <!--/.Panel-->
+    <div class="row">
+    <div class="col-sm-3 ">
+        <div class="card" text-center>
+            <div class="card-body">
+                <label class="card-text">Buscar id de merma</label><br>
+                <input type="text" id="bmerma" name="bmerma" class="form-control form-control-sm" />
+                <input id="bomerma" type="submit" value="Buscar" class="btn btn-success"/><br><br>
+                <p class="card-text">Eliminar producto de merma</p>
+                <input type="text" id="emerma" name="emerma" class="form-control form-control-sm" />
+                <input id="boemerma" type="submit" value="Eliminar" class="btn btn-success"/><br><br>
+                <p class="card-text">Nuevo producto de merma</p>
+                <input id="boamerma" type="submit" value="Agregar" class="btn btn-success"/><br><br>
+                <p class="card-text">Modificar producto de merma</p>
+                <input id="bommerma" type="submit" value="Modificar" class="btn btn-success"/><br><br>
+                <p class="card-text">Reporte</p>
+                <input id="bogmerma" type="submit" value="Generar" class="btn btn-success"/>
+            </div>
+        </div>
+    </div>
     <!--Panel-->
     <div class="col-sm-9">
         <div class="card">
@@ -96,6 +115,7 @@
                 <!--FIN TABLA MN-->
             </div>
         </div>
+    </div>
     </div>
     <!--/.Panel-->
 </div>
