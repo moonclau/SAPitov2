@@ -8,15 +8,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../CSS/estilos.css" rel="stylesheet">
-         <script src="../JS/validaciones.js"></script>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <link href="../Recursos/bootstrap/css/bootstrap.css" rel="stylesheet">
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-        <script src="../Recursos/bootstrap/librerias/jquery-3.3.1.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed --> 
-        <script src="../Recursos/bootstrap/js/bootstrap.js"></script>
-        <title>Compras</title>
+        <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
+<title>Compras</title>
         
     </head>
     

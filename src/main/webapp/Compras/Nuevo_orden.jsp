@@ -8,15 +8,13 @@
 <html>
     <head>
          
-         <link href="../CSS/estilos.css" rel="stylesheet">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-         <script src="../JS/validaciones.js"></script>
-        
-        <link href="../Recursos/bootstrap/css/bootstrap.css" rel="stylesheet">
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-        <script src="../Recursos/bootstrap/librerias/jquery-3.3.1.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed --> 
-        <script src="../Recursos/bootstrap/js/bootstrap.js"></script>
+         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
         
         <title>Compras</title>
         
@@ -27,7 +25,8 @@
         <header class="sticky-top">
             
             <nav class="navbar navbar-expand-lg navbar-light barra">
-                <div>
+               
+                <div >
                     <a class="navbar-brand" style="color: white" >Compras</a> 
                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -57,8 +56,7 @@
             </nav>           
 
         </header>
-        
-        <div id="principal">
+        <div id="principal" class="row">
             <div class="container-fluid">
                  <div class="row">
                     <br>
@@ -143,9 +141,6 @@
                           <br>
                           <select name="operacion" id="agr_est" class="form-control">
                                         <option>Proveedor</option>
-                                         <option>#FGEGJ212</option>
-                                         <option>#FGEGJ212</option>
-                                         <option>#FGEGJ212</option>
                                          
                                   </select>
                           <br>
