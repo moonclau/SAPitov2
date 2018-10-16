@@ -82,7 +82,7 @@ public class Consultas {
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select * from producto");
+        ResultSet rs = stmt.executeQuery("select * from producto where operacion='entrada'");
         while (rs.next()) {
             Producto p=new Producto();
             p.setClave(rs.getString("clave"));
@@ -123,49 +123,49 @@ public class Consultas {
         return l;
     
     }
-    public static LinkedList consultaStock() throws SQLException,ClassNotFoundException{
+    public static LinkedList consultaSalidaOp() throws SQLException,ClassNotFoundException{
        
-        String clavevieja;
-        int cantEx;
-        int cantS;
-        int cantE;
-        int vstock;
        Connection conn;
         Class.forName("org.postgresql.Driver");
-        LinkedList <Stock> l=new LinkedList<Stock>();
+        LinkedList <VarSal> l=new LinkedList<VarSal>();
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-        ResultSet res = stmt.executeQuery("select * from producto");
-//        ResultSet rcl = stmt.executeQuery("select clave from producto");
-//        ResultSet rex = stmt.executeQuery("select cantidad from producto where fecha=(select MAX(fecha) from producto)  and operacion='existente '");
-//        ResultSet re = stmt.executeQuery("select cantidad from producto where fecha=(select MAX(fecha) from producto)  and operacion='entrada'");
-//        ResultSet rs = stmt.executeQuery("select cantidad from producto where fecha=(select MAX(fecha) from producto)  and operacion='entrada'");
-        
-        
-        while(res.next()){
-//            clave=res.getString("clave");
-//            do{
-                
-//        cantEx=rex.getInt("cantidad");
-//        cantE=re.getInt("cantidad");
-//        cantS=rs.getInt("cantidad");
-//        vstock=(cantEx+cantE)-cantS;
-        Stock p=new Stock();
-            p.setClave(res.getString("clave"));
-//            p.setCantidadExistente(rex.getInt("cantidad"));
-//            p.setCantidadEntrada(re.getInt("cantidad"));
-//            p.setCantidadSalida(rs.getInt("cantidad"));
-//            p.setStock(vstock);
+        PedidoInventario pi=new PedidoInventario();
+        ResultSet res = stmt.executeQuery("select o.cantidad,p.existencia from orden_de_venta as o, producto as p where p.id=(select idproducto from pedido where idpedido="+pi.getIdpedido()+") and o.idpedido="+pi.getIdpedido());
+//        while (rs.next()) {
+            
+        VarSal p=new VarSal();
+            p.setCantidad(res.getInt("o.cantidad"));
+            p.setExistencia(res.getInt("p.existencia"));
             l.add(p);
-//            clavevieja=clave;
-//            }while(!clave.equals(clavevieja));
-        }
         
         conn.close();
         return l;
+    }
+    public int consultaExistencia1() throws SQLException,ClassNotFoundException{
+       
+       Connection conn;
+        Class.forName("org.postgresql.Driver");
+        Properties connProp = new Properties();
+        connProp.put("user", "postgres");
+        connProp.put("password", "root");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        Statement stmt;        
+        stmt = conn.createStatement();
+        Clave cl=new Clave();
+        int varExistencia;
+        ResultSet res = stmt.executeQuery("select existencia from producto where operacion='entrada' clave='"+cl.getVarClave()+"'");
+        
+            
+        Producto p=new Producto();
+            varExistencia=res.getInt("existencia");
+           
+        
+        conn.close();
+        return varExistencia;
     }
 }

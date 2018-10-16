@@ -64,21 +64,48 @@
         <div class="card" text-center>
             <div class="card-body">
                 
-                        <form  action="../ModificarProducto" method="post">
+                <form  action="../AgregarSalidas" method="post">
                 <h3 class="card-title" >Ingresar salida de producto </h3><br><br>
                 <!--INICIO CUESTIONARIO-->
-                <label class="card-text">Ingrese clave de producto:</label><br>
-                <input type="text" id="clave" name="clave" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese el costo unitario:</p>
-                <input type="number" id="costounitario" name="costounitario" class="form-control form-control-sm" required="required"/>
-                <p class="card-text">Ingrese la cantidad a pedir</p>
-                <input type="number" id="cantidad" name="cantidad" step="0.01" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese la fecha</p>
-                <input type="date" id="fecha" name="fecha" class="form-control form-control-sm" />
-                <p class="card-text">Ingrese el iva:</p>
-                <input type="number" id="iva" name="iva" class="form-control form-control-sm" required="required"/>
-                <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
-                        </form>
+                <label for="clave">Ingrese la clave de producto:</label><br>
+                                <input type="text" id="clave" name="clave" class="form-control" required="required" />
+                                                                                   
+                            <div class="form-group">
+                                <label for="nombre">Ingrese el nombre del producto:</label><br>
+                                <input type="text" id="nombre" name="nombre" class="form-control" required="required" />    
+                            </div>                                                        
+                            <div class="form-group">
+                                <label for="tipo">Ingrese tipo de producto</label>
+                                 <input type="text" id="tipo" name="tipo" class="form-control" required="required"/>                                    
+                            </div>
+                            <div class="form-group">
+                                <label for="unidad">Ingrese la unidad del producto:</label><br>
+                                 <input type="text" id="unidad" name="unidad" class="form-control" required="required"/>
+                                                                                  
+                            <div class="form-group">
+                <label for="cantidad">Ingrese la cantidad del producto</label>
+                <input type="number" id="cantidad" name="cantidad" class="form-control " required="required" />                                   
+                            </div>    
+                                 <div class="form-group">
+                <label for="costo">Ingrese el costo del producto:</label>
+                <input type="number" id="costo" name="costo" class="form-control " required="required" />  
+                
+                <label for="costo">Ingrese el costo de venta:</label>
+                <input type="number" id="costov" name="costov" class="form-control " required="required" /> 
+                            </div>  
+                                 <div class="form-group">
+                <label for="iva">Ingrese el iva del producto</label>
+                <input type="text" id="iva" name="iva" step="0.01" class="form-control" required="required" />       
+                                 </div>
+                                 <div class="form-group">
+                                      <label for="fecha">Fecha :</label>
+                             <input id="fecha" name="fecha" class="form-control " type="date" required="required"/> </div> 
+                            </div><div class="form-group">
+                                <input type="reset" value="Cancelar" class="btn btn-default"/>                                                        
+                                <input type="submit" value="Agregar" class="btn btn-default"/>
+                            </div> 
+                </form>
+            </div>
             </div>
         </div>
     </div>

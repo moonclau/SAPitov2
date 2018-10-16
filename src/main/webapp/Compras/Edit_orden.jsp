@@ -92,9 +92,6 @@
                         
                         
                         
-                        
-                        
-                        
                     
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12"><!-- Seccion central --> 
                                                 
@@ -104,17 +101,36 @@
                         <br>
                         <br>
                         
-                        <div class="container">
+                       <div class="container">
+                           
+                           <form action="" method="post" onsubmit="return editar_prov();">  
+                           <div class="row">
+                               <div class="col-xs-2"></div>
+                               <div class="col-xs-2">
+                       <center><input type="number" name="rfcprov" placeholder="Clave" class="form-control" id="codprod" required="Complete el campo"> 
+                           </div>
+                            
+                           <div class="col-xs-1">
+                               
                         
-                        <from action="" method="post" onsubmit="return editar_Ord();"><!--Cambiar action-->
-                             <div class="row">
+                        <input type="submit" value="Buscar"  name="buscar" class="btn btn-success"></center>
+                         
+                               </div>
+                            </div></form>
+                           
+                           <br>
+                           <br>
+                        
+                        <form action="../Modificar_Orden" method="post" onsubmit="editar_Ord();">                
+                            
+                            <div class="row">
                                  <div class="col-xs-2"></div>
                                <div class="col-xs-3">
                           <center><input type="number" name="folio_ord" placeholder="folio" id="fol_ord" class="form-control" required="complete el campo"></center>
                                <br>
-                          <center><input type="date" name="fecha" placeholder="fecha" id="fech_orden" class="form-control" required="complete el campo"></center>
+                          <center><input type="date" name="fecha" placeholder="fecha" id="fech_ord" class="form-control" required="complete el campo"></center>
                           <br>
-                          <center><input type="date" name="fec_ent" placeholder="fecha de entrega" id="fec_entrega" class="form-control" required="complete el campo"></center>
+                          <center><input type="date" name="fec_ent" placeholder="fecha de entrega" id="fec_ent" class="form-control" required="complete el campo"></center>
                           <br>
                           <center><input type="text" name="comp" placeholder="comprador" id="codprod" class="form-control" required="complete el campo"></center>
                           <br>
@@ -124,7 +140,14 @@
                           
                           
                                </div>
-                          <div class="col-xs-3"> 
+                          
+                            
+                        </form>
+                            
+                            <form action="" method="post" onsubmit="return requisicionCompra();">                
+                            
+                            <div class="row">
+                               <div class="col-xs-3"> 
                               <center><input type="text" name="rfcprov" placeholder="Producto" id="codprod" class="form-control" required="complete el campo"></center>
                                <br>
                           <center><input type="text" name="nomprov" placeholder="cantidad" id="codprod" class="form-control" required="complete el campo"></center>
@@ -139,49 +162,19 @@
                                          
                                   </select>
                           <br>
-                              <center><input type="submit" value="Cambiar" style="background-color:#3366FF" name="filtro" class="btn btn-primary"></center></div>                    
+                                
+                              <center><input type="submit" value="Agregar"   style="background-color:#3366FF" name="nuevo" class="btn btn-success"></center>  </div>
                           </div>
-                          
-                        <br>
-                        <br>
-                     <div class="table-responsive"><table class="table table-bordered">
-                                    <thead>
-                                        <tr class="active">
-                                            <th scope="col">ID</th>
-                                            <th scope="col">Producto</th>
-                                            <th scope="col">Cantidad</th>
-                                            <th scope="col">Precio unit</th>
-                                            <th scope="col">Total</th>
-                                            
-                                        </tr>
-                                    </thead>                                    
-                                    <tbody>                                       
-                                        <tr id="modalInter">
-                                        <td scope="col">0001</td>
-                                            <td scope="col">Reloj</td>
-                                            <td scope="col">100</td>
-                                            <td scope="col">$280.00</td>
-                                            <td scope="col">$14567.00</td>
-                                            
-                                        </tr>  
-                                        <tr id="modalInter">
-                                        <td scope="col">0002</td>
-                                            <td scope="col">Coche</td>
-                                            <td scope="col">100</td>
-                                            <td scope="col">$15000.00</td>
-                                            <td scope="col">$300000.00</td>
-                                          
-                                        </tr>  
-                                    </tbody>
-                                </table></div>    
-                        
-                        
+                            </div>
+                             
+                        </form>
                             
-                           
-                    
-                    
-                    
-                        </from>  </div>
+                        
+                        
+                    </div>
+                
+                        
+                        
                        
                     </div>
                 </div>

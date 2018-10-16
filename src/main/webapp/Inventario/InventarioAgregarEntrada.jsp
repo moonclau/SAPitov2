@@ -64,7 +64,7 @@
         <div class="card" text-center>
             <div class="card-body">
                 
-                        <form  action="../ModificarProducto" method="post">
+                        <form  action="../AgregarEntrada" method="post">
                 <h3 class="card-title" >Agregar Entrada </h3><br><br>
                 <!--INICIO CUESTIONARIO-->
                 <label class="card-text">Ingrese clave de producto:</label><br>
@@ -72,15 +72,15 @@
                 <label class="card-text">Ingrese nombre de producto:</label><br>
                 <input type="text" id="nombre" name="nombre" class="form-control form-control-sm" />
                 <label class="card-text">Ingrese la cantidad </label>
-                <input type="number" id="cantidad" name="cantidad" step="0.01" class="form-control form-control-sm" />
+                <input type="number" id="existencia" name="existencia" step="0.01" class="form-control form-control-sm" />
                 <label class="card-text">Ingrese el costo unitario:</label>
                 <input type="number" id="costounitario" name="costounitario" class="form-control form-control-sm" required="required"/>
                 <label class="card-text">Ingrese el iva</label>
                 <input type="number" id="iva" step="0.01" name="iva" class="form-control form-control-sm" />
                 <label class="card-text">Ingrese el  costo de venta</label>
-                <input type="number" id="iva"  name="iva" class="form-control form-control-sm" />
+                <input type="number" id="costov"  name="costov" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese la fecha :</p>
-                <input type="date" id="fechae" name="fechae" class="form-control form-control-sm" required="required"/>
+                <input type="date" id="fecha" name="fecha" class="form-control form-control-sm" required="required"/>
                 <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
                         </form>
             </div>

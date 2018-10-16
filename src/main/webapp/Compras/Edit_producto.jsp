@@ -119,7 +119,7 @@
                            <div class="row">
                                <div class="col-xs-2"></div>
                                <div class="col-xs-2">
-                       <center><input type="text" name="rfcprov" placeholder="ID" class="form-control" id="codprod" required="Complete el campo"> 
+                       <center><input type="text" name="codprod" placeholder="ID" class="form-control" id="codprod" required="Complete el campo"> 
                            </div>
                               
                            <div class="col-xs-0">
@@ -133,7 +133,7 @@
                         
                         
                             <div class="container">
-                        <form action="" method="post" onsubmit="return agr_prov();">                
+                        <form action="../Modificar_producto" method="post" onsubmit="return agr_prov();">                
                             
                            
                         <br> <br>
@@ -141,23 +141,23 @@
                            <div class="row">
                                  <div class="col-xs-2"></div>
                                <div class="col-xs-2">                              
-                          <center><input type="text" name="nomprod" placeholder="Nombre" class="form-control" id="codprod" required></center>
+                          <center><input type="text" name="nom_prod" placeholder="Nombre" class="form-control" id="nom_prod" required></center>
                           <br>
-                          <center><input type="number" name="com" placeholder="Precio Compra" class="form-control" id="codprod" required></center>
+                          <center><input type="number" name="precio_com" placeholder="Precio Compra" class="form-control" id="precio_com" required></center>
                           <br>
-                          <center><input type="number" name="ven" placeholder="Precio venta" class="form-control" id="codprod" required></center>
+                          <center><input type="number" name="precio_ven" placeholder="Precio venta" class="form-control" id="precio_ven" required></center>
                           <br>
-                          <center><input type="text" name="corprov" placeholder="Proveedor" class="form-control" id="codprod" required></center>
+                          <center><input type="text" name="prov" placeholder="Proveedor" class="form-control" id="prov" required></center>
                                
                           <br> <div><input type="submit" value="Editar" style="background-color:#3366FF" name="filtro" class="btn btn-primary"></div>
                                </div> 
                                  
-                            </div>
+                            </div></form>
                         <br>
                                      
                     </div>
                             
-                        </form>
+                        
                                
                                 
                     </div>

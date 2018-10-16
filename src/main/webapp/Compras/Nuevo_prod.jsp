@@ -133,7 +133,7 @@
                           <br>
                           <center><input type="number" name="numprov" placeholder="Teléfono" id="numprov" class="form-control"></center>
                           <br>
-                           <center><input type="text" name="corprov" placeholder="Correo" id="corprov" class="form-control"></center>
+                           <center><input type="text" name="corprov" placeholder="Correo" id="corrprov" class="form-control"></center>
                           <br>
                           <select name="operacion" id="agr_est" class="form-control">
                                         <option>Ciudad/Estado</option>
@@ -144,13 +144,13 @@
                                   </select>
                                </div>
                           <div class="col-xs-3"> 
-                              <center><input type="text" name="rfcprov" placeholder="Cuenta contable" id="codprod" class="form-control" ></center>
+                              <center><input type="text" name="rfcprov" placeholder="Cuenta contable" id="contagr" class="form-control" ></center>
                                <br>
-                          <center><input type="text" name="nomprov" placeholder="Límite de crédito" id="codprod" class="form-control"></center>
+                          <center><input type="text" name="nomprov" placeholder="Límite de crédito" id="limtcredagr" class="form-control"></center>
                           <br>
-                          <center><input type="text" name="dirprov" placeholder="Días de crédito" id="codprod" class="form-control" ></center>
+                          <center><input type="text" name="dirprov" placeholder="Días de crédito" id="daycredagr" class="form-control" ></center>
                           <br>
-                          <select name="operacion" id="agr_est" class="form-control">
+                          <select name="operacion" id="banco_agr" class="form-control">
                                         <option>Banco</option>
                                          <option>HSBC</option>
                                          <option>Santander</option>
@@ -158,9 +158,9 @@
                                          <option>BanCoopel</option>
                                   </select>
                           <br>
-                          <center><input type="number" name="numprov" placeholder="N° Cuenta" id="codprod" class="form-control" ></center>
+                          <center><input type="number" name="numprov" placeholder="N° Cuenta" id="numcuagr" class="form-control" ></center>
                           <br>
-                          <center><input type="number" name="numprov" placeholder="Clave Cuenta" id="codprod" class="form-control" ></center>                          
+                          <center><input type="number" name="numprov" placeholder="Clave Cuenta" id="keycuentagr" class="form-control" ></center>                          
                           </div>
                           </div>
                             <!--<div class="row">

@@ -1,10 +1,9 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sap.inventario.servlets;
+package Servlets.compras;
 
 import com.sap.conexion.Conexion;
 import java.io.IOException;
@@ -20,10 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author claudia
+ * @author Erick
  */
-@WebServlet(name = "AgregarProducto", urlPatterns = {"/AgregarProducto"})
-public class AgregarProducto extends HttpServlet {
+@WebServlet(name = "Modificar_Orden", urlPatterns = {"/Modificar_Orden"})
+public class Modificar_Orden extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,32 +36,48 @@ public class AgregarProducto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+        
+          // encabezado
+        String fech_ord = request.getParameter("fech_ord");
+        String fec_ent = request.getParameter("fec_ent");
+        String proveedor = request.getParameter("comprador");
+       
+        //productos
+        String nomprod = request.getParameter("nomprod");
+        String cant = request.getParameter("cant");
+        String provagr = request.getParameter("provagr");
+        
         Conexion c = new Conexion();
-        String clave = request.getParameter("clave");
-        String nombre = request.getParameter("nombre");
-        String tipo = request.getParameter("tipo");
-        String unidad = request.getParameter("unidad");
-        String cantidad = request.getParameter("cantidad");
-        String costounitario = request.getParameter("costo");
-        String iva = request.getParameter("iva");
-        String fecha= request.getParameter("fecha");
-        String costov=request.getParameter("costov");
-        double vcosto=Double.parseDouble(costounitario);
-        double viva=Double.parseDouble(iva);
-        double monto=(vcosto*viva)+vcosto;
-         c.insertar("clave,nombre,tipo,unidad,existencia,costounitario,iva,fecha,costo,monto_total,operacion", "producto",
-                    "'"+clave+"',"
-                       + "'"+nombre+"',"
-                       + "'"+tipo+"',"
-                       + "'"+unidad+"',"
-                       + ""+cantidad+","
-                       + ""+costounitario+","
-                       + ""+iva+","
-                       + "'"+fecha+"',"
-                       + ""+costov+","
-                       + ""+monto+"'entrada'");
+        
+         c.actualizar("fecha_ord,fecha_ent,productos,cantidad,proveedor", "Ordencompra","'"+fech_ord+"','"+fec_ent+"','"
+                 +nomprod+"',"+cant+",'"+proveedor+"'");
          
-         response.sendRedirect("Inventario/InventarioProductoAgregar.jsp");
+         
+         response.sendRedirect("Compras/Edit_orden.jsp");
+        
+        
+        
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Modificar_Orden.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Modificar_Orden.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -79,9 +94,9 @@ public class AgregarProducto extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Modificar_Orden.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Modificar_Orden.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

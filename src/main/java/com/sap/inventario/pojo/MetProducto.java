@@ -26,6 +26,7 @@ public class MetProducto {
 
     
     public MetProducto()  {
+        
     }
         public static LinkedList consultaSalidas() throws SQLException, ClassNotFoundException {        
         Connection conn;

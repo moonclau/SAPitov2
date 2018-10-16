@@ -67,36 +67,36 @@
                 </div>
                 <div class="row">
                     <div style="background-color:#F5F5F5;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
-                        <form method="POST" accion="List_com.jsp" >
+                        <form method="POST" accion="/Consulta_compra" >
                             <center><div id="titulo" class="col-12">
                                 <h3>Buscar&nbsp;Compra</h3>
                                 </div></center>
                            <br>
                            <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="todos">
                                     Todos
                             </label>
                            </div>
                            <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="folio">
                                     Por&nbsp;Folio
                             </label>
                            </div>
                            <br>
-                           <center><input type="number" name="folio" placeholder="Folio" class="form-control" id="codprod" required></center>
+                           <center><input type="number" name="folio_com" placeholder="Folio" class="form-control" id="folio_com" required></center>
                             <div>
                                 <br>
                             </div>
                             <div class="radio">
                             <label>
-                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="fecha">
                                     Por&nbsp;Fecha
                             </label>
                            </div>
                            <br>
-                           <center><input type="date" name="folio" placeholder="Fecha" class="form-control" id="codprod" required></center>
+                           <center><input type="date" name="fecha_com" placeholder="Fecha" class="form-control" id="fecha_com" required></center>
                             <div>
                                 <br>
                             </div>

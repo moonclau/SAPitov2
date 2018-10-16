@@ -1,10 +1,9 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.sap.inventario.servlets;
+package Servlets.compras;
 
 import com.sap.conexion.Conexion;
 import java.io.IOException;
@@ -20,10 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author claudia
+ * @author Marii
  */
-@WebServlet(name = "AgregarProducto", urlPatterns = {"/AgregarProducto"})
-public class AgregarProducto extends HttpServlet {
+@WebServlet(name = "Consulta_prov", urlPatterns = {"/Consulta_prov"})
+public class Consulta_prov extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,32 +36,43 @@ public class AgregarProducto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        Conexion c = new Conexion();
-        String clave = request.getParameter("clave");
-        String nombre = request.getParameter("nombre");
-        String tipo = request.getParameter("tipo");
-        String unidad = request.getParameter("unidad");
-        String cantidad = request.getParameter("cantidad");
-        String costounitario = request.getParameter("costo");
-        String iva = request.getParameter("iva");
-        String fecha= request.getParameter("fecha");
-        String costov=request.getParameter("costov");
-        double vcosto=Double.parseDouble(costounitario);
-        double viva=Double.parseDouble(iva);
-        double monto=(vcosto*viva)+vcosto;
-         c.insertar("clave,nombre,tipo,unidad,existencia,costounitario,iva,fecha,costo,monto_total,operacion", "producto",
-                    "'"+clave+"',"
-                       + "'"+nombre+"',"
-                       + "'"+tipo+"',"
-                       + "'"+unidad+"',"
-                       + ""+cantidad+","
-                       + ""+costounitario+","
-                       + ""+iva+","
-                       + "'"+fecha+"',"
-                       + ""+costov+","
-                       + ""+monto+"'entrada'");
-         
-         response.sendRedirect("Inventario/InventarioProductoAgregar.jsp");
+        
+        String tipo = request.getParameter("optionsRadios");
+        String bus_clave = request.getParameter("bus_clave");
+        
+               Conexion c = new Conexion();
+               
+               if(tipo=="todos"){
+                   c.consultaGeneral("Proveedor");
+               }
+               
+               if(tipo=="clave"){
+                c.consulta("*", "Proveedor" , "clave= "+bus_clave, 0);
+               }
+              
+        response.sendRedirect("Compras/Edit_orden.jsp");
+
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Consulta_prov.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Consulta_prov.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -79,9 +89,9 @@ public class AgregarProducto extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Consulta_prov.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(AgregarProducto.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Consulta_prov.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
