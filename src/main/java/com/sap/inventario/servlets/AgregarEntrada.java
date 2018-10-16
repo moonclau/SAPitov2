@@ -37,14 +37,28 @@ public class AgregarEntrada extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         Conexion c = new Conexion();
-        String eclave = request.getParameter("clavee");
-        String enombre = request.getParameter("enombre");
-        String ecantidad = request.getParameter("ecantidad");
-        String ecostounitario = request.getParameter("enombre");
-       
-
+        String eclave = request.getParameter("clave");
+        String enombre = request.getParameter("nombre");
+        String eexistencia = request.getParameter("existencia");
+        String ecostounitario = request.getParameter("costounitario");
+        String eiva = request.getParameter("iva");
+        String ecostototal = request.getParameter("costototal");
+        String emontototal = request.getParameter("montototal");
+        String efecha = request.getParameter("fecha");
         
+        c.insertar("clave,nombre,existencia,costounitario, iva,costo,monto_total, fecha","producto",
+                "'"+eclave+"',"
+                       + "'"+enombre+"',"
+                       + ""+eexistencia+","
+                       + ""+ecostounitario+","
+                       + ""+eiva+","
+                       + ""+ecostototal+","
+                       + ""+emontototal+","
+                       + "'"+efecha+"',"
+                       );
         
+         response.sendRedirect("Inventario/InventarioAgregarEntrada.jsp");
+                   
 //        
     }
 
