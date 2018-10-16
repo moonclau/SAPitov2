@@ -38,6 +38,13 @@ public class AgregarEntrada extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         Conexion c = new Conexion();
         String eclave = request.getParameter("clavee");
+        String enombre = request.getParameter("enombre");
+        String ecantidad = request.getParameter("ecantidad");
+        String ecostounitario = request.getParameter("enombre");
+       
+
+        
+        
 //        
     }
 
