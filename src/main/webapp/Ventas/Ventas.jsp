@@ -27,7 +27,7 @@
 <body>    
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a href="Contabilidad.jsp" class="navbar-brand text-white">Ventas</a>
+            <a href="Ventas.jsp" class="navbar-brand text-white">Ventas</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conta_navbar" aria-controls="conta_navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>

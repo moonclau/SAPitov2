@@ -28,7 +28,7 @@
 <body>    
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a href="Contabilidad.jsp" class="navbar-brand text-white">Ventas</a>
+            <a href="Ventas.jsp" class="navbar-brand text-white">Ventas</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conta_navbar" aria-controls="conta_navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -80,7 +80,7 @@
     <div class="row"><!-- INICIO DE SECCION PRINCIPAL -->
                 <div class="container-fluid">
                     <center>
-                        <form method="POST" autocomplete="off" action="../ContratarEmpleado" onsubmit="return valida();" id="formContratarEmp" name="formContratarEmp">
+                        <form method="POST" autocomplete="off" action="../Pedido" id="formPedido" name="formPedido">
                             <table>
                                  <h1 class="text-uppercase text-center">Pedido</h1>
                                 
@@ -114,13 +114,13 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        Id.Cliente:
+                                        Id de Cliente:
                                     </td>
                                     <td>
                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="idclientePedido" id="idclientePedido" required="required">
                                     </td>
                                     <td>
-                                        Id.Producto:
+                                        Id de Producto:
                                     </td>
                                     <td>
                                        <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="idproductoPedido" id="idproductoPedido" required="required">

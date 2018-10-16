@@ -8,7 +8,12 @@ package com.sap.inventario.servlets;
 import com.sap.conexion.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -49,19 +54,31 @@ public class AgregarSalidas extends HttpServlet {
         double vcosto=Double.parseDouble(costounitario);
         double viva=Double.parseDouble(iva);
         double monto=(vcosto*viva)+vcosto;
-         c.insertar("clave,nombre,tipo,unidad,costounitario,iva,fecha,costo,monto_total,operacion", "producto",
+//        String verificarClave;
+//         Connection conn;
+//        Class.forName("org.postgresql.Driver");
+//         Properties connProp = new Properties();
+//        connProp.put("user", "postgres");
+//        connProp.put("password", "root");
+//        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+//        Statement stmt;        
+//        stmt = conn.createStatement();
+//        ResultSet rs = stmt.executeQuery("select clave from producto where operacion='salida'");
+//        verificarClave=rs.getString("clave");
+//        if( verificarClave.equals(clave)==false){
+             c.insertar("clave,nombre,tipo,unidad,costounitario,iva,fecha,costo,monto_total,existencia,operacion", "producto",
                     "'"+clave+"',"
-                       + "'"+nombre+"',"
-                       + "'"+tipo+"',"
-                       + "'"+unidad+"',"
-                       + ""+costounitario+","
-                       + ""+iva+","
-                       + "'"+fecha+"',"
-                       + ""+costov+","
-                       + ""+monto+"'salida'");
-        c.actualizar("existencia=existencia-"+cantidad
+                       + "'"+nombre+"','"+tipo+"','"+unidad+"',"+costounitario+","+iva+",'"+fecha+"',"+costov+","+monto+","+cantidad+",'salida'");
+    
+           
+//        }else{
+//         c.actualizar("fecha='"+fecha+"',existencia=existencia-"+cantidad
+//                , "producto"
+//                , "clave='"+clave+"' and operacion='salida'");
+//           }
+         c.actualizar("existencia=existencia-"+cantidad
                 , "producto"
-                , "clave='"+clave+"'");
+                , "clave='"+clave+"' and operacion='entrada'");
 //        c.insertar("clave,nombre,existencia,costounitario, iva,costo,monto_total, fecha,operacion","producto",
 //                "'"+eclave+"',"
 //                       + "'"+enombre+"',"
@@ -73,7 +90,7 @@ public class AgregarSalidas extends HttpServlet {
 //                       + "'"+efecha+"','salida'"
 //                       );
 //        
-         response.sendRedirect("Inventario/InventarioAgregarEntrada.jsp");
+         response.sendRedirect("Inventario/InventarioIngresarSalidas.jsp");
     }
 
     /**

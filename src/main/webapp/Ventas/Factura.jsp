@@ -28,7 +28,7 @@
 <body>    
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <a href="Contabilidad.jsp" class="navbar-brand text-white">Ventas</a>
+            <a href="Ventas.jsp" class="navbar-brand text-white">Ventas</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#conta_navbar" aria-controls="conta_navbar" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -80,7 +80,7 @@
     <div class="row"><!-- INICIO DE SECCION PRINCIPAL -->
                 <div class="container-fluid">
                     <center>
-                        <form method="POST" autocomplete="off" action="../ContratarEmpleado" onsubmit="return valida();" id="formContratarEmp" name="formContratarEmp">
+                        <form method="POST" autocomplete="off" action="../Factura"  id="formFactura" name="formFactura">
                             <table>
                                  <h1 class="text-uppercase text-center">Factura</h1>
                                 
@@ -130,7 +130,7 @@
                                 <tr>
                                     
                                     <td colspan="4" align="center">
-                                        <input type="submit" value="Realizar Pedido" class="btn btn-primary"/>
+                                        <input type="submit" value="Procesar Factura" class="btn btn-primary"/>
                                     </td>
                                 </tr>
                             </table>
