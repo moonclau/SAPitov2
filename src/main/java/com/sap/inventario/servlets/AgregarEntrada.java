@@ -6,9 +6,12 @@
 package com.sap.inventario.servlets;
 
 import com.sap.conexion.Conexion;
+import com.sap.inventario.clases.Clave;
+import com.sap.inventario.clases.Consultas;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -42,20 +45,24 @@ public class AgregarEntrada extends HttpServlet {
         String eexistencia = request.getParameter("existencia");
         String ecostounitario = request.getParameter("costounitario");
         String eiva = request.getParameter("iva");
-        String ecostototal = request.getParameter("costototal");
-        String emontototal = request.getParameter("montototal");
+        String ecostototal = request.getParameter("costov");
         String efecha = request.getParameter("fecha");
-        
-        c.insertar("clave,nombre,existencia,costounitario, iva,costo,monto_total, fecha","producto",
-                "'"+eclave+"',"
-                       + "'"+enombre+"',"
-                       + ""+eexistencia+","
-                       + ""+ecostounitario+","
-                       + ""+eiva+","
-                       + ""+ecostototal+","
-                       + ""+emontototal+","
-                       + "'"+efecha+"',"
-                       );
+        int cant=Integer.parseInt(eexistencia);
+        Clave p=new Clave();
+        Consultas con=new Consultas();
+        c.actualizar("nombre= '"+enombre+"',existencia=existencia+"+cant+",costounitario="+ecostounitario+",iva="+eiva+",costo="+ecostototal+",fecha='"+efecha+"'"
+                , "producto"
+                , "clave='"+eclave+"'");
+//        c.insertar("clave,nombre,existencia,costounitario, iva,costo,monto_total, fecha,operacion","producto",
+//                "'"+eclave+"',"
+//                       + "'"+enombre+"',"
+//                       + ""+eexistencia+","
+//                       + ""+ecostounitario+","
+//                       + ""+eiva+","
+//                       + ""+ecostototal+","
+//                       + ""+emontototal+","
+//                       + "'"+efecha+"','entrada'"
+//                       );
         
          response.sendRedirect("Inventario/InventarioAgregarEntrada.jsp");
                    

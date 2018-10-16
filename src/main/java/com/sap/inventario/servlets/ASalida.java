@@ -21,8 +21,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author claudia
  */
-@WebServlet(name = "AgregarSalidas", urlPatterns = {"/AgregarSalidas"})
-public class AgregarSalidas extends HttpServlet {
+@WebServlet(name = "ASalida", urlPatterns = {"/ASalida"})
+public class ASalida extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -49,31 +49,27 @@ public class AgregarSalidas extends HttpServlet {
         double vcosto=Double.parseDouble(costounitario);
         double viva=Double.parseDouble(iva);
         double monto=(vcosto*viva)+vcosto;
-         c.insertar("clave,nombre,tipo,unidad,costounitario,iva,fecha,costo,monto_total,operacion", "producto",
-                    "'"+clave+"',"
-                       + "'"+nombre+"',"
-                       + "'"+tipo+"',"
-                       + "'"+unidad+"',"
-                       + ""+costounitario+","
-                       + ""+iva+","
-                       + "'"+fecha+"',"
-                       + ""+costov+","
-                       + ""+monto+"'salida'");
-        c.actualizar("existencia=existencia-"+cantidad
-                , "producto"
-                , "clave='"+clave+"'");
-//        c.insertar("clave,nombre,existencia,costounitario, iva,costo,monto_total, fecha,operacion","producto",
-//                "'"+eclave+"',"
-//                       + "'"+enombre+"',"
-//                       + ""+eexistencia+","
-//                       + ""+ecostounitario+","
-//                       + ""+eiva+","
-//                       + ""+ecostototal+","
-//                       + ""+emontototal+","
-//                       + "'"+efecha+"','salida'"
-//                       );
-//        
-         response.sendRedirect("Inventario/InventarioAgregarEntrada.jsp");
+    }
+
+    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+    /**
+     * Handles the HTTP <code>GET</code> method.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try {
+            processRequest(request, response);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(ASalida.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(ASalida.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
@@ -90,9 +86,9 @@ public class AgregarSalidas extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(AgregarSalidas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ASalida.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(AgregarSalidas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ASalida.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

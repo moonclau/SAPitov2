@@ -194,5 +194,7 @@ public class Conexion {
     public PreparedStatement prepareStatement(String query) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    
     
 }

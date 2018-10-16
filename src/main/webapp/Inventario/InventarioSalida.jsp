@@ -4,6 +4,7 @@
     Author     : claudia
 --%>
 
+<%@page import="com.sap.inventario.clases.VarSal"%>
 <%@page import="com.sap.inventario.clases.Producto"%>
 <%@page import="com.sap.inventario.clases.Consultas"%>
 <%@page import="java.util.LinkedList"%>
@@ -123,20 +124,21 @@
         </th>
       </tr>
 <%
-                        LinkedList<Producto> lista =Consultas.consultaSalidas();
+                        /*LinkedList<VarSal> lista =Consultas.consultaSalidaOp();
                         for (int i=0;i<lista.size();i++)
-                        {
+                        {*/
+    Consultas con=new Consultas();
                            out.println("<tr>");                               
-                           out.println("<td>"+lista.get(i).getClave()+"</td>");
-                           out.println("<td>"+lista.get(i).getNombre()+"</td>");
-                           out.println("<td>"+lista.get(i).getCostounitario()+"</td>");
+                           out.println("<td>"+con.consultaExistencia1()+"</td>");
+                           //out.println("<td>"+lista.get(i).getExistencia()+"</td>");
+                           /*out.println("<td>"+lista.get(i).getCostounitario()+"</td>");
                            out.println("<td>"+lista.get(i).getCantidad()+"</td>");
                            out.println("<td>"+lista.get(i).getIva()+"</td>");
                            out.println("<td>"+lista.get(i).getCostototal()+"</td>");
                            out.println("<td>"+lista.get(i).getMontototal()+"</td>");
                            out.println("<td>"+lista.get(i).getFecha()+"</td>");
                            out.println("</tr>");
-                        }
+                        *///}
                     %>
     </table>
         </div>
