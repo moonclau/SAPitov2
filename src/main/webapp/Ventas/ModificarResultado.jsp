@@ -190,7 +190,7 @@
                                 <tr>
                                     <br>
                                     <td colspan="4" align="center">
-                                        <input type="submit" value="Registrar" class="btn btn-primary"/>
+                                        <input type="submit" value="Modificar Cliente" class="btn btn-primary"/>
                                     </td>
                                 </tr>
                             </table>

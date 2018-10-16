@@ -80,7 +80,7 @@
     <div class="row"><!-- INICIO DE SECCION PRINCIPAL -->
                 <div class="container-fluid">
                     <center>
-                        <form method="POST" autocomplete="off" action="../ContratarEmpleado" onsubmit="return valida();" id="formContratarEmp" name="formContratarEmp">
+                        <form method="POST" autocomplete="off" action="../Devolucion" id="formDevolucion" name="formDevolucion">
                             <table>
                                  <h1 class="text-uppercase text-center">Devolucion</h1>
                                 
