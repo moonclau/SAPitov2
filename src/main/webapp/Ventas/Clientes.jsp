@@ -81,7 +81,7 @@
     <div class="row"><!-- INICIO DE SECCION PRINCIPAL -->
                 <div class="container-fluid">
                     <center>
-                        <form method="POST" autocomplete="off" action="../ContratarEmpleado" onsubmit="return valida();" id="formContratarEmp" name="formContratarEmp">
+                        <form method="POST" autocomplete="off" action="../Clientes" onsubmit="return validarClientes();" id="formClientes" name="formClientes">
                             <table>
                                  <h1 class="text-uppercase text-center">Cliente</h1>
                                 
@@ -181,7 +181,7 @@
                                 <br>
                                 <tr>
                                     <br>
-                                    <td colspan="4" align="center">
+                                    <td colspan="8" align="center">
                                         <input type="submit" value="Registrar" class="btn btn-primary"/>
                                     </td>
                                 </tr>
