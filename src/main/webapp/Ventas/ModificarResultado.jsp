@@ -137,7 +137,7 @@
                 </div>
                 
             <div class="form-group mx-2">
-                <button class="btn btn-success" type="submit">Modificar cliente</button>
+                <button class="btn btn-primary" type="submit">Modificar cliente</button>
             </div>
             </form>
             </div>

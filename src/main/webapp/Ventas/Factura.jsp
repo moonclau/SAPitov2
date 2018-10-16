@@ -103,7 +103,7 @@
                
                 
             <div class="form-group mx-2">
-                <button class="btn btn-success" type="submit">Generar Factura</button>
+                <button class="btn btn-primary" type="submit">Generar Factura</button>
                 </div>
             </form>
             </div>

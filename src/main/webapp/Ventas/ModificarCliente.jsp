@@ -89,7 +89,7 @@
                                 <tr>
                                     <td colspan="2">
                                         <center>
-                                            <input type="submit" class="btn btn-success" value="Buscar"/>
+                                            <input type="submit" class="btn btn-primary" value="Buscar"/>
                                         </center>
                                     </td>
                                 </tr>

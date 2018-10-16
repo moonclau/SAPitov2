@@ -69,6 +69,24 @@
                 </form>
             </div>
         </nav>
+        <div class="container-fluid">
+    <!--HAciendo una fila para dividir el contenedor en columnas-->
+    <div class="row">
+        <!--Columna de la izquierda-->
+        <div class="col-xs-3 col-md-3 izquierda">            
+               
+        </div>
+        <!--Columna Central-->
+        <div class="col-xs-6 col-md-6 central table-responsive">   
+            <h1 class="text-center">¡Bienvenido al M&oacute;dulo de Ventas!</h1>          
+        </div>
+        <!--columna de la derecha-->
+        <div class="col-xs-3 col-md-3 derecha table-responsive">
+            
+        </div>
+    </div>
+</div>
+        
     </header>
     </body>
 </html>

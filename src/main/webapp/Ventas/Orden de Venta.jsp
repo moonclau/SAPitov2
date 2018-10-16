@@ -115,7 +115,7 @@
                 
                 
             <div class="form-group mx-2">
-                <button class="btn btn-success" type="submit">Realizar orden</button>
+                <button class="btn btn-primary" type="submit">Realizar orden</button>
                 </div>
                 
             </form>
