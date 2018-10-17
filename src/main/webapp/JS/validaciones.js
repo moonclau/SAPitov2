@@ -14,23 +14,12 @@ if(!op1 && !opt3 && !op3){
 function agr_prov(){
     
     var rfc = document.getElementById('rfc').value;
-    if (rfc.length>14 || rfc==="") {
-        alert('La longitud del RFC no puede ser mayor a 13 caracteres');
-       return false;
-    }
-    
-    var cont=0;
-    for (var i = 0; i < rfc.length; i++) {
-        
-        if (rfc[i]=="-") {
-            cont++;
-        }
-     }
-    
-    if (cont<3) {
-         alert('RFC no valido \n Ejemplo: ASJ-140318-5L6');
-       return false; 
-    }
+   
+  if(rfc===""){
+   alert("Campo rfc vacio");
+    return false;
+  }
+  
     
       var razon;
     razon=document.getElementById("social").value;
