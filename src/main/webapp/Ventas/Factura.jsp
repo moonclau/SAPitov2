@@ -104,13 +104,13 @@
                                         Fecha:
                                     </td>
                                     <td>
-                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="fechaFactura" id="fechaFactura" required="required">
+                                      <input type="date" placeholder="Escribe aqui" class="form-control col-12" name="fechaFactura" id="fechaFactura" required="required">
                                     </td>
                                     <td>
                                         Total:
                                     </td>
                                     <td>
-                                     <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="totalFactura" id="totalFactura" required="required">
+                                     <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="totalFactura" id="totalFactura" required="required">
                                     </td>
                                 </tr>
                                 <tr>
@@ -124,7 +124,7 @@
                                         Id Orden de Venta:
                                     </td>
                                     <td>
-                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="idordendeventaFactura" id="idordendeventaFactura" required="required">
+                                      <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="idordendeventaFactura" id="idordendeventaFactura" required="required">
                                     </td>
                                 
                                 <tr>

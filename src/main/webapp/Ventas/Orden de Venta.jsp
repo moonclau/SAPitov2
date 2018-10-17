@@ -103,13 +103,13 @@
                                         Fecha:
                                     </td>
                                     <td>
-                                        <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="fechaOrdendeVenta" id="fechaOrdendeVenta" required="required">
+                                        <input type="date" placeholder="Escribe aqui" class="form-control col-12" name="fechaOrdendeVenta" id="fechaOrdendeVenta" required="required">
                                     </td>
                                     <td>
                                         Precio Unitario:
                                     </td>
                                     <td>
-                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="preciounitarioOrdendeVenta" id="preciounitarioOrdendeVenta" required="required">
+                                      <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="preciounitarioOrdendeVenta" id="preciounitarioOrdendeVenta" required="required">
                                     </td>
                                 </tr>
                                 <tr>
@@ -123,7 +123,7 @@
                                         Precio Total:
                                     </td>
                                     <td>
-                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="preciototalOrdendeVenta" id="preciototalOrdendeVenta" required="required">
+                                       <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="preciototalOrdendeVenta" id="preciototalOrdendeVenta" required="required">
                                     </td>
                                 </tr>
                                 <tr>
@@ -137,7 +137,7 @@
                                         Id. Pedido:
                                     </td>
                                     <td>
-                                        <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="idpedidoOrdendeVenta" id="idpedidoOrdendeVenta" required="required">
+                                        <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="idpedidoOrdendeVenta" id="idpedidoOrdendeVenta" required="required">
                                     </td>
                                 </tr>
                                 <tr>
@@ -145,7 +145,7 @@
                                        Cantidad:
                                     </td>
                                     <td>
-                                    <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="cantidadOrdendeVenta" id="cantidadOrdendeVenta" required="required">
+                                    <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="cantidadOrdendeVenta" id="cantidadOrdendeVenta" required="required">
                                     </td>
                                 </tr>
                                 <tr>

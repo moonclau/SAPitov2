@@ -103,13 +103,13 @@
                                         Fecha:
                                     </td>
                                     <td>
-                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="fechaDevolucion" id="fechDevolucion" required="required">
+                                      <input type="date" placeholder="Escribe aqui" class="form-control col-12" name="fechaDevolucion" id="fechDevolucion" required="required">
                                     </td>
                                     <td>
                                         Id Orden de Venta:
                                     </td>
                                     <td>
-                                     <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="idordendeventaDevolucion" id="idordendeventaDevolucion" required="required">
+                                     <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="idordendeventaDevolucion" id="idordendeventaDevolucion" required="required">
                                     </td>
                                 </tr>
                                

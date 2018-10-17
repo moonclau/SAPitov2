@@ -95,7 +95,7 @@
                                         Fecha:
                                     </td>
                                     <td>
-                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="fechaPedido" id="fechaPedido" required="required">
+                                      <input type="date" placeholder="Escribe aqui" class="form-control col-12" name="fechaPedido" id="fechaPedido" required="required">
                                     </td>
                                 </tr>
                                 <tr>
@@ -117,13 +117,13 @@
                                         Id de Cliente:
                                     </td>
                                     <td>
-                                     <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="idclientePedido" id="idclientePedido" required="required">
+                                     <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="idclientePedido" id="idclientePedido" required="required">
                                     </td>
                                     <td>
                                         Id de Producto:
                                     </td>
                                     <td>
-                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="idproductoPedido" id="idproductoPedido" required="required">
+                                       <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="idproductoPedido" id="idproductoPedido" required="required">
                                     </td>
                                 
                                 <tr>

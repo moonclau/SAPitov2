@@ -1,4 +1,4 @@
-function validarClientes(){
+function validar(){
     var nombre = document.getElementById("nombreClientes").value.toString();
     var paterno = document.getElementById("apClientes").value.toString();
     var materno = document.getElementById("amClientes").value.toString();

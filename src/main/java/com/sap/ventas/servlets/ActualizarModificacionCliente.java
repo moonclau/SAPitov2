@@ -57,7 +57,7 @@ public class ActualizarModificacionCliente extends HttpServlet {
         c.actualizar("clave_cliente = '"+clave+"',nombre = '"+nombre+"', apellido_paterno = '"+paterno+"',apellido_materno = '"+materno+"',direccion = '"+direccion+
                 "',cp = "+cp+",municipio = '"+municipio+"',estado = '"+estado+"',pais = '"+pais+"',rfc = '"+rfc+
                 "',cuenta_contable = '"+cuentacontable+"',cuenta_bancaria = '"+cuentabancaria+"',razon_social = '"+razonsocial+"'"
-                , "cliente", "idcliente = "+cliente);
+                , "cliente", "id = "+cliente);
                 
         
             response.sendRedirect("Ventas/ModificarCliente.jsp");

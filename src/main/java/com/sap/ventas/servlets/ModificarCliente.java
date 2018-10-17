@@ -40,8 +40,8 @@ public class ModificarCliente extends HttpServlet {
         String cliente = request.getParameter("modificarIdCliente");
         Conexion c = new Conexion();
         //usuario usu = new usuario();
-         ArrayList lista = c.consulta("idcliente,clave_cliente,nombre,apellido_paterno,apellido_materno,direccion,cp,municipio,estado,pais,rfc,cuenta_contable,"
-                + "cuenta_bancaria,razon_social","cliente", "idcliente = "+cliente, 14);
+         ArrayList lista = c.consulta("id,clave_cliente,nombre,apellido_paterno,apellido_materno,direccion,cp,municipio,estado,pais,rfc,cuenta_contable,"
+                + "cuenta_bancaria,razon_social","cliente", "id = "+cliente, 14);
         if(!lista.isEmpty()){
             request.getSession().setAttribute("cliente",lista);
         //int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Modifica empleado");

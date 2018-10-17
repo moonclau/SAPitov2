@@ -83,9 +83,9 @@
     <div class="row"><!-- INICIO DE SECCION PRINCIPAL -->
                 <div class="container-fluid">
                     <center>
-                        <form method="POST" autocomplete="off" action="../ContratarEmpleado" onsubmit="return valida();" id="formContratarEmp" name="formContratarEmp">
+                        <form method="POST" autocomplete="off" action="../ActualizarModificacionCliente" onsubmit="return valida();" id="formContratarEmp" name="formContratarEmp">
                             <table>
-                                 <h1 class="text-uppercase text-center">Cliente</h1>
+                                 <h1 class="text-uppercase text-center">Modificar Cliente</h1>
                                 
                                 <tr>
                                     <td>
@@ -146,7 +146,7 @@
                                         Cuenta Contable:
                                     </td>
                                     <td>
-                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="cuentacontableClientes" id="cuentacontableClientes" value="<%= lista.get(11) %>" required="required">
+                                       <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="cuentacontableClientes" id="cuentacontableClientes" value="<%= lista.get(11) %>" required="required">
                                     </td>
                                 </tr>
                                 <tr>
@@ -160,7 +160,7 @@
                                         Cuenta Bancaria:
                                     </td>
                                     <td>
-                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="cuentabancariaClientes" id="cuentabancariaClientes" value="<%= lista.get(12) %>" required="required">
+                                       <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="cuentabancariaClientes" id="cuentabancariaClientes" value="<%= lista.get(12) %>" required="required">
                                     </td>
                                 </tr>
                                 <tr>
@@ -168,7 +168,7 @@
                                         C.P:
                                     </td>
                                     <td>
-                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12"name="cpClientes" id="cpClientes" value="<%= lista.get(6) %>" required="required">
+                                       <input type="number" placeholder="Escribe aqui" class="form-control col-12"name="cpClientes" id="cpClientes" value="<%= lista.get(6) %>" required="required">
                                     </td>
                                     <td>
                                         Razon Social:
@@ -189,7 +189,7 @@
                                 <br>
                                 <tr>
                                     <br>
-                                    <td colspan="4" align="center">
+                                    <td colspan="8" align="center">
                                         <input type="submit" value="Modificar Cliente" class="btn btn-primary"/>
                                     </td>
                                 </tr>

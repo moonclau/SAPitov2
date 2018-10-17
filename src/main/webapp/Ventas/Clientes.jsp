@@ -81,7 +81,7 @@
     <div class="row"><!-- INICIO DE SECCION PRINCIPAL -->
                 <div class="container-fluid">
                     <center>
-                        <form method="POST" autocomplete="off" action="../Clientes" onsubmit="return validarClientes();" id="formClientes" name="formClientes">
+                        <form method="POST" autocomplete="off" action="../Clientes" onsubmit="return validar();" id="formClientes" name="formClientes">
                             <table>
                                  <h1 class="text-uppercase text-center">Cliente</h1>
                                 
@@ -138,7 +138,7 @@
                                         Cuenta Contable:
                                     </td>
                                     <td>
-                                        <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="cuentacontableClientes" id="cuentacontableClientes" required="required">
+                                        <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="cuentacontableClientes" id="cuentacontableClientes" required="required">
                                     </td>
                                 </tr>
                                 <tr>
@@ -152,7 +152,7 @@
                                         Cuenta Bancaria:
                                     </td>
                                     <td>
-                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="cuentabancariaClientes" id="cuentabancariaClientes" required="required">
+                                       <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="cuentabancariaClientes" id="cuentabancariaClientes" required="required">
                                     </td>
                                 </tr>
                                 <tr>
@@ -160,7 +160,7 @@
                                         C.P:
                                     </td>
                                     <td>
-                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12"name="cpClientes" id="cpClientes" required="required">
+                                       <input type="number" placeholder="Escribe aqui" class="form-control col-12"name="cpClientes" id="cpClientes" required="required">
                                     </td>
                                     <td>
                                         Razon Social:
