@@ -129,7 +129,7 @@
                                 
                                 <tr>
                                     
-                                    <td colspan="4" align="center">
+                                    <td colspan="8" align="center">
                                         <input type="submit" value="Procesar Factura" class="btn btn-primary"/>
                                     </td>
                                 </tr>

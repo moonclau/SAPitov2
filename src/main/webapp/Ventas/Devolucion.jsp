@@ -115,7 +115,7 @@
                                
                                 <tr>
                                     
-                                    <td colspan="4" align="center">
+                                    <td colspan="8" align="center">
                                         <input type="submit" value="Realizar Devolucion" class="btn btn-primary"/>
                                     </td>
                                 </tr>
