@@ -13,11 +13,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
          <script src="../JS/validaciones.js"></script>
         
-        <link href="../Recursos/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="../Recursos/Bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-        <script src="../Recursos/bootstrap/librerias/jquery-3.3.1.min.js"></script>
+        <script src="../Recursos/Bootstrap/librerias/jquery-3.3.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed --> 
-        <script src="../Recursos/bootstrap/js/bootstrap.js"></script>
+        <script src="../Recursos/Bootstrap/js/bootstrap.js"></script>
         
         <title>Compras</title>
         
@@ -28,11 +28,10 @@
         <header class="sticky-top">
             
             <nav class="navbar navbar-expand-lg navbar-light barra">
-                <div>
-                    <a class="navbar-brand" style="color: white" >Compras</a>  
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <a href="#" class="navbar-brand text-white">Compras</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
@@ -48,14 +47,13 @@
                             <a class="nav-link" href="List_com.jsp" style="color: white">Lista&nbsp;de&nbsp;Compras</a>
                         </li>                        
                     </ul>
-                     <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
                             <a class="nav-link" href="" style="color: white">Salir</a>
                         </li>                                              
                     </ul>
-                    </div> 
-                </div>
-            </nav>           
+                </div> 
+            </nav>       
 
         </header>
         
@@ -115,43 +113,40 @@
                     
                    
                         <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"><!-- Seccion central --> 
-                                             
+                                               
                             <center><div>
                                     <h3>Editar Proveedor</h3>
                             </div></center>                       
                             <br><br>
-                            
-                             <form action="" method="post" onsubmit="return editar_prov();">  
+                             
                            <div class="row">
                                <div class="col-xs-4"></div>
                                <div class="col-xs-3">
-                       <center><input type="text" name="clave_prov" placeholder="Clave" class="form-control" id="clave_prov" required="Complete el campo"> 
+                       <center><input type="text" name="rfcprov" placeholder="Clave" class="form-control" id="codprod" required="Complete el campo"> 
                            </div>
-                            
+                              
                            <div class="col-xs-1">
                         
                         <input type="submit" value="Buscar"  name="buscar" class="btn btn-success"></center>
                          
                                </div>
-                            </div></form>
-                            
-                            
+                            </div>
                         <br>
-                        <form action="../Modificar_proveedor" method="post" onsubmit="return editar_prov();">  
+                        <form action="" method="post" onsubmit="return editar_prov();">  
                               <div class="row">
                                  <div class="col-xs-3"></div>
                                <div class="col-xs-3">
-                          <center><input type="text" name="rfc_prov" placeholder="RFC" id="rfc_prov" class="form-control" ></center>
+                          <center><input type="text" name="rfcprov" placeholder="RFC" id="rfc_edi" class="form-control" ></center>
                                <br>
-                          <center><input type="text" name="razo_prov" placeholder="Razón social" id="razo_prov" class="form-control" ></center>
+                          <center><input type="text" name="nomprov" placeholder="Razón social" id="razoned" class="form-control" ></center>
                           <br>
-                          <center><input type="text" name="dir_prov" placeholder="Dirección" id="dir_prov" class="form-control" ></center>
+                          <center><input type="text" name="dirprov" placeholder="Dirección" id="codprod" class="form-control" ></center>
                           <br>
-                          <center><input type="number" name="tel_prov" placeholder="Teléfono" id="tel_prov" class="form-control" ></center>
+                          <center><input type="number" name="numprov" placeholder="Teléfono" id="codprod" class="form-control" ></center>
                           <br>
-                           <center><input type="text" name="correo_prov" placeholder="Correo" id="correo_prov" class="form-control"></center>
+                           <center><input type="text" name="corprov" placeholder="Correo" id="codprod" class="form-control"></center>
                           <br>
-                          <select name="agr_est" id="agr_est" class="form-control">
+                          <select name="operacion" id="agr_est" class="form-control">
                                         <option>Ciudad/Estado</option>
                                          <option>Edo.Mexico</option>
                                          <option>Yucatan</option>
@@ -160,13 +155,13 @@
                                   </select>
                                </div>
                           <div class="col-xs-3"> 
-                              <center><input type="text" name="cuent_cont" placeholder="Cuenta contable" id="cuent_cont" class="form-control"></center>
+                              <center><input type="text" name="rfcprov" placeholder="Cuenta contable" id="codprod" class="form-control"></center>
                                <br>
-                          <center><input type="text" name="lim_cred" placeholder="Límite de crédito" id="lim_cred" class="form-control" ></center>
+                          <center><input type="text" name="nomprov" placeholder="Límite de crédito" id="codprod" class="form-control" ></center>
                           <br>
-                          <center><input type="text" name="dias_cred" placeholder="Días de crédito" id="dias_cred" class="form-control" ></center>
+                          <center><input type="text" name="dirprov" placeholder="Días de crédito" id="codprod" class="form-control" ></center>
                           <br>
-                          <select name="agr_bnco" id="agr_bnco" class="form-control">
+                          <select name="operacion" id="agr_est" class="form-control">
                                         <option>Banco</option>
                                          <option>HSBC</option>
                                          <option>Santander</option>
@@ -174,9 +169,9 @@
                                          <option>BanCoopel</option>
                                   </select>
                           <br>
-                          <center><input type="number" name="num_cuenta" placeholder="N° Cuenta" id="num_cuenta" class="form-control" ></center>
+                          <center><input type="number" name="numprov" placeholder="N° Cuenta" id="codprod" class="form-control" ></center>
                           <br>
-                          <center><input type="number" name="clave_cuenta" placeholder="Clave Cuenta" id="clave_cuenta" class="form-control" ></center>                          
+                          <center><input type="number" name="numprov" placeholder="Clave Cuenta" id="codprod" class="form-control" ></center>                          
                           </div>
                           </div>
                             <div class="row">

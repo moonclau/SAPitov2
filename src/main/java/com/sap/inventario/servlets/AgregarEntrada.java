@@ -64,7 +64,7 @@ public class AgregarEntrada extends HttpServlet {
 //                       + "'"+efecha+"','entrada'"
 //                       );
         
-         response.sendRedirect("Inventario/InventarioAgregarEntrada.jsp");
+         response.sendRedirect("Inventario/InventarioAgregarSalida.jsp");
                    
 //        
     }

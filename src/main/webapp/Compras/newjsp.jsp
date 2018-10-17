@@ -5,11 +5,11 @@
         <link href="../CSS/estilos.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../JS/validaciones.js"></script>
-        <link href="../Recursos/bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="../Recursos/Bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-        <script src="../Recursos/bootstrap/librerias/jquery-3.3.1.min.js"></script>
+        <script src="../Recursos/Bootstrap/librerias/jquery-3.3.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed --> 
-        <script src="../Recursos/bootstrap/js/bootstrap.js"></script>
+        <script src="../Recursos/Bootstrap/js/bootstrap.js"></script>
         <title>Compras</title>
         
     </head>
@@ -18,12 +18,11 @@
         
         <header class="sticky-top">
             
-            <nav class="navbar navbar-expand-lg navbar-light barra">
-                <div>
-                    <a class="navbar-brand" style="color: white" >Compras</a>  
+          <nav class="navbar navbar-expand-lg navbar-light barra">
+                <a href="#" class="navbar-brand text-white">Compras</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#compras_navbar" aria-controls="compras_navbar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="nav navbar-nav">
                         <li class="nav-item">
@@ -39,13 +38,12 @@
                             <a class="nav-link" href="List_com.jsp" style="color: white">Lista&nbsp;de&nbsp;Compras</a>
                         </li>                        
                     </ul>
-                     <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right">
                         <li class="nav-item">
                             <a class="nav-link" href="" style="color: white">Salir</a>
                         </li>                                              
                     </ul>
-                    </div> 
-                </div>
+                </div> 
             </nav>           
 
         </header>
