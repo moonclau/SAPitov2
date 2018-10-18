@@ -37,7 +37,6 @@ public class Clientes extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        String clave = request.getParameter("claveClientes");
         String nombre = request.getParameter("nombreClientes");
         String paterno = request.getParameter("apClientes");
         String materno = request.getParameter("amClientes");
@@ -52,8 +51,8 @@ public class Clientes extends HttpServlet {
         String razonsocial= request.getParameter("razonsocialClientes");
         Conexion c = new Conexion();
         //usuario usu = new usuario();
-        c.insertar("clave_cliente,nombre,apellido_paterno,apellido_materno,direccion,cp,municipio,estado,pais,rfc,cuenta_contable,"
-                + "cuenta_bancaria,razon_social","cliente","'"+clave+"','"+nombre+"','"+paterno+"','"+materno+"','"+direccion+"',"+cp+",'"+municipio+"','"+estado+"','"+pais+"','"+rfc+"','"+cuentacontable+"','"+cuentabancaria+"','"+razonsocial+"'");
+        c.insertar("nombre,ape_pat,ape_mat,direccion,cp,municipio,edo,pais,rfc,cuentacontable,"
+                + "cuentabancaria,razon","cliente","'"+nombre+"','"+paterno+"','"+materno+"','"+direccion+"',"+cp+",'"+municipio+"','"+estado+"','"+pais+"','"+rfc+"','"+cuentacontable+"','"+cuentabancaria+"','"+razonsocial+"'");
         
         
 //        int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Contratacion de empleado empleado");

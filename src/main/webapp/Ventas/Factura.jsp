@@ -45,7 +45,8 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Atencion</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
-                            <a class="nav-link text-white" href="Pedido.jsp">&nbsp;Pedido</a>
+                          
+                            
                             <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
                                                              
                         </div>
@@ -107,10 +108,10 @@
                                       <input type="date" placeholder="Escribe aqui" class="form-control col-12" name="fechaFactura" id="fechaFactura" required="required">
                                     </td>
                                     <td>
-                                        Total:
+                                        Tipo:
                                     </td>
                                     <td>
-                                     <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="totalFactura" id="totalFactura" required="required">
+                                     <input type="number" placeholder="0 cliente/1 proveedor" class="form-control col-12" name="tipoFactura" id="tipoFactura" required="required">
                                     </td>
                                 </tr>
                                 <tr>
@@ -121,14 +122,22 @@
                                      <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="nombredelclienteFactura" id="nombredelclienteFactura" required="required">
                                     </td>
                                     <td>
+                                        Total:
+                                    </td>
+                                    <td>
+                                      <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="totalFactura" id="idordendeventaFactura" required="required">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         Id Orden de Venta:
                                     </td>
                                     <td>
                                       <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="idordendeventaFactura" id="idordendeventaFactura" required="required">
                                     </td>
-                                
+                                </tr>
+                               
                                 <tr>
-                                    
                                     <td colspan="8" align="center">
                                         <input type="submit" value="Procesar Factura" class="btn btn-primary"/>
                                     </td>

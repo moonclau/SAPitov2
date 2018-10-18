@@ -38,7 +38,6 @@ public class ActualizarModificacionCliente extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         String cliente = request.getParameter("idModificarCli");
-        String clave = request.getParameter("claveClientes");
         String nombre = request.getParameter("nombreClientes");
         String paterno = request.getParameter("apClientes");
         String materno = request.getParameter("amClientes");
@@ -54,9 +53,9 @@ public class ActualizarModificacionCliente extends HttpServlet {
         
         Conexion c = new Conexion();
         
-        c.actualizar("clave_cliente = '"+clave+"',nombre = '"+nombre+"', apellido_paterno = '"+paterno+"',apellido_materno = '"+materno+"',direccion = '"+direccion+
-                "',cp = "+cp+",municipio = '"+municipio+"',estado = '"+estado+"',pais = '"+pais+"',rfc = '"+rfc+
-                "',cuenta_contable = '"+cuentacontable+"',cuenta_bancaria = '"+cuentabancaria+"',razon_social = '"+razonsocial+"'"
+        c.actualizar("nombre = '"+nombre+"', ape_pat = '"+paterno+"',ape_mat = '"+materno+"',direccion = '"+direccion+
+                "',cp = "+cp+",municipio = '"+municipio+"',edo = '"+estado+"',pais = '"+pais+"',rfc = '"+rfc+
+                "',cuentacontable = '"+cuentacontable+"',cuentabancaria = '"+cuentabancaria+"',razon = '"+razonsocial+"'"
                 , "cliente", "id = "+cliente);
                 
         

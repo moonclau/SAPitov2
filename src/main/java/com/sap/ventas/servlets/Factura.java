@@ -38,13 +38,14 @@ public class Factura extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         String clave = request.getParameter("claveFactura");
         String fecha = request.getParameter("fechaFactura");
+        String tipo = request.getParameter("tipoFactura");
         String cliente = request.getParameter("nombredelclienteFactura");
         String proveedor = request.getParameter("nombredelproveedorFactura");
         String total = request.getParameter("totalFactura");
         String idOVF = request.getParameter("idordendeventaFactura");
         Conexion c = new Conexion();
         
-        c.insertar("clave_factura,fecha,nombre_cliente,nombre_proveedor,total,idordenventa","factura","'"+clave+"','"+fecha+"','"+cliente+"','"+proveedor+"',"+total+","+idOVF+"");
+        c.insertar("clave,fecha,tipo,nombrecliente,nombreproveedor,total,idordenventa","factura","'"+clave+"','"+fecha+"',"+tipo+",'"+cliente+"','"+proveedor+"',"+total+","+idOVF+"");
         
         
         response.sendRedirect("Ventas/Factura.jsp");

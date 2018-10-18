@@ -44,11 +44,12 @@ public class OrdendeVenta extends HttpServlet {
         String vendedor = request.getParameter("vendedorOrdendeVenta");
         String preciounitario = request.getParameter("preciounitarioOrdendeVenta");
         String preciototal = request.getParameter("preciototalOrdendeVenta");
-        String idPOV = request.getParameter("idpedidoOrdendeVenta");
+        String idCOV = request.getParameter("idclienteOrdendeVenta");
+        String idVPOV = request.getParameter("idventaproductoOrdendeVenta");
        
         Conexion c = new Conexion();
         
-        c.insertar("clave_ordenventa,fecha,direccion,cantidad,descripcion_venta,vendedor,precio_unitario,precio_total,idpedido,","cliente","'"+clave+"','"+fecha+"','"+direccion+"',"+cantidad+",'"+descripcion+"','"+vendedor+"',"+preciounitario+","+preciototal+","+idPOV+"");
+        c.insertar("clave_ordenventa,fecha,direccion,cantidad,descripcion_venta,vendedor,precio_unitario,precio_total,idcliente,idventaproducto","orden_de_venta","'"+clave+"','"+fecha+"','"+direccion+"',"+cantidad+",'"+descripcion+"','"+vendedor+"',"+preciounitario+","+preciototal+","+idCOV+","+idVPOV+"");
        
          response.sendRedirect("Ventas/Orden de Venta.jsp");
     }

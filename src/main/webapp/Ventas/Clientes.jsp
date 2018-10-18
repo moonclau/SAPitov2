@@ -45,7 +45,7 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Atencion</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
-                            <a class="nav-link text-white" href="Pedido.jsp">&nbsp;Pedido</a>
+         
                             <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
                                                              
                         </div>
@@ -83,14 +83,15 @@
                     <center>
                         <form method="POST" autocomplete="off" action="../Clientes" onsubmit="return validar();" id="formClientes" name="formClientes">
                             <table>
-                                 <h1 class="text-uppercase text-center">Cliente</h1>
+                                 <h1 class="text-uppercase text-center">Agregar Cliente</h1>
                                 
                                 <tr>
+                                    
                                     <td>
-                                        Clave del Cliente:
+                                        Nombre:
                                     </td>
                                     <td>
-                                       <input type="text" placeholder="Ingresar clave" class="form-control col-12" name="claveClientes" id="claveClientes" required="required">
+                                        <input type="text" placeholder="Ingresar nombre" class="form-control col-12" name="nombreClientes" id="nombreClientes" required="required">
                                     </td>
                                     <td>
                                         Estado:
@@ -98,13 +99,14 @@
                                     <td>
                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="estadoClientes" id="estadoClientes" required="required">
                                     </td>
+                                   
                                 </tr>
                                 <tr>
                                     <td>
-                                        Nombre:
+                                        Apellido Paterno:
                                     </td>
                                     <td>
-                                        <input type="text" placeholder="Ingresar nombre" class="form-control col-12" name="nombreClientes" id="nombreClientes" required="required">
+                                       <input type="text" placeholder="Apellido paterno" class="form-control col-12" name="apClientes" id="apClientes" required="required">
                                     </td>
                                     <td>
                                         Pais:
@@ -115,30 +117,16 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        Apellido Paterno:
-                                    </td>
-                                    <td>
-                                       <input type="text" placeholder="Apellido paterno" class="form-control col-12" name="apClientes" id="apClientes" required="required">
-                                    </td>
-                                    <td>
-                                        RFC:
-                                    </td>
-                                    <td>
-                                        <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="rfcClientes" id="rfcClientes" required="required">
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
                                         Apellido Materno:
                                     </td>
                                     <td>
                                        <input type="text" placeholder="Apellido materno" class="form-control col-12" name="amClientes" id="amClientes" required="required">
                                     </td>
-                                    <td>
-                                        Cuenta Contable:
+                                   <td>
+                                        RFC:
                                     </td>
                                     <td>
-                                        <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="cuentacontableClientes" id="cuentacontableClientes" required="required">
+                                        <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="rfcClientes" id="rfcClientes" required="required">
                                     </td>
                                 </tr>
                                 <tr>
@@ -148,11 +136,12 @@
                                     <td>
                                        <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="direccionClientes" id="direccionClientes" required="required">
                                     </td>
+                                    
                                     <td>
-                                        Cuenta Bancaria:
+                                        Cuenta Contable:
                                     </td>
                                     <td>
-                                       <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="cuentabancariaClientes" id="cuentabancariaClientes" required="required">
+                                        <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="cuentacontableClientes" id="cuentacontableClientes" required="required">
                                     </td>
                                 </tr>
                                 <tr>
@@ -162,21 +151,28 @@
                                     <td>
                                        <input type="number" placeholder="Escribe aqui" class="form-control col-12"name="cpClientes" id="cpClientes" required="required">
                                     </td>
+                                   
                                     <td>
-                                        Razon Social:
+                                        Cuenta Bancaria:
                                     </td>
                                     <td>
-                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12"name="razonsocialClientes" id="razonsocialClientes" required="required">
+                                       <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="cuentabancariaClientes" id="cuentabancariaClientes" required="required">
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>
+                                     <td>
                                         Municipio:
                                     </td>
                                     <td>
                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12" name="municipioClientes" id="municipioClientes" required="required">
                                     </td>
                                     
+                                    <td>
+                                        Razon Social:
+                                    </td>
+                                    <td>
+                                       <input type="text" placeholder="Escribe aqui" class="form-control col-12"name="razonsocialClientes" id="razonsocialClientes" required="required">
+                                    </td>
                                 </tr>
                                 <br>
                                 <tr>
