@@ -25,9 +25,10 @@ public class Consultalog extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         Conexion c = new Conexion();
         Log filtro = new Log();
+        //" AND area ="+" '"+request.getParameter("area")+"' "
         String referencia = filtro.filtrosQuery(request.getParameter("fecha"), request.getParameter("horaInicio"),
                                                 request.getParameter("horaFin"));
-        ArrayList lista = c.consulta("des,id,area,fecha,hora", "log", referencia, "", "", 5);
+        ArrayList lista = c.consulta("id_emp,area,des,fecha,hora", "log", referencia, "", "", 5);
         request.getSession().setAttribute("lista", lista);
         response.sendRedirect("Gerencia/Log.jsp");
     }
