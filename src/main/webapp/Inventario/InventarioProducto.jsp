@@ -73,11 +73,13 @@
                         <h5>Buscar ID de producto</h5>
                         <input name="clave" type="text" placeholder="ID producto"/><br><br> 
                         
+                <input id="buscar" type="submit" value="Buscar" class="btn btn-success"/><br><br>
                             <hr>
                      <a href="InventarioProductoAgregar.jsp"><label>Agregar producto</label></a>
                      <a href="InventarioProductoModificar.jsp"><label>Modificar producto</label></a>
                     <h4>Reporte</h4>
-                    <input type="submit" value="Generar"/><br>  
+                    
+                <input id="generar" type="submit" value="Generar" class="btn btn-success"/><br><br>
                      
                 </form>
               </div>

@@ -10,9 +10,9 @@
     <head>
         <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-        <link href="../CSS/estilos.css" rel="stylesheet">
+        <link href="../CSS/compras.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="../JS/validaciones.js"></script>
+        <script src="../JS/compras.js"></script>
 
         <link href="../Recursos/Bootstrap/css/bootstrap.css" rel="stylesheet">
         <script src="../Recursos/Bootstrap/librerias/jquery-3.3.1.min.js"></script>

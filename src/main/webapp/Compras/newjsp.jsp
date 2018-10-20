@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../CSS/estilos.css" rel="stylesheet">
+        <link href="../CSS/compras.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="../JS/validaciones.js"></script>
+        <script src="../JS/compras.js"></script>
         <link href="../Recursos/Bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
         <script src="../Recursos/Bootstrap/librerias/jquery-3.3.1.min.js"></script>

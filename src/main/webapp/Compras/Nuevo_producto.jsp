@@ -8,8 +8,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../CSS/estilos.css" rel="stylesheet">
-        <script src="../JS/validaciones.js"></script>
+        <link href="../CSS/compras.css" rel="stylesheet">
+        <script src="../JS/compras.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="../Recursos/Bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 

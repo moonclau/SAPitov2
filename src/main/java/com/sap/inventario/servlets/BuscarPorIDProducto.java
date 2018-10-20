@@ -36,11 +36,19 @@ public class BuscarPorIDProducto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+       //obtener conexion de clase conexion
         Conexion c=new Conexion();
-        String idproducto = request.getParameter("clave");
-        c.consultaVariosCamposUnaClave2("id="+idproducto+"",
-                "clave, nombre,tipo, unidad, existencia, costounitario,costo, iva","producto",8); 
+        // variables para insertar en la base de datos
+        String clave = request.getParameter("clave");
+        //campos de la tabla producto que vamos a mostrar
+        String campos="clave, nombre,tipo, unidad, existencia, costounitario,costo, iva";
+        //condicion para que nos muestre esos datos en especifico
+        String condicion="clave='"+clave+"' and ";
+        c.consultaVariosCamposUnaClave2(condicion, campos, "producto", 1);
         
+       /* c.consultaVariosCamposUnaClave2("id="+idproducto+"",
+                ,8); 
+       */ 
          response.sendRedirect("Inventario/InventarioProducto.jsp");
                
     }
