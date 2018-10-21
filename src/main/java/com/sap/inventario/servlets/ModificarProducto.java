@@ -24,6 +24,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "ModificarProducto", urlPatterns = {"/ModificarProducto"})
 public class ModificarProducto extends HttpServlet {
 
+   
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -37,6 +38,7 @@ public class ModificarProducto extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         Conexion c=new Conexion();
+        String claveo=request.getParameter("bclave");;
         String clave = request.getParameter("clave");
         String nombre = request.getParameter("nombre");
         String tipo = request.getParameter("tipo");
@@ -49,19 +51,9 @@ public class ModificarProducto extends HttpServlet {
         double vcosto=Double.parseDouble(costounitario);
         double viva=Double.parseDouble(iva);
         double monto=(vcosto*viva)+vcosto;
-         c.actualizar("clave='"+clave+"',"
-                 + "nombre='"+nombre+"',"
-                 + "tipo='"+tipo+"',"
-                 + "unidad='"+unidad+"',"
-                 + "existencia="+cantidad+","
-                 + "costounitario="+costounitario+","
-                 + "iva="+iva+","
-                 + "costo="+costov+","
-                 + "fecha='"+fecha+"',"
-                 + "monto_total="+monto+""
-                 ,"producto"
-                 ,"clave='"+clave+"'and operacion='existente'");
-
+        String campos="clave='"+clave+"',nombre='"+nombre+"',tipo='"+tipo+"',unidad='"+unidad+"',existencia="+cantidad+
+                ",costounitario="+costounitario+",iva="+iva+",fecha='"+fecha+"',monto_total="+monto;
+        c.actualizar(campos, "producto", "clave='"+claveo+"' and operacion='entrada'");
          response.sendRedirect("Inventario/InventarioProductoModificar.jsp");
     }
 
