@@ -8,8 +8,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
-        <link href="../CSS/compras.css" rel="stylesheet">
+                <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
+
+                <script src="../Recursos/js/compras.js"> </script>
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../JS/compras.js"></script>
         
@@ -60,13 +62,12 @@
         <div id="principal">
             <div class="container-fluid">
                  <div class="row">
-                    <br>
-                    <br>
-                    <br>
-                    <br>
+                    
+                   
+                    
                 </div>
                 <div class="row">
-                    <div style="background-color:#F5F5F5;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
+                    <div style="background-color:#F5F5F5;" class="col-lg-4 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
                         <form method="POST" >
                             <center><div id="titulo" class="col-12">
                                 <h3>Buscar&nbsp;Proveedor</h3>
@@ -112,7 +113,7 @@
                     </div>   
                     
                    
-                        <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12"><!-- Seccion central --> 
+                        <div class="col-lg-5 col-md-8 col-sm-8 col-xs-12"><!-- Seccion central --> 
                                                
                             <center><div>
                                     <h3>Editar Proveedor</h3>
@@ -120,33 +121,33 @@
                             <br><br>
                              
                            <div class="row">
-                               <div class="col-xs-4"></div>
-                               <div class="col-xs-3">
-                       <center><input type="text" name="rfcprov" placeholder="Clave" class="form-control" id="codprod" required="Complete el campo"> 
+                               <div class="col-xs-5"></div>
+                               <div class="col-xs-4">
+                       <center><input type="text" name="rfcprov" placeholder="Clave" class="form-control" id="editprov" required="Complete el campo"> 
                            </div>
                               
-                           <div class="col-xs-1">
+                           <div class="col-xs-3">
                         
-                        <input type="submit" value="Buscar"  name="buscar" class="btn btn-success"></center>
+                    <!--   <input type="submit" value="Buscar"  name="buscar" class="btn btn-success"></center> -->
                          
                                </div>
                             </div>
                         <br>
-                        <form action="" method="post" onsubmit="return editar_prov();">  
+                        <form action="../Modificar_proveedor" method="post" onsubmit="return editar_prov();">  
                               <div class="row">
-                                 <div class="col-xs-3"></div>
-                               <div class="col-xs-3">
+                                 <div class="col-xs-5"></div>
+                               <div class="col-xs-5">
                           <center><input type="text" name="rfcprov" placeholder="RFC" id="rfc_edi" class="form-control" ></center>
                                <br>
                           <center><input type="text" name="nomprov" placeholder="Razón social" id="razoned" class="form-control" ></center>
                           <br>
-                          <center><input type="text" name="dirprov" placeholder="Dirección" id="codprod" class="form-control" ></center>
+                          <center><input type="text" name="dirprov" placeholder="Dirección" id="diredit" class="form-control" ></center>
                           <br>
-                          <center><input type="number" name="numprov" placeholder="Teléfono" id="codprod" class="form-control" ></center>
+                          <center><input type="number" name="numprov" placeholder="Teléfono" id="teledit" class="form-control" ></center>
                           <br>
-                           <center><input type="text" name="corprov" placeholder="Correo" id="codprod" class="form-control"></center>
+                           <center><input type="text" name="corprov" placeholder="Correo" id="correoedit" class="form-control"></center>
                           <br>
-                          <select name="operacion" id="agr_est" class="form-control">
+                          <select name="operacion" id="estadoedit" class="form-control">
                                         <option>Ciudad/Estado</option>
                                          <option>Edo.Mexico</option>
                                          <option>Yucatan</option>
@@ -154,14 +155,14 @@
                                          <option>Queretaro</option>
                                   </select>
                                </div>
-                          <div class="col-xs-3"> 
-                              <center><input type="text" name="rfcprov" placeholder="Cuenta contable" id="codprod" class="form-control"></center>
+                          <div class="col-xs-5"> 
+                              <center><input type="text" name="rfcprov" placeholder="Cuenta contable" id="cuentaconedit" class="form-control"></center>
                                <br>
-                          <center><input type="text" name="nomprov" placeholder="Límite de crédito" id="codprod" class="form-control" ></center>
+                          <center><input type="text" name="nomprov" placeholder="Límite de crédito" id="limcrededit" class="form-control" ></center>
                           <br>
-                          <center><input type="text" name="dirprov" placeholder="Días de crédito" id="codprod" class="form-control" ></center>
+                          <center><input type="text" name="dirprov" placeholder="Días de crédito" id="diascrededit" class="form-control" ></center>
                           <br>
-                          <select name="operacion" id="agr_est" class="form-control">
+                          <select name="operacion" id="bancoedit" class="form-control">
                                         <option>Banco</option>
                                          <option>HSBC</option>
                                          <option>Santander</option>
@@ -169,13 +170,13 @@
                                          <option>BanCoopel</option>
                                   </select>
                           <br>
-                          <center><input type="number" name="numprov" placeholder="N° Cuenta" id="codprod" class="form-control" ></center>
+                          <center><input type="number" name="numprov" placeholder="N° Cuenta" id="numcuentaedit" class="form-control" ></center>
                           <br>
-                          <center><input type="number" name="numprov" placeholder="Clave Cuenta" id="codprod" class="form-control" ></center>                          
+                          <center><input type="number" name="numprov" placeholder="Clave Cuenta" id="clvcuentaedit" class="form-control" ></center>                          
                           </div>
                           </div>
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-lg-6">
                             <br>
                             <center><input type="submit" value="Editar" style="background-color:#3366FF" name="filtro" class="btn btn-primary"></center></div>
                             </div>
@@ -189,5 +190,7 @@
          
     </body>
 </html>
+
+
 
 
