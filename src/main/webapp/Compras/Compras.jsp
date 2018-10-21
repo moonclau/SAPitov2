@@ -8,16 +8,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-        <link href="../CSS/compras.css" rel="stylesheet">
+        <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
+      
+        <script src="../Recursos/js/compras.js"> </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="../JS/compras.js"></script>
-
+      <!--  <scri        <script src="../Recursos/js/compras.js"> </script>
+pt src="../js/compras.js"></script> -->
         <link href="../Recursos/Bootstrap/css/bootstrap.css" rel="stylesheet">
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
         <script src="../Recursos/Bootstrap/librerias/jquery-3.3.1.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed --> 
         <script src="../Recursos/Bootstrap/js/bootstrap.js"></script>
-
+        
+        <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
 
         <title>Compras</title>
 
@@ -151,74 +154,68 @@
                                         <td>$50,000</td>
                                         <td>30</td>
                                     </tr>
-                                    <tr id="modalInter">
-                                        <th scope="row">3</th>
-                                        <td>Norkcon tools </td>
-                                        <td>FGDHSDJH78634CRLR</td>
-                                        <td>col. margaritas</td>
-                                        <td>7223456712</td>
-                                        <td>norkcontools@gmail.com</td>
-                                        <td>10.11</td>
-                                        <td>$50,000</td>
-                                        <td>20</td>
-                                    </tr>
+                                   
                                 </tbody>
                             </table></div>
                         <br>
 
                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
                             <h5>Solo mostrar:</h5>
+                           
+                            <form action="" method="post" onsubmit="return Bucarprov();">
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1">
+                                    <input type="checkbox" name="optionsRadios" id="opc1" value="option1">
                                     RFC
                                 </label>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    <input type="checkbox" name="optionsRadios" id="opc2" value="option2">
                                     Razón Social
                                 </label>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    <input type="checkbox" name="optionsRadios" id="opc3" value="option2">
                                     Dirección 
                                 </label>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    <input type="checkbox" name="optionsRadios" id="opc4" value="option2">
                                     Correo
                                 </label>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    <input type="checkbox" name="optionsRadios" id="opc5" value="option2">
                                     Teléfono
                                 </label>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    <input type="checkbox" name="optionsRadios" id="opc6" value="option2">
                                     Crédito
                                 </label>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    <input type="checkbox" name="optionsRadios" id="opc7" value="option2">
                                     Cuenta contable
                                 </label>
                             </div>
                             <div class="checkbox">
                                 <label>
-                                    <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
+                                    <input type="checkbox" name="optionsRadios" id="opc8" value="option2">
                                     Días Crédito
                                 </label>
                             </div> 
-
+</from>
                             <center><input type="submit" value="Filtrar" style="background-color:#3366FF" name="filtro" class="btn btn-primary" onsubmit="return compras();"></center>
+                             
                         </div>
+                       
                     </div>
                 </div>
             </div>            
