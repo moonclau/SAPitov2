@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+                <script src="../Recursos/js/compras.js"> </script>
+
+          <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
        <link href="../CSS/compras.css" rel="stylesheet">
         <script src="../JS/compras.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -58,9 +61,7 @@
             <div class="container-fluid">
                  <div class="row">
                     <br>
-                    <br>
-                    <br>
-                    <br>
+                    
                 </div>
                 <div class="row">
                     <div style="background-color:#F5F5F5;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
@@ -112,6 +113,7 @@
                         </form>
                         <br>
                     </div>   
+                    
                       <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12"><!-- Seccion central --> 
                         
                             <center><div>
@@ -120,14 +122,19 @@
                         <br>
                         
                            <div class="row">
-                               <div class="col-xs-4"></div>
-                               <div class="col-xs-3">
-                       <center><input type="text" name="rfcprov" placeholder="Folio" class="form-control" id="codprod" required="Complete el campo"> 
+                               <div class="col-xs-6"></div>
+                               <div class="col-xs-5">
                            </div> 
-                           <div class="col-xs-1">
-                        <input type="submit" value="Buscar"  name="filtro" class="btn btn-success"></center>
-                               </div>
+                           <form action="" method="post" onsubmit="return buscarOrd();">    
+                               <br>
+                               <input type="text" name="rfcprov" placeholder="Folio" class="form-control" id="buscarord" required="complete campo" > 
+                      <br>
+                               <div class="col-xs-3">
+                        
+                               <input type="submit" value="Buscar"  name="filtro" class="btn btn-success">
                                
+                               </div>
+                           </form>
                                 
                             </div>
                                
@@ -153,7 +160,10 @@
                                 </table></div></center>                      
                               
                         <br>
+                        <form action="" method="post" onsubmit="return agr_prov();">                
+
                         <center><input type="submit" value="Eliminar" style="background-color:#3366FF" name="buscar" class="btn btn-primary"></center>
+                        </form>
                     </div>
                 </div>
             </div>            
@@ -162,5 +172,7 @@
          
     </body>
 </html>
+
+
 
 
