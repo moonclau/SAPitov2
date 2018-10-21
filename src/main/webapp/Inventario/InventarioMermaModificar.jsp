@@ -60,14 +60,15 @@
     <div class="col-sm-9 central" style="width: auto; margin: auto auto;" >
         <div class="card" text-center>
             <div class="card-body">
+                 <form  action="../ModificarMerma" method="post">
                 <h3 class="card-title" >Modificar Producto en Merma</h3><br><br>
                 <!--INICIO CUESTIONARIO-->
                 <label class="card-text">Ingrese el id de merma:</label><br>
-                <input type="text" id="mip" name="mim" class="form-control form-control-sm" />
+                <input type="number" id="mip" name="mip" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese el id del producto:</p>
-                <input type="text" id="mipr" name="mpr" class="form-control form-control-sm" />               
+                <input type="number" id="mipr" name="mipr" class="form-control form-control-sm" />               
                 <label class="card-text">Ingrese la cantidad:</label><br>
-                <input type="text" id="mc" name="mc" class="form-control form-control-sm" />
+                <input type="number" id="mc" name="mc" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese la descripcion</p>
                 <input type="text" id="md" name="md" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese la fecha</p>
@@ -79,6 +80,7 @@
                                     <option value="anormal">Anormal</option>
                                 </select>><br><br>
                 <input id="boamerma" type="submit" value="Guardar" class="btn btn-success"/>
+                 </form>
             </div>
         </div>
     </div>
