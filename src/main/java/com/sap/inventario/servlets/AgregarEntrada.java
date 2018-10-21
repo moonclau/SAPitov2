@@ -6,7 +6,6 @@
 package com.sap.inventario.servlets;
 
 import com.sap.conexion.Conexion;
-import com.sap.inventario.clases.Clave;
 import com.sap.inventario.clases.Consultas;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -48,11 +47,10 @@ public class AgregarEntrada extends HttpServlet {
         String ecostototal = request.getParameter("costov");
         String efecha = request.getParameter("fecha");
         int cant=Integer.parseInt(eexistencia);
-        Clave p=new Clave();
         Consultas con=new Consultas();
         c.actualizar("nombre= '"+enombre+"',existencia=existencia+"+cant+",costounitario="+ecostounitario+",iva="+eiva+",costo="+ecostototal+",fecha='"+efecha+"'"
                 , "producto"
-                , "clave='"+eclave+"'");
+                , "clave='"+eclave+"' and operacion='entrada'");
 //        c.insertar("clave,nombre,existencia,costounitario, iva,costo,monto_total, fecha,operacion","producto",
 //                "'"+eclave+"',"
 //                       + "'"+enombre+"',"
@@ -64,7 +62,7 @@ public class AgregarEntrada extends HttpServlet {
 //                       + "'"+efecha+"','entrada'"
 //                       );
         
-         response.sendRedirect("Inventario/InventarioAgregarSalida.jsp");
+         response.sendRedirect("Inventario/InventarioAgregarEntrada.jsp");
                    
 //        
     }

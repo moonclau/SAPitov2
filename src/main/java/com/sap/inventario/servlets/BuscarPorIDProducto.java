@@ -9,6 +9,7 @@ import com.sap.conexion.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -40,16 +41,39 @@ public class BuscarPorIDProducto extends HttpServlet {
         Conexion c=new Conexion();
         // variables para insertar en la base de datos
         String clave = request.getParameter("clave");
+        System.out.println("cadena:"+clave);
         //campos de la tabla producto que vamos a mostrar
-        String campos="clave, nombre,tipo, unidad, existencia, costounitario,costo, iva";
+        String campos=" clave,nombre,tipo,unidad,existencia,costounitario,costo,iva";
         //condicion para que nos muestre esos datos en especifico
-        String condicion="clave='"+clave+"' and ";
-        c.consultaVariosCamposUnaClave2(condicion, campos, "producto", 1);
+        String condicion=" clave='"+clave+"' and operacion='entrada'";
         
-       /* c.consultaVariosCamposUnaClave2("id="+idproducto+"",
-                ,8); 
-       */ 
-         response.sendRedirect("Inventario/InventarioProducto.jsp");
+        ArrayList l=c.consultaVariosCamposUnaClave2(condicion, campos, "producto", 8);
+       try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */                  
+            out.println("<h1 class='text-center'> Consulta Realizada</h1>");         
+            out.println("<table class='tablap'>");         
+            out.println("<tr>");
+            out.println("<th>Clave</th>");
+            out.println("<th>Nombre</th>");
+            out.println("<th>Tipo</th>");
+            out.println("<th>Unidad</th>");
+            out.println("<th>Existencia</th>");
+            out.println("<th>Costo Unitario</th>");
+            out.println("<th>Costo</th>");
+            out.println("<th>iva</th>");
+            out.println("</tr>");
+            out.println("<tr>");                               
+            out.println("<td>"+l.get(0)+"</td>");
+            out.println("<td>"+l.get(1)+"</td>");
+            out.println("<td>"+l.get(2)+"</td>");
+            out.println("<td>"+l.get(3)+"</td>");
+            out.println("<td>"+l.get(4)+"</td>");
+            out.println("<td>"+l.get(5)+"</td>");
+            out.println("<td>"+l.get(6)+"</td>");
+            out.println("<td>"+l.get(7)+"</td>");
+            out.println("</tr>");            
+            out.println("</table>");         
+        }
                
     }
     
