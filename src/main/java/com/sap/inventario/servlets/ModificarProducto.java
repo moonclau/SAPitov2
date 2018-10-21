@@ -24,7 +24,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "ModificarProducto", urlPatterns = {"/ModificarProducto"})
 public class ModificarProducto extends HttpServlet {
 
-   
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -57,8 +56,6 @@ public class ModificarProducto extends HttpServlet {
          response.sendRedirect("Inventario/InventarioProductoModificar.jsp");
     }
 
-    
- 
 
     /**
      * Handles the HTTP <code>POST</code> method.
