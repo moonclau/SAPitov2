@@ -7,6 +7,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+          <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
+        <script src="../Recursos/js/compras.js"> </script>
 
         <link href="../CSS/compras.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -60,9 +62,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <br>
-                    <br>
-                    <br>
-                    <br>
+                    
                 </div>
                 <div class="row">
                     <div style="background-color:#F5F5F5;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
@@ -86,7 +86,7 @@
                         </form>
                         <br>
                     </div>   
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+               <!--     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div> -->
 
 
 
@@ -104,17 +104,17 @@
 
                         <div class="container">
 
-                            <from action="" method="post" onsubmit="return editar_Ord();"><!--Cambiar action-->
+                            <form action="" method="post" onsubmit="return editar_Ord();"><!--Cambiar action-->
                                 <div class="row">
                                     <div class="col-xs-2"></div>
                                     <div class="col-xs-3">
-                                        <center><input type="number" name="folio_ord" placeholder="folio" id="fol_ord" class="form-control" required="complete el campo"></center>
+                                        <center><input type="number" name="folio_ord" placeholder="folio" id="fol_ord" class="form-control" ></center>
                                         <br>
-                                        <center><input type="date" name="fecha" placeholder="fecha" id="fech_orden" class="form-control" required="complete el campo"></center>
+                                        <center><input type="date" name="fecha" placeholder="fecha" id="fech_orden" class="form-control" ></center>
                                         <br>
-                                        <center><input type="date" name="fec_ent" placeholder="fecha de entrega" id="fec_entrega" class="form-control" required="complete el campo"></center>
+                                        <center><input type="date" name="fec_ent" placeholder="fecha de entrega" id="fec_entrega" class="form-control"</center>
                                         <br>
-                                        <center><input type="text" name="comp" placeholder="comprador" id="codprod" class="form-control" required="complete el campo"></center>
+                                        <center><input type="text" name="comp" placeholder="comprador" id="codprod" class="form-control" ></center>
                                         <br>
 
                                         <input type="submit" value="Aceptar" style="background-color:#3366FF" name="filtro" class="btn btn-primary">
@@ -123,9 +123,9 @@
 
                                     </div>
                                     <div class="col-xs-3"> 
-                                        <center><input type="text" name="rfcprov" placeholder="Producto" id="codprod" class="form-control" required="complete el campo"></center>
+                                        <center><input type="text" name="rfcprov" placeholder="Producto" id="prodedit" class="form-control" </center>
                                         <br>
-                                        <center><input type="text" name="nomprov" placeholder="cantidad" id="codprod" class="form-control" required="complete el campo"></center>
+                                        <center><input type="text" name="nomprov" placeholder="cantidad" id="cantedit" class="form-control" ></center>
 
 
                                         <br>
