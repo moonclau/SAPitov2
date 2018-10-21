@@ -8,6 +8,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+                          <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
+
         <link href="../CSS/estilos.css" rel="stylesheet">
          <script src="../JS/validaciones.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -97,6 +99,7 @@
                             <div>
                                 <br>
                             </div>
+                           
                             <center><input type="submit" value="Buscar" style="background-color:#3366FF" name="buscar" class="btn btn-primary"></center>
                             <br>
                         </form>
@@ -127,9 +130,11 @@
                                <div class="col-xs-3">
                        <center><input type="text" name="rfcprov" placeholder="Folio Compra" class="form-control" id="codprod" required="Complete el campo"> 
                            </div> 
+                        <form action="" method="post" onsubmit="return agr_prov();">                
+
                            <div class="col-xs-1">
                         <input type="submit" value="Buscar"  name="filtro" class="btn btn-success"></center>
-                               </div>
+                               </div></form>
                                 
                          </div><br>
                          
@@ -153,8 +158,13 @@
                                     </tbody>
                                 </table></div>
                         <br>
-                        <center><input type="submit" value="Eliminar" style="background-color:#3366FF" name="buscar" class="btn btn-primary"></center>
-                    </div>
+                        
+                        <form action="" method="post" onsubmit="return agr_prov();">                
+
+                            <div>  <center><input type="submit" value="Eliminar" style="background-color:#3366FF" name="buscar" class="btn btn-primary"></center> </div>
+                                                </from>
+     
+     </div>
                 </div>
             </div>            
             
