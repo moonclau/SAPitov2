@@ -7,15 +7,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../CSS/compras.css" rel="stylesheet">
+        <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
+      
+        <script src="../Recursos/js/compras.js"> </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="../JS/compras.js"></script>
+      <!--  <scri        <script src="../Recursos/js/compras.js"> </script>
+pt src="../js/compras.js"></script> -->>
         <link href="../Recursos/Bootstrap/css/bootstrap.css" rel="stylesheet">
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
         <script src="../Recursos/Bootstrap/librerias/jquery-3.3.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed --> 
         <script src="../Recursos/Bootstrap/js/bootstrap.js"></script>
-        <script src="../JS/validaciones.js"></script>
+        
+        <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
         <title>Compras</title>
         
     </head>
@@ -59,8 +63,7 @@
                  <div class="row">
                     <br>
                     <br>
-                    <br>
-                    <br>
+                    
                 </div>
                 <div class="row">
                     <div style="background-color:#F5F5F5;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
@@ -108,12 +111,11 @@
                         <br>                        
                     </div>   
                     
-                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12"><!-- Seccion central --> 
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12"><!-- Seccion central --> 
                                                 
                             <center><div>
                                     <h3>Nuevo Proveedor</h3>
                             </div></center>                       
-                        <br>
                         <br>
                         
                         <div class="container">
@@ -142,13 +144,13 @@
                                   </select>
                                </div>
                           <div class="col-xs-3"> 
-                              <center><input type="text" name="rfcprov" placeholder="Cuenta contable" id="codprod" class="form-control" ></center>
+                              <center><input type="text" name="rfcprov" placeholder="Cuenta contable" id="cuenta_conta" class="form-control" ></center>
                                <br>
-                          <center><input type="text" name="nomprov" placeholder="Límite de crédito" id="codprod" class="form-control"></center>
+                          <center><input type="text" name="nomprov" placeholder="Límite de crédito" id="lim_credito" class="form-control"></center>
                           <br>
-                          <center><input type="text" name="dirprov" placeholder="Días de crédito" id="codprod" class="form-control" ></center>
+                          <center><input type="text" name="dirprov" placeholder="Días de crédito" id="dias_credito" class="form-control" ></center>
                           <br>
-                          <select name="operacion" id="agr_est" class="form-control">
+                          <select name="operacion" id="banco" class="form-control">
                                         <option>Banco</option>
                                          <option>HSBC</option>
                                          <option>Santander</option>
@@ -156,9 +158,9 @@
                                          <option>BanCoopel</option>
                                   </select>
                           <br>
-                          <center><input type="number" name="numprov" placeholder="N° Cuenta" id="codprod" class="form-control" ></center>
+                          <center><input type="number" name="numprov" placeholder="N° Cuenta" id="num_cuenta" class="form-control" ></center>
                           <br>
-                          <center><input type="number" name="numprov" placeholder="Clave Cuenta" id="codprod" class="form-control" ></center>                          
+                          <center><input type="number" name="numprov" placeholder="Clave Cuenta" id="clv_cuenta" class="form-control" ></center>                          
                           </div>
                           </div>
                             <!--<div class="row">
@@ -166,18 +168,18 @@
                             <br>
                             <center><input type="submit" value="Agregar" style="background-color:#3366FF" name="filtro" class="btn btn-primary"></center></div>
                             </div>-->
-                            
+                            <br>
                             <div class="row">       
                                 <br/>
                                 	
-                                <div class="col-lg-10">      
+                                <div class="col-lg-8">      
                                     <center><input type="submit" value="Agregar" class="btn btn-primary" /></center>
                                 </div>
                             
                             
                             
-                        </form>
-                        </div>
+                        
+                        </div> </form>
                     </div>
                 </div>
             </div>            
@@ -186,4 +188,6 @@
          
     </body>
 </html>
+
+
 
