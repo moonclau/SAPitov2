@@ -7,6 +7,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+                  <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
+        <script src="../Recursos/js/compras.js"> </script>
+
         <link href="../CSS/compras.css" rel="stylesheet">
         <script src="../JS/compras.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -56,8 +59,7 @@
         <div id="principal">
             <div class="container-fluid">
                  <div class="row">
-                    <br>
-                    <br>
+                    
                     <br>
                     <br>
                 </div>
@@ -115,6 +117,7 @@
                         <br>
                     </div>      
                     
+                    
                     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12"><!-- Seccion central --> 
                         
                             <center><div>
@@ -123,28 +126,30 @@
                         <br>
                         
                             <div class="container">
-                        
-                        <from action="" method="post" onsubmit="return agr_prov();"><!--Cambiar action-->
+                                                <form action="" method="post" onsubmit="return nuevaCompra();">                
+
                              <div class="row">
                                  <div class="col-xs-2"></div>
                                <div class="col-xs-3">
-                          <center><input type="text" name="rfcprov" placeholder="Folio Orden de compra" id="codprod" class="form-control" required="complete el campo"></center>
+                          <center><input type="text" name="rfcprov" placeholder="Folio Orden de compra" id="folioComp" class="form-control" ></center>
                            <br>
-                          <center><input type="date" name="dirprov" placeholder="Fecha Compra" id="codprod" class="form-control" required="complete el campo"></center>
+                          <center><input type="date" name="dirprov" placeholder="Fecha Compra" id="fechacomp" class="form-control" ></center>
                           
                                </div>
                           <div class="col-xs-3"> 
-                              <center><input type="number" name="pago" placeholder="Total de pago" id="codprod" class="form-control" required="complete el campo"></center>
+                              <center><input type="number" name="pago" placeholder="Total de pago" id="totalp" class="form-control" ></center>
                                <br>
-                          <center><input type="text" name="nomprov" placeholder="Proveedor" id="codprod" class="form-control" required="complete el campo"></center>
+                          <center><input type="text" name="nomprov" placeholder="Proveedor" id="codprod" class="form-control" ></center>
                          </div>
-                          </div>
-                            <div class="row">
-                                <div class="col-lg-10">
+                           
+                             </div>
+                           <center><input type="submit" value="Agregar" style="background-color:#3366FF" name="filtro" class="btn btn-primary"></center>
+  
                             <br>
-                            <center><input type="submit" value="Agregar" style="background-color:#3366FF" name="filtro" class="btn btn-primary"></center></div>
+                            
+                            </from>
                             </div>
-                        </from>
+                        
                         </div>
                     </div>
                 </div>
