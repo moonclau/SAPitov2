@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+                <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
+        <script src="../Recursos/js/compras.js"> </script>
+
         <link href="../CSS/compras.css" rel="stylesheet">
         <script src="../JS/compras.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -59,9 +62,8 @@
             <div class="container-fluid">
                  <div class="row">
                     <br>
-                    <br>
-                    <br>
-                    <br>
+                    
+                    
                 </div>
                 <div class="row">
                     <div style="background-color:#F5F5F5;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
@@ -107,7 +109,7 @@
                     
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-10"><!-- Seccion central --> 
                        <div class="container">
-                        <form action="" method="post" onsubmit="return agr_prov();">                
+                        <form action="../nuevo_prod" method="post" onsubmit="return agrProd();">                
                             
                               <center><div>
                                     
@@ -120,24 +122,25 @@
                                  <div class="col-xs-2"></div>
                                <div class="col-xs-2">
                                   
-                               <center><input type="number" name="idprod" placeholder="ID" class="form-control" id="codprod" required></center>
+                               <center><input type="number" name="idprod" placeholder="ID" class="form-control" id="codprod" ></center>
                                <br>
-                          <center><input type="text" name="nomprod" placeholder="Nombre" class="form-control" id="codprod" required></center>
+                          <center><input type="text" name="nomprod" placeholder="Nombre" class="form-control" id="nom" ></center>
                           <br>
-                          <center><input type="number" name="com" placeholder="Precio Compra" class="form-control" id="codprod" required></center>
+                          <center><input type="number" name="com" placeholder="Precio Compra" class="form-control" id="preciocom" ></center>
                           <br>
-                          <center><input type="number" name="ven" placeholder="Precio venta" class="form-control" id="codprod" required></center>
+                          <center><input type="number" name="ven" placeholder="Precio venta" class="form-control" id="precioventa" ></center>
                           <br>
-                          <center><input type="text" name="corprov" placeholder="Proveedor" class="form-control" id="codprod" required></center>
+                          <center><input type="text" name="corprov" placeholder="Proveedor" class="form-control" id="prov" ></center>
                           <br>
                                <input type="submit" value="Agregar" style="background-color:#3366FF" name="filtro" class="btn btn-primary">
                                </div>                                 
                             </div>
                         <br>
-                        <div </div>
-                            
                         </form>
-                    </div> 
+                         </div>
+                            
+                        
+                    </div>  </div>
                            
                     </div>
                 </div>
