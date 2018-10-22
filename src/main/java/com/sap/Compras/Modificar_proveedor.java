@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Servlets.compras;
+package com.sap.Compras;
 
 import com.sap.conexion.Conexion;
 import java.io.IOException;
@@ -38,24 +33,28 @@ public class Modificar_proveedor extends HttpServlet {
         
         response.setContentType("text/html;charset=UTF-8");
         
-        String clave_prov= request.getParameter("clave_prov");
-        String rfc_prov = request.getParameter("rfc_prov");
-        String razo_prov = request.getParameter("razo_prov");
-        String dir_prov = request.getParameter("dir_prov");
-        String tel_prov = request.getParameter("tel_prov");
-        String correo_prov = request.getParameter("correo_prov");
-        String agr_est = request.getParameter("agr_est");
-        String cuent_cont = request.getParameter("cuent_cont");
-        String lim_cred = request.getParameter("lim_cred");
-        String dias_cred = request.getParameter("dias_cred");
-        String agr_bnco = request.getParameter("agr_bnco");
-        String num_cuenta = request.getParameter("num_cuenta");
-        String clave_cuenta = request.getParameter("clave_cuenta");
+        String clave_prov= request.getParameter("editprov");
+        String rfc_prov = request.getParameter("rfc_edi");
+        String razo_prov = request.getParameter("razoned");
+        String dir_prov = request.getParameter("diredit");
+        String tel_prov = request.getParameter("teledit");
+        String correo_prov = request.getParameter("correoedit");
+        String agr_est = request.getParameter("estadoedit");
+        String cuent_cont = request.getParameter("cuentaconedit");
+        String lim_cred = request.getParameter("limcrededit");
+        String dias_cred = request.getParameter("diascrededit");
+        String agr_bnco = request.getParameter("bancoedit");
+        String num_cuenta = request.getParameter("numcuentaedit");
+        String clave_cuenta = request.getParameter("clvcuentaedit");
         
         Conexion c = new Conexion();
+      /*  String campos="'"+request.getParameter("razoned")+"',"+request.getParameter("rfc_edi")+",'"+ request.getParameter("diredit")+"',"+request.getParameter("estadoedit")+",'"+request.getParameter("teledit")+"','"+request.getParameter("correoedit")+"',"+request.getParameter("cuentaconedit")+","+request.getParameter("numcuentaedit")+","+request.getParameter("bancoedit")+",'"+request.getParameter("diascrededit")+"',"+request.getParameter("limcrededit")+"";
+        System.out.println("cadena:"+campos); 
+        */
         
-        c.actualizar("'"+razo_prov+"','"+rfc_prov+"','"+dir_prov+"','"+agr_est+"',"+tel_prov+",'"+correo_prov
-                +"',"+cuent_cont+","+num_cuenta+",'"+agr_bnco+"',"+dias_cred+","+lim_cred, "Proveedor", "clave= "+clave_prov);
+       
+        c.actualizar("'"+rfc_prov+"','"+dir_prov+"','"+agr_est+"''"+razo_prov+"',"+num_cuenta+","+clave_cuenta+","+tel_prov+",'"+correo_prov
+                +"',"+cuent_cont+","+lim_cred+","+dias_cred+",'"+agr_bnco+"'", "Proveedor", "clave= "+clave_prov);
         
         response.sendRedirect("Compras/Edit_prod.jsp");
 
