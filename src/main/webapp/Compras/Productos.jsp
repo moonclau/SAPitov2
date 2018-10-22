@@ -8,7 +8,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        
+        <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
+
         <link href="../CSS/compras.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../JS/compras.js"></script>
@@ -61,9 +62,7 @@
             <div class="container-fluid">
                  <div class="row">
                     <br>
-                    <br>
-                    <br>
-                    <br>
+                    
                 </div>
                 <div class="row">
                     <div style="background-color:#F5F5F5;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
