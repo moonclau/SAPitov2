@@ -110,3 +110,4 @@ public class Consulta_compra extends HttpServlet {
     }// </editor-fold>
 
 }
+//nuevo
