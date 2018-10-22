@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+                  <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
+        <script src="../Recursos/js/compras.js"> </script>
+
        <link href="../CSS/compras.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../JS/compras.js"></script>
@@ -59,9 +62,7 @@
             <div class="container-fluid">
                  <div class="row">
                     <br>
-                    <br>
-                    <br>
-                    <br>
+                    
                 </div>
                 <div class="row">
                     <div style="background-color:#F5F5F5;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
@@ -163,30 +164,30 @@
                          </form>
                         
                            <div class="container">
-                        <form action="" method="post" onsubmit="return agr_prov();">                
+                        <form action="" method="post" onsubmit="return listCompra();">                
                            <div>
                                     <h5>Solo mostrar:</h5>
                             <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios1" value="option1">
+                                <input type="checkbox" name="optionsRadios" id="op1" value="option1">
                                     Folio
                             </label>
                            </div>
                            <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
+                                <input type="checkbox" name="optionsRadios" id="op2" value="option2">
                                     Proveedor 
                             </label>
                            </div>
                            <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
+                                <input type="checkbox" name="optionsRadios" id="op3" value="option2">
                                    Precio Venta
                             </label>
                            </div>
                                     <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="optionsRadios" id="optionsRadios2" value="option2">
+                                <input type="checkbox" name="optionsRadios" id="op4" value="option2">
                                    Fecha
                             </label>
                            </div>
