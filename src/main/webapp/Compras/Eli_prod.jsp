@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
+        <script src="../Recursos/js/compras.js"> </script>
+
         <link href="../CSS/compras.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../JS/compras.js"></script>
@@ -64,6 +67,7 @@
                 </div>
                 <div class="row">
                     <div style="background-color:#F5F5F5;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 form-style-5"> <!-- Seccion izquierda -->
+                       
                         <form method="POST" >
                             <center><div id="titulo" class="col-12">
                                 <h3>Buscar&nbsp;Proveedor</h3>
@@ -114,19 +118,19 @@
                                     <h3>Eliminar Proveedor</h3>
                             </div></center>                       
                         <br>
-                        
+                        <form action="" method="post" onsubmit="return elim_prov();"> 
                            <div class="row">
-                               <div class="col-xs-4"></div>
-                               <div class="col-xs-3">
-                       <center><input type="text" name="rfcprov" placeholder="Clave" class="form-control" id="codprod" required="Complete el campo"> 
+                               <div class="col-xs-6"></div>
+                               <div class="col-xs-4">
+                       <center><input type="text" name="rfcprov" placeholder="Clave" class="form-control" id="elimprov" > 
                            </div> 
-                           <div class="col-xs-1">
+                           <div class="col-xs-4">
                         <input type="submit" value="Buscar"  name="filtro" class="btn btn-success"></center>
                                </div>
                                
                                 
                             </div>
-                               
+                        </form>
                                <div><br><br></div>
                         
                         <center><div class="table-responsive " ><table class="table table-bordered">
@@ -159,7 +163,10 @@
                                 </table></div></center>                      
                               
                         <br>
-                        <center><input type="submit" value="Eliminar" style="background-color:#3366FF" name="buscar" class="btn btn-primary"></center>
+                        <form action="../Elim_prov" method="post" onsubmit="return editar_prov();"> 
+                        
+                            <center><input type="submit" value="Eliminar" style="background-color:#3366FF" name="buscar" class="btn btn-primary"></center>
+                        </form>
                     </div>
                 </div>
             </div>            
@@ -168,3 +175,4 @@
          
     </body>
 </html>
+
