@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Servlets.compras;
+package com.sap.Compras;
 
 import com.sap.conexion.Conexion;
 import java.io.IOException;
@@ -109,3 +109,4 @@ public class Generar_ordenCompra extends HttpServlet {
     }// </editor-fold>
 
 }
+
