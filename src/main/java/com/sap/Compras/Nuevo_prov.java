@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Servlets.compras;
+package com.sap.Compras;
 
 import com.sap.conexion.Conexion;
 import java.io.IOException;
@@ -39,22 +34,19 @@ public class Nuevo_prov extends HttpServlet {
         
            
          Conexion c = new Conexion();
-        String rfc = request.getParameter("rfc");
-        String social = request.getParameter("social");
-        String dirprov = request.getParameter("dirprov");
-        String numprov = request.getParameter("numprov");
-        String corprov = request.getParameter("corrprov");
-        String agr_est = request.getParameter("agr_est");
-        String contagr = request.getParameter("contagr");
-        String limtcredagr= request.getParameter("limtcredagr");
-        String daycredagr=request.getParameter("daycredagr");
-        String banco_agr = request.getParameter("banco_agr");
-        String numcuagr= request.getParameter("numcuagr");
-        String keycuentagr=request.getParameter("keycuentagr");
-            
-        c.insertar("rfc,ra_social,direccion,Telefono,correo,estado,cuenta,limitecredito,diascredito,banco,numcuenta,clavecuenta","Proveedor",
-                "'"+rfc+"','"+social+"','"+ dirprov+"','"+numprov+"',"+corprov+","+agr_est+","+contagr+",'"+limtcredagr+"',"+daycredagr+","+ banco_agr+","+ numcuagr+","+ keycuentagr);
-            
+        int resultado=0;        
+        String campos="'"+request.getParameter("rfc")+"',"+request.getParameter("social")+",'"+ request.getParameter("dirprov")+"',"+request.getParameter("numprov")+",'"+request.getParameter("corprov")+"','"+request.getParameter("est")+"',"+request.getParameter("cuenta")+","+request.getParameter("limcred")+","+request.getParameter("diascred")+",'"+request.getParameter("banco")+"',"+request.getParameter("numcuenta")+","+request.getParameter("clvcuent")+"";
+        System.out.println("cadena:"+campos);         
+        
+        resultado=c.insertar("rfc,razonsocial ,direccion, estado,telefono,correo,cuenta_contable,cuenta,banco,dias_credito,limite_credito,clvCuenta","proveedores", campos);                            
+        System.out.println("el resultado fue:"+resultado);
+        
+        if(resultado!=1){
+            request.getSession().setAttribute("motivo", "Error de conexión, intentelo nuevamente!");
+            response.sendRedirect("Compras/Error.jsp");            
+        }else{            
+            response.sendRedirect("Compras/Nuevo_prod.jsp");
+        }
             response.sendRedirect("Compras/Nuevo_prod.jsp");
         
     }
