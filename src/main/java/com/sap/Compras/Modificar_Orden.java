@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Servlets.compras;
+package com.sap.Compras;
 
 import com.sap.conexion.Conexion;
 import java.io.IOException;
@@ -37,13 +32,11 @@ public class Modificar_Orden extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         
-          // encabezado
+         
         String fech_ord = request.getParameter("fech_ord");
         String fec_ent = request.getParameter("fec_ent");
         String proveedor = request.getParameter("comprador");
-       
-        //productos
-        String nomprod = request.getParameter("nomprod");
+             String nomprod = request.getParameter("nomprod");
         String cant = request.getParameter("cant");
         String provagr = request.getParameter("provagr");
         
@@ -111,3 +104,4 @@ public class Modificar_Orden extends HttpServlet {
     }// </editor-fold>
 
 }
+
