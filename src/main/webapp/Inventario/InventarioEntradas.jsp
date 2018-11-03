@@ -14,6 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Inventario Entrada</title>
 <!-- Bootstrap -->
+
 <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
@@ -100,20 +101,15 @@
         <th>
           Nombre
         </th><th>
-          Cantidad
+          Cantidad comprada
         </th>
       <th>
          Costo unitario
         </th><th>
-          iva
-        </th><th>
           Costo venta
         </th>
-      <th>
-          Monto total
-        </th>
         <th>
-          Fecha
+          iva
         </th>
       </tr>
 
@@ -126,10 +122,8 @@
                            out.println("<td>"+lista.get(i).getNombre()+"</td>");
                            out.println("<td>"+lista.get(i).getCantidad()+"</td>");
                            out.println("<td>"+lista.get(i).getCostounitario()+"</td>");
-                           out.println("<td>"+lista.get(i).getIva()+"</td>");
                            out.println("<td>"+lista.get(i).getCostototal()+"</td>");
-                           out.println("<td>"+lista.get(i).getMontototal()+"</td>");
-                           out.println("<td>"+lista.get(i).getFecha()+"</td>");
+                           out.println("<td>"+lista.get(i).getIva()+"</td>");
                            out.println("</tr>");
                         }
                     %>

@@ -36,29 +36,26 @@ public class AgregarMerma extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-       Conexion c = new Conexion();
+Conexion c = new Conexion();
        ///obtener parametros
         String mclave = request.getParameter("clavem");
         String producto = request.getParameter("producto");
         String mcantidad = request.getParameter("cantidad");
         String mdescripcion = request.getParameter("descripcion");
         String mfecha = request.getParameter("fecha");
-        String mtipo = request.getParameter("mermatipo");
+        String mtipo = request.getParameter("tipo");
+                int cant=Integer.parseInt(mcantidad);
         //campos de la base de datos merma
-        String campos="clave_merma,cantidad,descripcion,fecha,tipo_merma";
+        String campos="clave_merma,cantidad,motivo,fecha,tipo_merma,producto";
         //guardar las variables obtenidas desde registro jsp
-       String valores="'"+mclave+"',"+mcantidad+",'"+mdescripcion+"','"+mfecha+"','"+mtipo+"'";
+       String valores="'"+mclave+"',"+mcantidad+",'"+mdescripcion+"','"+mfecha+"','"+mtipo+"',id from producto where clave='"+producto+"'";
        //insertar los datos en tabla merma
-        c.insertar(campos, "merma", valores);
-        //poner la restriccion para agregar el id en la merma insertada
-        String referencia="clave_merma='"+mclave+"'";
-        //
-        c.actualizar("producto=(select id from producto where clave='"+producto+"')", "merma", referencia);
-        c.actualizar("existencia=existencia-"+mcantidad
-                , "producto"
-                , "clave='"+producto+"' and operacion='entrada'");
+        c.insertardemastablas(campos, "merma",valores );
+                //actualizar cantidad de productos
+        c.actualizar("cantidad=cantidad-"+cant, "producto", "clave='"+producto+"'");
+
         response.sendRedirect("Inventario/InventarioMermaAgregar.jsp");
-    }
+       }
 
     /**
      * Handles the HTTP <code>POST</code> method.

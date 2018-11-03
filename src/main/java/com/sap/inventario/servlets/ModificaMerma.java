@@ -36,7 +36,6 @@ public class ModificaMerma extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        
         Conexion c=new Conexion();
         String mermanterior=request.getParameter("mermaant");
         String merma=request.getParameter("merma");
@@ -44,8 +43,11 @@ public class ModificaMerma extends HttpServlet {
         String cantidad = request.getParameter("cantidad");
         String descripcion = request.getParameter("descripcion");
         String fecha= request.getParameter("fecha");
-        String tipo= request.getParameter("mermatipo");
-        String campos="clave_merma='"+merma+"',cantidad="+cantidad+",descripcion='"+descripcion+"',fecha='"+fecha+"',tipo_merma='"+tipo+"'";
+        String tipo= request.getParameter("tipo");
+        //String campos="clave_merma='"+merma+"',cantidad="+cantidad+",motivo='"+descripcion+
+          //      "',fecha='"+fecha+"',tipo_merma='"+tipo+"',producto=(select id from producto where clave='"+producto+"')";
+        String campos="clave_merma='"+merma+"',cantidad="+cantidad+",motivo='"+descripcion+"',fecha='"+fecha+"',tipo_merma='"+tipo+"'";
+       //  String campos="clave_merma='"+merma+"',cantidad="+cantidad+",motivo='"+descripcion+"',fecha='"+fecha+"',tipo_merma='"+tipo+"'";
         c.actualizar(campos, "merma", "clave_merma='"+mermanterior+"'");
        // String campop="producto=(select id from producto where clave='"+producto+"')";
     //c.actualizar(camposa, "producto", referencia);

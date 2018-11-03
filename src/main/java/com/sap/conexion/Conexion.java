@@ -44,6 +44,16 @@ public class Conexion {
         closeDB();
         return rs;
     }
+    
+    public Integer insertardemastablas(String campos, String tabla, String valores) throws SQLException {
+        openDB();
+        PreparedStatement ps;
+        ps=conn.prepareStatement("INSERT INTO "+tabla+" ("+campos+") SELECT "+valores);
+        Integer rs = ps.executeUpdate();
+        closeDB();
+        return rs;
+    }
+    
     /**
      * 
      * @param campos
