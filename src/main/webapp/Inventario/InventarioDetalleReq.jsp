@@ -1,23 +1,27 @@
 <%-- 
-    Document   : InventarioMerma
-    Created on : 6/10/2018, 05:36:57 PM
+    Document   : InventarioDetalleReq
+    Created on : 4/11/2018, 05:11:11 AM
     Author     : claudia
 --%>
-<%@page import="java.util.LinkedList"%>
+
+<%@page import="com.sap.inventario.clases.Requisicion"%>
 <%@page import="com.sap.inventario.clases.Consultas"%>
-<%@page import="com.sap.inventario.clases.Merma"%>
+<%@page import="java.util.LinkedList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <title>Inventario Requisiciones</title>
+        <!----BOOSTRAP---------------------------->
+    <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
-    </head>
-    
-<body>  
+</head>
+<body>
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <a href="Inventario.jsp" class="navbar-brand text-white">Inventario</a>
@@ -61,66 +65,85 @@
             </div>
         </nav>
     </header>      
-    <br/><br/>
-    <!--/.Panel-->
+    <br>
+    <br>
+    <!---------------BARRA DE LA IZQUIERDA----------------->
+<div class="container-fluid">
+ 
     <div class="row">
     <div class="col-sm-3 ">
         <div class="card" text-center>
             <div class="card-body">
-                <label class="card-text">Buscar id de merma</label><br>
-                <input type="text" id="bmerma" name="bmerma" class="form-control form-control-sm" />
-                <input id="bomerma" type="submit" value="Buscar" class="btn btn-success"/><br><br>
-                <p class="card-text">Eliminar producto de merma</p>
-                <input type="text" id="emerma" name="emerma" class="form-control form-control-sm" />
-                <input id="boemerma" type="submit" value="Eliminar" class="btn btn-success"/><br><br>
-                <hr>
-                <a href="InventarioMermaAgregar.jsp"><label class="card-text">Nuevo producto de merma</label></a>
-                <a href="InventarioMermaModificar.jsp"><label class="card-text">Modificar producto de merma</label></a>
-                <hr>
-                <p class="card-text">Reporte</p>
-                <input id="bogmerma" type="submit" value="Generar" class="btn btn-success"/>
+                <h4>Requisicion</h4>
+                 <div class="col-xs-offset-1 col-md-offset-1 central">
+                  <!---BARRA DE LA IZQUIERDA---------------------------------------------------------->
+                </div>
+                    <div class="col-xs-10 col-md-10 central">
+                        
+                     <a href="InventarioRequisicion.jsp"><label>Agregar Requisicion</label></a>
+                     <a href="InventarioDetalleReq.jsp"><label>Mostrar Requisiciones</label></a>
+                    <h4>Reporte</h4>
+                    
+                <input id="generar" type="submit" value="Generar" class="btn btn-success"/><br><br>
+                    </div>
             </div>
         </div>
     </div>
-    <!--Panel-->
-    <div class="col-sm-9">
+                <!--FIN DE BARRA-------------------------------------------------------------------->
+<!----INICIO DE TABLA--------------------------------------->
+
+    <div class="col-sm-8">
         <div class="card">
             <div class="card-body">
-                <h3 class="card-title">Merma</h3>
-                <!--TABLA MERMA NORMAL  -->
-                <div class="col-xs-12 col-md-12 central table-responsive">              
-                        <table class="tablas table">
-                            <tr>                                
-                                <th>Clave merma</th>
-                                <th>Clave producto</th>
-                                <th>Cantidad</th>
-                                <th>Motivo</th>
-                                <th>Fecha</th>
-                                <th>Tipo merma</th>                               
-                            </tr>
-                            <%
-                        LinkedList<Merma> lista =Consultas.consultaMerma();
+      <div class="col-xs-offset-6 col-md-offset-6 central">
+              <div class="container">
+                <h4>Productos</h4>
+              </div>
+            </div>
+                <div class="table-striped table table-bordered table-hover">
+    <table class="tablap">
+      <tr>
+        <th>
+          Clave de Requisicion
+        </th>
+        <th>
+          Clave de Producto
+        </th>
+        <th>
+          Cantidad
+        </th>
+        <th>
+          Fecha de requisicion
+        </th>
+       <th>
+          Fecha de entrada
+        </th>
+       <th>
+          Comentarios
+        </th>
+      </tr>
+     <%
+                        LinkedList<Requisicion> lista =Consultas.consultaReq();
                         for (int i=0;i<lista.size();i++)
                         {
                            out.println("<tr>");                               
-                           out.println("<td>"+lista.get(i).getClavemerma()+"</td>");
+                           out.println("<td>"+lista.get(i).getClave()+"</td>");
                            out.println("<td>"+lista.get(i).getClavep()+"</td>");
                            out.println("<td>"+lista.get(i).getCantidad()+"</td>");
-                           out.println("<td>"+lista.get(i).getDescripcion()+"</td>");
-                           out.println("<td>"+lista.get(i).getFecha()+"</td>");
-                           out.println("<td>"+lista.get(i).getTipoMerma()+"</td>");
+                           out.println("<td>"+lista.get(i).getFechareq()+"</td>");
+                           out.println("<td>"+lista.get(i).getFechaent()+"</td>");
+                           out.println("<td>"+lista.get(i).getComentarios()+"</td>");
                            out.println("</tr>");
                         }
-                    %>
-                        </table>               
-            </div>
-                <!--FIN TABLA MN-->
-            </div>
+                    %>   
+</table>
+                </div>
+       </div>
         </div>
-    </div>
-    </div>
-    <!--/.Panel-->
-</div>
+    </div>     
     
+    </div>
+</div>
+<!----------------------------------FIN DE TABLA------------------------------>
     </body>
 </html>

@@ -36,7 +36,7 @@ public class AgregarMerma extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-Conexion c = new Conexion();
+       Conexion c = new Conexion();
        ///obtener parametros
         String mclave = request.getParameter("clavem");
         String producto = request.getParameter("producto");
@@ -55,7 +55,7 @@ Conexion c = new Conexion();
         c.actualizar("cantidad=cantidad-"+cant, "producto", "clave='"+producto+"'");
 
         response.sendRedirect("Inventario/InventarioMermaAgregar.jsp");
-       }
+    }
 
     /**
      * Handles the HTTP <code>POST</code> method.

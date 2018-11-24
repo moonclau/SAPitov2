@@ -6,6 +6,7 @@
 package com.sap.inventario.clases;
 
 
+import com.sap.inventario.clases.Requisicion;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -115,6 +116,32 @@ public class Consultas {
             p.setFecha(rs.getString("fecha"));
             p.setTipoMerma(rs.getString("tipo_merma"));
             p.setClavep(rs.getString("producto"));
+            l.add(p);
+        }
+        conn.close();
+        return l;
+    
+    }
+    public static LinkedList consultaReq() throws SQLException,ClassNotFoundException{
+        Connection conn;
+        Class.forName("org.postgresql.Driver");
+         LinkedList <Requisicion> l=new LinkedList<Requisicion>();
+        Properties connProp = new Properties();
+        connProp.put("user", "postgres");
+        connProp.put("password", "root");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        Statement stmt;        
+        stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(" select p.clave,r.clave,r.cantidad,"
+                 + "r.fecha_req,r.fecha_ent,r.comentarios from requisicion r,producto p where p.id=r.producto");
+        while (rs.next()) {
+            Requisicion p=new Requisicion();
+            p.setClavep(rs.getString("clave"));
+            p.setClave(rs.getString("clave"));
+            p.setCantidad(rs.getInt("cantidad"));
+            p.setFechareq(rs.getString("fecha_req"));
+            p.setFechaent(rs.getString("fecha_ent"));
+            p.setComentarios(rs.getString("comentarios"));
             l.add(p);
         }
         conn.close();
