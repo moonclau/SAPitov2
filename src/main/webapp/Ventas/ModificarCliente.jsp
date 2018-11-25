@@ -38,20 +38,17 @@
                         <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clientes</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
                             <a class="nav-link text-white" href="Clientes.jsp">&nbsp;Cliente</a>
-                            <a class="nav-link text-white" href="ModificarCliente.jsp">&nbsp;Modificar cliente</a>
-                                                             
                         </div>
                     </li>                          
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Atencion</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
-                       
-                            <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
+                        <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
                                                              
                         </div>
                     </li>
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Salida Ventas</a>
+                        <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Salida de Ventas</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
                             <a class="nav-link text-white" href="Factura.jsp">&nbsp;Factura</a>
                         </div>
@@ -65,17 +62,57 @@
                      
                               
                 </ul>   
-               <form class="form-inline my-2 my-lg-0" action="../index.jsp">                
+               <form class="form-inline my-2 my-lg-0" action="../CerrarSesion">                
                     <button class="btn-outline-primary barra text-white my-2 my-sm-0" id="cerrarSesion" type="submit">Cerrar Sesi&oacute;n</button>
                 </form>
             </div>
         </nav>
     </header>
-    <div class="row"><!-- INICIO DE SECCION PRINCIPAL -->
-         
-                <div class="container-fluid">
+    <br>
+    <br>
+<!--Contenedor principal de la pagina-->
+<div class="container-fluid">
+    <!--HAciendo una fila para dividir el contenedor en columnas-->
+    <div class="row">
+        <!--Columna de la izquierda-->
+        <div class="col-xs-3 col-md-3 izquierda">            
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="container">
+                    <form action="" method="post">
+                        <div class="row">                        
+                            <div class="col-xs-2">
+                                <input id="clave" name="clave" class="form-control" type="text" placeholder="ingresa clave a buscar"/>
+                            </div>
+                        </div>
+                        <div class="row">                        
+                            <div class="col-xs-2">
+                              <input type="submit" value="buscar"/>       
+                            </div>
+                        </div>                    
+                    </form>
+                </div>
+                <hr/>
+                <table class="tabla">
+                    <tr>
+                    	<td>
+                    		<a href="AgregarCliente.jsp">Agregar Cliente</a>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<a href="ModificarCliente.jsp">Modificar Cliente</a>
+                        </td>
+                    </tr>
+                </table>
+              </div>
+            </div>            
+        </div>
+        <!--Columna Central-->
+        <div class="col-xs-8 col-md-8 central table-responsive jumbotron">
                     <center>
                         <h1 class="text-uppercase text-center">Modificar Cliente</h1>
+                        <br>
                         <form method="POST" action="../ModificarCliente" autocomplete="off">
                             <table>
                                 <tr>
@@ -87,8 +124,9 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2">
+                                <td colspan="2">
                                         <center>
+                                            <br>
                                             <input type="submit" class="btn btn-primary" value="Buscar"/>
                                         </center>
                                     </td>
@@ -96,7 +134,14 @@
                             </table>
                         </form>
                     </center>
-                </div>
-            </div><!-- FIN DE SECCION PRINCIPAL -->
-    </body>
+        </div>
+        
+        <!--columna de la derecha-->
+        <div class="col-xs-3 col-md-3 derecha table-responsive">
+        </div>
+</body>
 </html>
+
+    
+    
+  

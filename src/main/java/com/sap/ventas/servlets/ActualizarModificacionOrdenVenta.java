@@ -22,8 +22,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author asus
  */
-@WebServlet(name = "Factura", urlPatterns = {"/Factura"})
-public class Factura extends HttpServlet {
+@WebServlet(name = "ActualizarModificacionOrdenVenta", urlPatterns = {"/ActualizarModificacionOrdenVenta"})
+public class ActualizarModificacionOrdenVenta extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,24 +37,31 @@ public class Factura extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        String clave = request.getParameter("claveFactura");
-        String fecha = request.getParameter("fechaFactura");
-        String tipo = request.getParameter("tipoFactura");
-        String cliente = request.getParameter("nombredelclienteFactura");
-        String proveedor = request.getParameter("nombredelproveedorFactura");
-        String total = request.getParameter("totalFactura");
-        String idOVF = request.getParameter("idordendeventaFactura");
+        String idov = request.getParameter("idOrdendeVenta");
+        String clave = request.getParameter("nombreOrdendeVenta");
+        String fecha = request.getParameter("fechaOrdendeVenta");
+        String direccion = request.getParameter("direccionOrdendeVenta");
+        String cantidad = request.getParameter("cantidadOrdendeVenta");
+        String descripcion = request.getParameter("descripcionOrdendeVenta");
+        String vendedor = request.getParameter("vendedorOrdendeVenta");
+        String preciounitario = request.getParameter("preciounitarioOrdendeVenta");
+        String preciototal = request.getParameter("preciototalOrdendeVenta");
+        String idCOV = request.getParameter("nombreclienteventa");
+        String idPOV = request.getParameter("claveproductoventa");
         HttpSession sesion = request.getSession(true);
+       
         Conexion c = new Conexion();
         
-        c.insertar("clave,fecha,tipo,nombrecliente,nombreproveedor,total,idordenventa","factura","'"+clave+"','"+fecha+"',"+tipo+",'"+cliente+"','"+proveedor+"',"+total+","+idOVF+"");
+           c.actualizar("clave_ordenventa = '"+clave+"', fecha = '"+fecha+"',direccion = '"+direccion+"',cantidad = "+cantidad+
+                ",descripcion_venta = '"+descripcion+"',vendedor = '"+vendedor+"',precio_unitario = "+preciounitario+",preci_ototal = "+preciototal+
+                ",idcliente = "+idCOV+",idproducto = "+idPOV,"orden_de_venta", "idordenventa = "+idov);
+                
         
-        
-        response.sendRedirect("Ventas/Factura.jsp");
-            }
+            response.sendRedirect("Ventas/Clientes.jsp");
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-
+    
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -69,9 +76,9 @@ public class Factura extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Factura.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ActualizarModificacionOrdenVenta.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
-            Logger.getLogger(Factura.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ActualizarModificacionOrdenVenta.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -84,9 +91,5 @@ public class Factura extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    void setId(int aInt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }

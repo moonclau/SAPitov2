@@ -36,6 +36,14 @@ public class Conexion {
         conn.close();
     }
     
+    public Integer insertartabla(String campos, String tabla, String valores) throws SQLException {
+        openDB();
+        PreparedStatement ps;
+        ps=conn.prepareStatement("INSERT INTO "+tabla+" ("+campos+") SELECT "+valores);
+        Integer rs = ps.executeUpdate();
+        closeDB();
+        return rs;
+    }
     public Integer insertar(String campos, String tabla, String valores) throws SQLException {
         openDB();
         PreparedStatement ps;

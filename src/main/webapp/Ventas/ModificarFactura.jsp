@@ -1,8 +1,9 @@
 <%-- 
-    Document   : Ventas
+    Document   : Factura
     Created on : 12/10/2018, 1:44:05 AM
     Author     : asus
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +11,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ventas</title>
+<title>Sap Ventas</title>
 <!--Enlace a estilos personalizados de COntabilidad-->
 <link href="../Recursos/css/contabilidad.css" rel="stylesheet" type="text/css"/>
 <!--Validacion de campos-->
@@ -38,11 +39,11 @@
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
                             <a class="nav-link text-white" href="Clientes.jsp">&nbsp;Cliente</a>
                         </div>
-                    </li>       
+                    </li>                                  
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Atencion</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
-                            <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
+                        <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
                                                              
                         </div>
                     </li>
@@ -66,27 +67,86 @@
                 </form>
             </div>
         </nav>
-        <div class="container-fluid">
+    </header>
+    <br>
+    <br>
+        
+<!--Contenedor principal de la pagina-->
+<div class="container-fluid">
     <!--HAciendo una fila para dividir el contenedor en columnas-->
     <div class="row">
         <!--Columna de la izquierda-->
         <div class="col-xs-3 col-md-3 izquierda">            
-               
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <div class="container">
+                    <form action="" method="post">
+                        <div class="row">                        
+                            <div class="col-xs-2">
+                                <input id="clave" name="clave" class="form-control" type="text" placeholder="ingresa clave a buscar"/>
+                            </div>
+                        </div>
+                        <div class="row">                        
+                            <div class="col-xs-2">
+                              <input type="submit" value="buscar"/>       
+                            </div>
+                        </div>                    
+                    </form>
+                </div>
+                <hr/>
+                <table class="tabla">
+                    <tr>
+                    	<td>
+                    		<a href="AgregarFactura.jsp">Agregar Factura</a>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<a href="ModificarFactura.jsp">Modificar Factura</a>
+                        </td>
+                    </tr>
+                    <tr>
+                    	<td>
+                    		<a href="ImprimirFactura.jsp">Imprimir Factura</a>
+                        </td>
+                    </tr>
+                    
+                </table>
+              </div>
+            </div>            
         </div>
         <!--Columna Central-->
-        <div class="col-xs-6 col-md-6 central table-responsive">   
-            <br>
-            <br>
-            <br>
-            <h1 class="text-center">¡Bienvenido al M&oacute;dulo de Ventas!</h1>          
+         <div class="col-xs-8 col-md-8 central table-responsive jumbotron">
+                    <center>
+                        <h1 class="text-uppercase text-center">Modificar Factura</h1>
+                        <br>
+                        <form method="POST" action="../ModificarFactura" autocomplete="off">
+                            <table>
+                                <tr>
+                                    <td>
+                                        Id&nbsp;del&nbsp;factura
+                                    </td>
+                                    <td>
+                                        <input type="number" id="modificarIdFactura" name="modificarIdFactura" class="form-control form-control-sm" required="required"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td colspan="2">
+                                        <center>
+                                            <br>
+                                            <input type="submit" class="btn btn-primary" value="Buscar"/>
+                                        </center>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </center>
         </div>
         <!--columna de la derecha-->
         <div class="col-xs-3 col-md-3 derecha table-responsive">
-            
         </div>
     </div>
 </div>
-        
-    </header>
-    </body>
+</body>
 </html>
+   

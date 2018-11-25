@@ -1,12 +1,9 @@
 <%-- 
-    Document   : Factura
+    Document   : Clientes
     Created on : 12/10/2018, 1:44:05 AM
     Author     : asus
 --%>
 
-<%@page import="com.sap.ventas.clases.Factura"%>
-<%@page import="com.sap.ventas.servlets.ConsultasGenerales"%>
-<%@page import="java.util.LinkedList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,12 +38,12 @@
                         <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clientes</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
                             <a class="nav-link text-white" href="Clientes.jsp">&nbsp;Cliente</a>
-                       </div>
-                    </li>                                  
+                        </div>
+                    </li>                                 
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Atencion</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
-                            <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
+                        <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
                                                              
                         </div>
                     </li>
@@ -71,10 +68,10 @@
             </div>
         </nav>
     </header>
+    
     <br>
     <br>
-        
-<!--Contenedor principal de la pagina-->
+    <!--Contenedor principal de la pagina-->
 <div class="container-fluid">
     <!--HAciendo una fila para dividir el contenedor en columnas-->
     <div class="row">
@@ -100,64 +97,89 @@
                 <table class="tabla">
                     <tr>
                     	<td>
-                    		<a href="AgregarFactura.jsp">Agregar Factura</a>
+                    		<a href="AgregarCliente.jsp">Agregar Cliente</a>
                         </td>
                     </tr>
                     <tr>
                     	<td>
-                    		<a href="ModificarFactura.jsp">Modificar Factura</a>
+                    		<a href="ModificarCliente.jsp">Modificar Cliente</a>
                         </td>
                     </tr>
-                    <tr>
-                    	<td>
-                    		<a href="ImprimirFactura.jsp">Imprimir Factura</a>
-                        </td>
-                    </tr>
-                    
                 </table>
               </div>
             </div>            
         </div>
         <!--Columna Central-->
-        <div class="col-xs-6 col-md-6 central table-responsive">   
-            <h1 class="titulo">Facturas Registrados</h1>
-            <div class="scroll-y">
-                <table class="tablas table">
-                    <tr>
-                        <th>Id</th>
-                        <th>Clave</th>      
-                        <th>Fecha</th>                            
-                        <th>Tipo</th>
-                        <th>Cliente</th>
-                        <th>Proveedor</th>      
-                        <th>Total</th>                            
-                    </tr>
-                    <%
-                        LinkedList<Factura> lista =ConsultasGenerales.mostrarFactura();
-                        for (int i=0;i<lista.size();i++)
-                        {
-                           out.println("<tr>");
-                           out.println("<td>"+lista.get(i).getId()+"</td>");
-                           out.println("<td>"+lista.get(i).getClave()+"</td>");
-                           out.println("<td>"+lista.get(i).getFecha()+"</td>");                           
-                           out.println("<td>"+lista.get(i).getTipo()+"</td>");
-                           out.println("<td>"+lista.get(i).getNombre_cliente()+"</td>");
-                           out.println("<td>"+lista.get(i).getNombre_proveedor()+"</td>");
-                           out.println("<td>"+lista.get(i).getTotal()+"</td>");                              
-                           out.println("</tr>");
-                        }
-                    %>
-                   
-
-                </table>               
+        <div class="col-xs-8 col-md-8 central table-responsive jumbotron">
+             <h1 class="text-uppercase text-center">Agregar Cliente</h1>
+             <br>
+             <form method="POST" autocomplete="off" action="../Clientes" id="formClientes" name="formClientes">
+                <div class="row">
+                 <div class="col-xs-4 col-md-4">
+                    <label for="nombrecliente">Nombre:</label>
+                    <input type="text" class="form-control col-12" name="nombreClientes" id="nombreClientes" required="required">
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <label for="apcliente">Apellido Paterno:</label>
+                    <input type="text" class="form-control col-12" name="apClientes" id="apClientes" required="required">
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <label for="amcliente">Apellido Materno:</label>
+                     <input type="text" class="form-control col-12" name="amClientes" id="amClientes" required="required">
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-xs-8 col-md-8">
+                    <label for="direccioncliente">Dirección:</label>
+                    <input type="text" class="form-control col-12" name="direccionClientes" id="direccionClientes" required="required">
+                </div>
+                 <div class="col-xs-4 col-md-4">
+                    <label for="cpcliente">C.P:</label>
+                    <input type="number" class="form-control col-12"name="cpClientes" id="cpClientes" required="required">
+                </div> 
+                </div>
+                <div class="row">
+                <div class="col-xs-4 col-md-4">
+                    <label for="municipiocliente">Municipio:</label>
+                    <input type="text" class="form-control col-12" name="municipioClientes" id="municipioClientes" required="required">
+                </div>
+                 <div class="col-xs-4 col-md-4">
+                    <label for="municipiocliente">Estado:</label>
+                    <input type="text" class="form-control col-12" name="estadoClientes" id="estadoClientes" required="required">
+                </div>
+                 <div class="col-xs-4 col-md-4">
+                    <label for="municipiocliente">País:</label>
+                     <input type="text" class="form-control col-12" name="paisClientes" id="paisClientes" required="required">
+                </div>
+                </div>
+                <div class="row">
+                <div class="col-xs-4 col-md-4">
+                    <label for="municipiocliente">RFC:</label>
+                    <input type="text" class="form-control col-12" name="rfcClientes" id="rfcClientes" required="required">
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <label for="municipiocliente">Cuenta Bancaria:</label>
+                    <input type="number" class="form-control col-12" name="cuentabancariaClientes" id="cuentabancariaClientes" required="required">
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <label for="municipiocliente">Razón Social:</label>
+                    <input type="text" class="form-control col-12"name="razonsocialClientes" id="razonsocialClientes" required="required">
+                </div>
+                </div>
+            <br>
+            <center>
+            <div>
+            <input type="submit" value="Agregar" class="btn btn-primary"/>    
             </div>
+            </center>
+            
+            </form>
+            
         </div>
-        
         <!--columna de la derecha-->
         <div class="col-xs-3 col-md-3 derecha table-responsive">
         </div>
     </div>
 </div>
-</body>
+    </body>
 </html>
-   

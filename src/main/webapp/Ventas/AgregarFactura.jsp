@@ -4,7 +4,8 @@
     Author     : asus
 --%>
 
-<%@page import="com.sap.ventas.clases.Factura"%>
+<%@page import="com.sap.ventas.clases.Proveedor"%>
+<%@page import="com.sap.ventas.clases.Cliente"%>
 <%@page import="com.sap.ventas.servlets.ConsultasGenerales"%>
 <%@page import="java.util.LinkedList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -41,12 +42,12 @@
                         <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clientes</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
                             <a class="nav-link text-white" href="Clientes.jsp">&nbsp;Cliente</a>
-                       </div>
+                        </div>
                     </li>                                  
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Atencion</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
-                            <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
+                          <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
                                                              
                         </div>
                     </li>
@@ -113,50 +114,75 @@
                     		<a href="ImprimirFactura.jsp">Imprimir Factura</a>
                         </td>
                     </tr>
-                    
                 </table>
               </div>
             </div>            
         </div>
         <!--Columna Central-->
-        <div class="col-xs-6 col-md-6 central table-responsive">   
-            <h1 class="titulo">Facturas Registrados</h1>
-            <div class="scroll-y">
-                <table class="tablas table">
-                    <tr>
-                        <th>Id</th>
-                        <th>Clave</th>      
-                        <th>Fecha</th>                            
-                        <th>Tipo</th>
-                        <th>Cliente</th>
-                        <th>Proveedor</th>      
-                        <th>Total</th>                            
-                    </tr>
-                    <%
-                        LinkedList<Factura> lista =ConsultasGenerales.mostrarFactura();
-                        for (int i=0;i<lista.size();i++)
-                        {
-                           out.println("<tr>");
-                           out.println("<td>"+lista.get(i).getId()+"</td>");
-                           out.println("<td>"+lista.get(i).getClave()+"</td>");
-                           out.println("<td>"+lista.get(i).getFecha()+"</td>");                           
-                           out.println("<td>"+lista.get(i).getTipo()+"</td>");
-                           out.println("<td>"+lista.get(i).getNombre_cliente()+"</td>");
-                           out.println("<td>"+lista.get(i).getNombre_proveedor()+"</td>");
-                           out.println("<td>"+lista.get(i).getTotal()+"</td>");                              
-                           out.println("</tr>");
-                        }
-                    %>
-                   
-
-                </table>               
+        <div class="col-xs-8 col-md-8 central table-responsive jumbotron">
+        <h1 class="text-uppercase text-center">Agregar Factura</h1>
+        <br>
+        <form method="POST" autocomplete="off" action="../Factura"  id="formFactura" name="formFactura">
+            <div class="row">
+                <div class="col-xs-4 col-md-4">
+                    <label for="nombrecliente">Clave de Factura:</label>
+                    <input type="text" class="form-control col-12" name="claveFactura" id="claveFactura" required="required">
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <label for="fechaFactura">Fecha:</label>
+                    <input type="date" class="form-control col-12" name="fechaFactura" id="fechaFactura" required="required">
+                </div>
+                <div class="col-xs-4 col-md-4">
+                    <label for="tipoFcatura">Tipo:</label>
+                    <input type="number" placeholder="0 cliente/1 proveedor" class="form-control col-12" name="tipoFactura" id="tipoFactura" required="required">
+                </div>
             </div>
+            <div class="row">
+                <div class="col-xs-4 col-md-4">
+                          <label for="cliente">Seleccione cliente:</label>
+                          <Select  class="form-control" id="cliente" name="cliente" required="required">
+                              <option value="x">Seleccione...</option>
+                            <%
+                                LinkedList<Cliente> l =ConsultasGenerales.opcionesCliente();
+                                for (int i=0;i<l.size();i++)
+                                {                                   
+                                   out.println("<option value='"+l.get(i).getId()+"'>"+l.get(i).getNombre()+""+" "+""+l.get(i).getApe_pat()+""+" "+""+l.get(i).getApe_mat()+"</option>");                                   
+                                }
+                            %> 
+                          </select>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                          <label for="proveedor">Seleccione al Proveedor:</label>
+                          <Select  class="form-control" id="proveedor" name="proveedor" required="required">
+                              <option value="x">Seleccione...</option>
+                               <%
+                                    LinkedList<Proveedor> a =ConsultasGenerales.opcionesProveedor();
+                                    for (int i=0;i<a.size();i++)
+                                    {                                   
+                                        out.println("<option value='"+a.get(i).getId()+"'>"+a.get(i).getNombre()+"</option>");                                   
+                                    }
+                                %>
+                           </select>
+                </div>
+                <div class="col-xs-4 col-md-4">
+                     <label for="tipoFcatura">Total:</label>
+                     <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="totalFactura" id="idordendeventaFactura" required="required">
+                </div>
+            </div>
+                <br>
+                <br>
+                <center>
+                <div>
+                <input type="submit" value="Agregar factura" class="btn btn-primary"/>    
+                </div>
+                </center>
+               
+                
+        </form>
         </div>
-        
         <!--columna de la derecha-->
         <div class="col-xs-3 col-md-3 derecha table-responsive">
         </div>
-    </div>
 </div>
 </body>
 </html>
