@@ -17,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -41,7 +42,7 @@ public class Consulta_orden extends HttpServlet {
         String tipo = request.getParameter("optionsRadios");
         String bus_clave = request.getParameter("folio_orden");
         String bus_fecha = request.getParameter("fech_orden");
-        
+           HttpSession sesion = request.getSession(true);
                Conexion c = new Conexion();
                
                if(tipo=="todos"){

@@ -11,7 +11,7 @@ package com.sap.ventas.clases;
  */
 public class OrdenVenta {
     
-     int id;
+    int idordenventa;
     String clave_ordenventa;
     String fecha;
     String direccion;
@@ -21,8 +21,8 @@ public class OrdenVenta {
     String precio_unitario;
     String precio_total;
 
-    public int getId() {
-        return id;
+    public int getIdordenventa() {
+        return idordenventa;
     }
 
     public String getClave_ordenventa() {
@@ -57,8 +57,8 @@ public class OrdenVenta {
         return precio_total;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIdordenventa(int idordenventa) {
+        this.idordenventa = idordenventa;
     }
 
     public void setClave_ordenventa(String clave_ordenventa) {
@@ -92,6 +92,10 @@ public class OrdenVenta {
     public void setPrecio_total(String precio_total) {
         this.precio_total = precio_total;
     }
+    
+    
+
+   
     
    
 

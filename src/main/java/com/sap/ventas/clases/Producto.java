@@ -11,99 +11,19 @@ package com.sap.ventas.clases;
  */
 public class Producto {
     
-    int idproducto;
+    int id;
     String clave;
     String nombre;
-    double costounitario;
-    String unidad;
     String tipo;
-    int cantidad;
+    String unidad;
+    double costounitario;
+    double precio_venta;
     double iva;
-    double costototal;
-    String fecha;
-    String operacion;
+    int cantidad;
     double montototal;
-    int cantidaddoble;
 
-    public double getCostounitario() {
-        return costounitario;
-    }
-
-    public void setCostounitario(double costounitario) {
-        this.costounitario = costounitario;
-    }
-
-    public int getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(int cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public double getIva() {
-        return iva;
-    }
-
-    public void setIva(double iva) {
-        this.iva = iva;
-    }
-
-    public double getCostototal() {
-        return costototal;
-    }
-
-    public void setCostototal(double costototal) {
-        this.costototal = costototal;
-    }
-
-    public double getMontototal() {
-        return montototal;
-    }
-
-    public void setMontototal(double montototal) {
-        this.montototal = montototal;
-    }
-
-    public int getCantidaddoble() {
-        return cantidaddoble;
-    }
-
-    public void setCantidaddoble(int cantidaddoble) {
-        this.cantidaddoble = cantidaddoble;
-    }
-    
-    public int getIdproducto() {
-        return idproducto;
-    }
-
-    public String getClave() {
-        return clave;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public String getUnidad() {
-        return unidad;
-    }
-
-    
-    public String getFecha() {
-        return fecha;
-    }
-
-    public String getOperacion() {
-        return operacion;
-    }
-
-    public void setIdproducto(int idproducto) {
-        this.idproducto = idproducto;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setClave(String clave) {
@@ -122,12 +42,64 @@ public class Producto {
         this.unidad = unidad;
     }
 
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-    public void setOperacion(String operacion) {
-        this.operacion = operacion;
+    public void setCostounitario(double costounitario) {
+        this.costounitario = costounitario;
     }
 
+    public void setPrecio_venta(double precio_venta) {
+        this.precio_venta = precio_venta;
+    }
+
+    public void setIva(double iva) {
+        this.iva = iva;
+    }
+
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public void setMontototal(double montototal) {
+        this.montototal = montototal;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public String getUnidad() {
+        return unidad;
+    }
+
+    public double getCostounitario() {
+        return costounitario;
+    }
+
+    public double getPrecio_venta() {
+        return precio_venta;
+    }
+
+    public double getIva() {
+        return iva;
+    }
+
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public double getMontototal() {
+        return montototal;
+    }
    
 }

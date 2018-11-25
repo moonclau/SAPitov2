@@ -6,13 +6,13 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Gerencia</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../Recursos/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="../Recursos/bootstrap/librerias/jquery-3.3.1.min.js" type="text/javascript"></script>
-        <script src="../Recursos/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../Recursos/bootstrap/librerias/popper.min.js" type="text/javascript"></script>
+        <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
         <script src="../Gerencia/validaciones/validacion.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js" integrity="sha256-CfcERD4Ov4+lKbWbYqXD6aFM9M51gN4GUEtDhkWABMo=" crossorigin="anonymous"></script>
     </head>
@@ -82,7 +82,7 @@ and open the template in the editor.
                         </ul>
                     </li>
                     <li class="nav-item" style="list-style:none">
-                        <a class="nav-link" href="#" style="color: white">Salir</a>
+                        <a class="nav-link" href="../CerrarSesion" style="color: white">Salir</a>
                     </li>
                 </div>
 
@@ -116,7 +116,7 @@ and open the template in the editor.
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                         <div style="background-color: #fff; margin: 20px 2px;">
-                            <a href="../RecursosHumanos/rh_index.jsp">
+                            <a href="../RH/rh_index.jsp">
                                 <h1 style="color: black; margin-left: 20px;">Recursos Humanos</h1>
                                 <div class="row justify-content-center" style="margin-left: 20px; margin-right: 20px;">
                                     <canvas id="gRH" width="100%" height="80px"></canvas>
@@ -132,7 +132,7 @@ and open the template in the editor.
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div style="background-color: #fff; margin: 20px 2px;">
-                            <a href="../Compras/Compras.jsp">
+                            <a href="../Compras/bienvenida.jsp">
                                 <h1 style="color: black; margin-left: 20px;">Compras</h1>
                                 <div class="row justify-content-center" style="margin-left: 20px; margin-right: 20px;">                               
                                     <canvas id="gCompras" width="100%"></canvas>
@@ -143,7 +143,7 @@ and open the template in the editor.
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                         <div style="background-color: #fff; margin: 20px 2px;">
-                            <a href="#">
+                            <a href="../Ventas/Ventas.jsp">
                                 <h1 style="color: black; margin-left: 20px;">Ventas</h1>
                                 <div class="row justify-content-center" style="margin-left: 20px; margin-right: 20px;">                               
                                     <canvas id="gVentas" width="100%"></canvas>

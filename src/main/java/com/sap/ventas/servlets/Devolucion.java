@@ -40,7 +40,7 @@ public class Devolucion extends HttpServlet {
         String clave = request.getParameter("claveDevolucion");
         String fecha = request.getParameter("fechaDevolucion");
         String motivo = request.getParameter("motivoDevolucion");
-        String idOVD = request.getParameter("idordendeventaDevolucion");
+        String idOVD = request.getParameter("claveordendeventaDevolucion");
         HttpSession sesion = request.getSession(true);
         Conexion c = new Conexion();
         

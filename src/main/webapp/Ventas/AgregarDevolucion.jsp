@@ -4,6 +4,9 @@
     Author     : asus
 --%>
 
+<%@page import="java.util.LinkedList"%>
+<%@page import="com.sap.ventas.servlets.ConsultasGenerales"%>
+<%@page import="com.sap.ventas.clases.OrdenVenta"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,16 +114,14 @@
         </div>
         <!--Columna Central-->
          <div class="col-xs-8 col-md-8 central table-responsive jumbotron">
-        <h1 class="text-uppercase text-center">Devolución</h1>
+        <h1 class="text-uppercase text-center">Agregar Devolución</h1>
         <form method="POST" autocomplete="off" action="../Devolucion" id="formDevolucion" name="formDevolucion">
             <div class="row">
                  <div class="col-xs-4 col-md-4">
-                    <label for="clavedevolucion">Clave de la devolución:</label>
-                    <input type="text" placeholder="Clave" class="form-control col-12" name="claveDevolucion" id="claveDevolucion" required="required">
+                    <label for="clavedevolucion">Clave devolución:</label>
+                    <input type="text" class="form-control col-12" name="claveDevolucion" id="claveDevolucion" required="required">
                 </div>
                 <div class="col-xs-4 col-md-4">
-                    <label for="motivodevolucion">Motivo:</label>
-                    <input type="text" placeholder="Motivo de la devolución" class="form-control col-12" name="motivoDevolucion" id="motivoDevolucion" required="required">
                 </div>
                 <div class="col-xs-4 col-md-4">
                     <label for="fechadevolucion">Fecha:</label>
@@ -128,9 +129,22 @@
                 </div>
                 </div>
                 <div class="row">
-                <div class="col-xs-4 col-md-4">
-                    <label for="clavedevolucion">Id orden de venta:</label>
-                    <input type="number" placeholder="Escribe aqui" class="form-control col-12" name="idordendeventaDevolucion" id="idordendeventaDevolucion" required="required">
+                <div class="col-xs-9 col-md-9">
+                    <label for="motivodevolucion">Motivo de devolucion:</label>
+                    <input type="text" class="form-control col-12" name="motivoDevolucion" id="motivoDevolucion" required="required">
+                </div>
+                  <div class="col-xs-3 col-md-3">
+                    <label for="claveordendeventaDevolucion">Clave orden de venta:</label>
+                    <Select  class="form-control" id="claveordendeventaDevolucion" name="claveordendeventaDevolucion" required="required">
+                              <option value="x">Seleccione...</option>
+                            <%
+                                LinkedList<OrdenVenta> h =ConsultasGenerales.opcionesOrdenVenta();
+                                for (int i=0;i<h.size();i++)
+                                {                                   
+                                   out.println("<option value='"+h.get(i).getIdordenventa()+"'>"+h.get(i).getClave_ordenventa()+"</option>");                                   
+                                }
+                            %> 
+                        </select>
                 </div>
                 </div>
                 <br>

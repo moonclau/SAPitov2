@@ -1,7 +1,6 @@
 package com.sap.rh.servlets;
 
 import com.sap.conexion.Conexion;
-import com.sap.gerencia.clases.usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -13,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,22 +33,19 @@ public class ActividadEmpleado extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+        HttpSession sesion = request.getSession(true);
         Conexion c = new Conexion();
-        usuario usu = new usuario();
         try (PrintWriter out = response.getWriter()) {
             String empleado = request.getParameter("actividadIdEmp");
             String actividad = request.getParameter("actividadEmpleado");
             ArrayList lista = c.consulta("id", "empleado", "id = "+ empleado, 1);
-            
-            
-            
             if(!lista.isEmpty()){
-                int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Actividad del empleado");
+                c.insertar("id_emp,area,des", "log", sesion.getAttribute("usuario")+",'"+sesion.getAttribute("area")+"','Actividad actualizada para el empleado "+empleado+"");
                 c.actualizar("actividad = '" + actividad + "'", "empleado", "id = " + empleado);
                 response.sendRedirect("RH/ActividadEmpleado.jsp");
             }else{
-                int i = c.insercionRegistro(usu.getId_emp(),  "rh", "No encuentra actividad del empleado");
-                request.getSession().setAttribute("motivo", "El empleado no existe");
+                c.insertar("id_emp,area,des", "log", sesion.getAttribute("usuario")+",'"+sesion.getAttribute("area")+"','Actualizacion de actividad fallido'");
+                sesion.setAttribute("motivo", "El empleado no existe");
                 response.sendRedirect("RH/Error.jsp");
             }
         }

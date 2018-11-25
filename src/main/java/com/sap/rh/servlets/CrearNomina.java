@@ -1,7 +1,6 @@
 package com.sap.rh.servlets;
 
 import com.sap.conexion.Conexion;
-import com.sap.gerencia.clases.usuario;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -41,16 +41,14 @@ public class CrearNomina extends HttpServlet {
         String tipo = request.getParameter("tipoCrearNomina");
         String percepcion = request.getParameter("percepcionCrearNomina");
         Conexion c = new Conexion();
-        usuario usu = new usuario();
+        HttpSession sesion = request.getSession(true);
         ArrayList lista = c.consulta("cuenta", "empleado", "id = "+empleado, 1);
         String cuenta = lista.get(0).toString();
         if(!cuenta.isEmpty()){
             c.insertar("empleado,cantidad,cuenta,estado,origen_recurso,regimen,periodicidad,tipo,percepcion,situacion", "nomina",
                     empleado+","+cantidad+",'"+cuenta+"','"+estado+"','"+recurso+"','"+regimen+"','"+periodicidad+"','"+tipo+"','"+percepcion+"',-1");
         }
-        
-        int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Crea una nomina");
-        
+        c.insertar("id_emp,area,des", "log", sesion.getAttribute("usuario")+",'"+sesion.getAttribute("area")+"','Creacion de nominas'");
         response.sendRedirect("RH/CrearNomina.jsp");
     }
 

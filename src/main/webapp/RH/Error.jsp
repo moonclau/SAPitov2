@@ -21,7 +21,7 @@
         <link href="../Recursos/css/RecursosHumanos.css" rel="stylesheet" type="text/css"/>
         <!--Validacion de campos-->
         <script src="../Recursos/js/RecursosHumanos.js" type="text/javascript"></script>
-        <title>P&aacute;gina&nbsp;principal</title>
+        <title>Error</title>
     </head>
     <body onload="regreso();">
         <div class="container-fluid">
@@ -54,7 +54,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="../index.jsp" class="nav-link bg-primary text-white">Cerrar&nbsp;sesi&oacute;n</a>
+                                        <a href="../CerrarSesion" class="nav-link bg-primary text-white">Cerrar&nbsp;sesi&oacute;n</a>
                                     </li>
                                 </ul>
                             </div>

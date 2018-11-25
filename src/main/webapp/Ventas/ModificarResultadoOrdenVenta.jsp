@@ -188,7 +188,7 @@
                                 LinkedList<Producto> b =ConsultasGenerales.opcionesProducto();
                                 for (int i=0;i<b.size();i++)
                                 {                                   
-                                   out.println("<option value='"+b.get(i).getIdproducto()+"'>"+b.get(i).getClave()+"</option>");                                   
+                                   out.println("<option value='"+b.get(i).getId()+"'>"+b.get(i).getClave()+"</option>");                                   
                                 }
                             %> 
                         </select>

@@ -1,10 +1,7 @@
 package com.sap.rh.servlets;
 
-
 import com.sap.conexion.Conexion;
-import com.sap.gerencia.clases.usuario;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -14,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -34,22 +32,20 @@ public class BuscarNomina extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+        HttpSession sesion = request.getSession(true);
         String nomina = request.getParameter("buscarIdNomina");
         Conexion c = new Conexion();
-        usuario usu = new usuario();
-        ArrayList lista;
+        ArrayList<String> lista;
         if(!nomina.isEmpty()){
-            lista = c.consulta("id,empleado,cantidad,estado,origen_recurso,regimen,periodicidad,tipo,percepcion,situacion",
-                    "nomina", "id = " + nomina, 10);
+            lista = c.consulta("id,empleado,cantidad,cuenta,estado,origen_recurso,regimen,periodicidad,tipo,percepcion,situacion",
+                    "nomina", "id = "+nomina, 10);
         }else{
-            lista = c.consulta("id,empleado,cantidad,estado,origen_recurso,regimen,periodicidad,tipo,percepcion,situacion",
+            lista = c.consulta("id,empleado,cantidad,cuenta,estado,origen_recurso,regimen,periodicidad,tipo,percepcion,situacion",
                     "nomina", "id is not null", 10);
         }
-        
-        int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Busqueda de nomina");
-        
-        request.getSession().setAttribute("nomina", lista);
-        response.sendRedirect("RH/BuscarResultado.jsp");
+        c.insertar("id_emp,area,des", "log", sesion.getAttribute("usuario")+",'"+sesion.getAttribute("area")+"','Consulta de la nomina "+nomina+"'");
+        sesion.setAttribute("nomina", lista);
+        response.sendRedirect("RH/ConsultarResultado.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

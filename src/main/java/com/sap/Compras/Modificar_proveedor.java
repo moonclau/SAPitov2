@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -46,6 +47,7 @@ public class Modificar_proveedor extends HttpServlet {
         String agr_bnco = request.getParameter("bancoedit");
         String num_cuenta = request.getParameter("numcuentaedit");
         String clave_cuenta = request.getParameter("clvcuentaedit");
+           HttpSession sesion = request.getSession(true);
         
         Conexion c = new Conexion();
       /*  String campos="'"+request.getParameter("razoned")+"',"+request.getParameter("rfc_edi")+",'"+ request.getParameter("diredit")+"',"+request.getParameter("estadoedit")+",'"+request.getParameter("teledit")+"','"+request.getParameter("correoedit")+"',"+request.getParameter("cuentaconedit")+","+request.getParameter("numcuentaedit")+","+request.getParameter("bancoedit")+",'"+request.getParameter("diascrededit")+"',"+request.getParameter("limcrededit")+"";

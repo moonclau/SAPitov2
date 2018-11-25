@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
+        <link href="../Recursos/css/Compras.css" rel="stylesheet" type="text/css"/>
 
         <link href="../CSS/compras.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -49,9 +49,9 @@
                         </li>                        
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="" style="color: white">Salir</a>
-                        </li>                                              
+                     <form class="form-inline my-2 my-lg-0" action="../CerrarSesion">                
+                    <button class="btn-outline-primary barra text-white my-2 my-sm-0" id="cerrarSesion" type="submit">Cerrar Sesi&oacute;n</button>
+                </form>                                         
                     </ul>
                 </div> 
             </nav>          

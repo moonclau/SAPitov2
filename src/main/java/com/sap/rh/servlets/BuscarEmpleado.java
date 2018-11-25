@@ -1,7 +1,6 @@
 package com.sap.rh.servlets;
 
 import com.sap.conexion.Conexion;
-import com.sap.gerencia.clases.usuario;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,10 +32,10 @@ public class BuscarEmpleado extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
+        HttpSession sesion = request.getSession(true);
         String empleado = request.getParameter("buscarIdEmpleado");
         String area = request.getParameter("buscarAreaEmpleado");
         Conexion c = new Conexion();
-        usuario usu = new usuario();
         ArrayList lista;
         if(!area.isEmpty() && !empleado.isEmpty()){
             lista = c.consulta("id,nombre,primer_apellido,segundo_apellido,nacionalidad,curp,rfc,edad,lugar_nacimiento,direccion,telefono,"
@@ -54,10 +54,8 @@ public class BuscarEmpleado extends HttpServlet {
                 }
             }
         }
-        
-        int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Busqueda de empleado");
-        
-        request.getSession().setAttribute("empleados", lista);
+        c.insertar("id_emp,area,des", "log", sesion.getAttribute("usuario")+",'"+sesion.getAttribute("area")+"','Consulta de empleado(s)'");
+        sesion.setAttribute("empleados", lista);
         response.sendRedirect("RH/BuscarResultado.jsp");
     }
 

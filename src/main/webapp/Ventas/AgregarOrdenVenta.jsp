@@ -49,7 +49,7 @@
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Atencion</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
-                        <a class="nav-link text-white" href="Orden%20de%20Venta.jsp">&nbsp;Orden de Venta</a>
+                        <a class="nav-link text-white" href="Orden de Venta.jsp">&nbsp;Orden de Venta</a>
                                                              
                         </div>
                     </li>
@@ -120,7 +120,7 @@
         <div class="col-xs-8 col-md-8 central table-responsive jumbotron">
         <h1 class="text-uppercase text-center">Agregar Orden de Venta</h1>
         <br>
-        <form method="POST" autocomplete="off" action="../OrdendeVenta1"  id="formFactura" name="for">
+        <form method="POST" autocomplete="off" action="../OrdendeVenta"  id="formFactura" name="for">
             <div class="row">
                 <div class="col-xs-4 col-md-4">
                     <label for="clave">Clave Orden de Venta:</label>
@@ -181,7 +181,7 @@
                                 LinkedList<Producto> b =ConsultasGenerales.opcionesProducto();
                                 for (int i=0;i<b.size();i++)
                                 {                                   
-                                   out.println("<option value='"+b.get(i).getIdproducto()+"'>"+b.get(i).getClave()+"</option>");                                   
+                                   out.println("<option value='"+b.get(i).getId()+"'>"+b.get(i).getClave()+"</option>");                                   
                                 }
                             %> 
                         </select>

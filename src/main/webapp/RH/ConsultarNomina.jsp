@@ -53,7 +53,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="../index.jsp" class="nav-link bg-primary text-white">Cerrar&nbsp;sesi&oacute;n</a>
+                                        <a href="../CerrarSesion" class="nav-link bg-primary text-white">Cerrar&nbsp;sesi&oacute;n</a>
                                     </li>
                                 </ul>
                             </div>

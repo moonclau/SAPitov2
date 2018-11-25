@@ -17,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -40,6 +41,7 @@ public class Consulta_prov extends HttpServlet {
         
         String tipo = request.getParameter("optionsRadios");
         String bus_clave = request.getParameter("bus_clave");
+           HttpSession sesion = request.getSession(true);
         
                Conexion c = new Conexion();
                

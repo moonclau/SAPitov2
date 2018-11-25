@@ -33,7 +33,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, nombre FROM proveedores");
@@ -60,7 +60,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, nombre, ape_pat, ape_mat, direccion FROM cliente");
@@ -76,6 +76,50 @@ public class ConsultasGenerales {
         conn.close();
         return l;
 }
+    
+       public static LinkedList opcionesProducto() throws SQLException, ClassNotFoundException {        
+        Connection conn;
+        Class.forName("org.postgresql.Driver");
+       LinkedList <Producto> l=new LinkedList<>();
+        Properties connProp = new Properties();
+        connProp.put("user", "postgres");
+        connProp.put("password", "root");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
+        Statement stmt;        
+        stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT id, clave, nombre, costounitario FROM Producto");
+            while (rs.next()) {
+                Producto p=new Producto();
+                p.setId(rs.getInt("id"));             
+                p.setNombre(rs.getString("nombre")); 
+                p.setCostounitario(rs.getDouble("costounitario"));
+                p.setClave(rs.getString("clave")); 
+                l.add(p);
+            }                    
+        conn.close();
+        return l;
+}
+       
+          public static LinkedList opcionesOrdenVenta() throws SQLException, ClassNotFoundException {        
+        Connection conn;
+        Class.forName("org.postgresql.Driver");
+       LinkedList <OrdenVenta> l=new LinkedList<>();
+        Properties connProp = new Properties();
+        connProp.put("user", "postgres");
+        connProp.put("password", "root");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
+        Statement stmt;        
+        stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("SELECT idordenventa,clave_ordenventa FROM orden_de_venta");
+            while (rs.next()) {
+                OrdenVenta j=new OrdenVenta();
+                j.setIdordenventa(rs.getInt("idordenventa"));             
+                j.setClave_ordenventa(rs.getString("clave_ordenventa")); 
+                l.add(j);
+            }
+        conn.close();
+        return l;
+}
     public static LinkedList mostrarCliente() throws SQLException, ClassNotFoundException {        
         Connection conn;
         Class.forName("org.postgresql.Driver");
@@ -83,7 +127,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, nombre, ape_pat, ape_mat, direccion, cp, municipio, edo, pais, rfc, cuentabancaria, razon FROM cliente");
@@ -113,7 +157,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, clave, fecha, tipo, nombrecliente, nombreproveedor, total FROM factura");
@@ -138,7 +182,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT iddevolucion, clave_devolucion, fecha, motivo FROM devolucion");
@@ -161,13 +205,13 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT idordenventa, clave_ordenventa, fecha, direccion, cantidad, descripcion_venta, vendedor, precio_unitario, precio_total FROM orden_de_venta");
             while (rs.next()) {
                 OrdenVenta d=new OrdenVenta();
-                d.setId(rs.getInt("idordenventa"));             
+                d.setIdordenventa(rs.getInt("idordenventa"));             
                 d.setClave_ordenventa(rs.getString("clave_ordenventa"));
                 d.setFecha(rs.getString("fecha"));
                 d.setDireccion(rs.getString("direccion"));
@@ -182,28 +226,7 @@ public class ConsultasGenerales {
         return l;
     }
       
-    public static LinkedList opcionesProducto() throws SQLException, ClassNotFoundException {        
-        Connection conn;
-        Class.forName("org.postgresql.Driver");
-       LinkedList <Producto> l=new LinkedList<>();
-        Properties connProp = new Properties();
-        connProp.put("user", "postgres");
-        connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
-        Statement stmt;        
-        stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT id, clave, nombre, costounitario FROM Producto");
-            while (rs.next()) {
-                Producto p=new Producto();
-                p.setIdproducto(rs.getInt("id"));             
-                p.setNombre(rs.getString("nombre")); 
-                p.setCostounitario(rs.getDouble("costounitario"));
-                p.setClave(rs.getString("clave")); 
-                l.add(p);
-            }                    
-        conn.close();
-        return l;
-}
+ 
      
      
      

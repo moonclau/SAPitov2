@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -37,6 +38,7 @@ public class Eliminar_compra extends HttpServlet {
         
         //productos
         String folelim = request.getParameter("folelim");
+           HttpSession sesion = request.getSession(true);
         
         
         Conexion c = new Conexion();

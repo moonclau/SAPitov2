@@ -24,7 +24,7 @@ public class Conexion {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
     }
         
 
@@ -36,14 +36,6 @@ public class Conexion {
         conn.close();
     }
     
-    public Integer insertartabla(String campos, String tabla, String valores) throws SQLException {
-        openDB();
-        PreparedStatement ps;
-        ps=conn.prepareStatement("INSERT INTO "+tabla+" ("+campos+") SELECT "+valores);
-        Integer rs = ps.executeUpdate();
-        closeDB();
-        return rs;
-    }
     public Integer insertar(String campos, String tabla, String valores) throws SQLException {
         openDB();
         PreparedStatement ps;

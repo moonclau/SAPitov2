@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -42,6 +43,7 @@ public class Eliminar_ordenC extends HttpServlet {
         
         
         Conexion c = new Conexion();
+           HttpSession sesion = request.getSession(true);
         
          
         

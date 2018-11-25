@@ -8,13 +8,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../Recursos/css/compras.css" rel="stylesheet" type="text/css"/>
+        <link href="../Recursos/css/Compras.css" rel="stylesheet" type="text/css"/>
       
         <script src="../Recursos/js/compras.js"> </script>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <!--  <scri        <script src="../Recursos/js/compras.js"> </script>
 pt src="../js/compras.js"></script> -->
-        <link href="../Recursos/Bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="../Recursos/Bootstrap/css/bootstrap.css" rel="stylesheet"/>
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
         <script src="../Recursos/Bootstrap/librerias/jquery-3.3.1.min.js"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed --> 
@@ -50,9 +50,9 @@ pt src="../js/compras.js"></script> -->
                         </li>                        
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="" style="color: white">Salir</a>
-                        </li>                                              
+                       <form class="form-inline my-2 my-lg-0" action="../CerrarSesion">                
+                    <button class="btn-outline-primary barra text-white my-2 my-sm-0" id="cerrarSesion" type="submit">Cerrar Sesi&oacute;n</button>
+                </form>                                           
                     </ul>
                 </div> 
             </nav>           

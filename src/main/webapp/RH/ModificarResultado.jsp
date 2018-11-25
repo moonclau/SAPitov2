@@ -7,7 +7,11 @@
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    ArrayList lista = (ArrayList) request.getSession().getAttribute("empleado");
+    HttpSession sesion = request.getSession(true);
+    ArrayList lista = (ArrayList) sesion.getAttribute("empleado");
+    if(lista.isEmpty()){
+        response.sendRedirect("ModificarEmpleado.jsp");
+    }
 %>
 <!DOCTYPE html>
 <html>
@@ -57,7 +61,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="../index.jsp" class="nav-link bg-primary text-white">Cerrar&nbsp;sesi&oacute;n</a>
+                                        <a href="../CerrarSesion" class="nav-link bg-primary text-white">Cerrar&nbsp;sesi&oacute;n</a>
                                     </li>
                                 </ul>
                             </div>
@@ -124,7 +128,7 @@
                                         RFC
                                     </td>
                                     <td>
-                                        <input type="text" class="form-control form-control-sm" id="rfcModificarEmp" name="rfcModificarEmp" required="required" value="<%= lista.get(5) %>"/>
+                                        <input type="text" class="form-control form-control-sm" id="rfcModificarEmp" name="rfcModificarEmp" required="required" value="<%= lista.get(5) %>" onblur="validaRFCA();"/>
                                     </td>
                                 </tr>
                                 <tr>

@@ -18,7 +18,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <title>Subastas</title>
+    <title>SAP</title>
     <!--Enlace a estilos personalizados de COntabilidad-->
     <link href="Recursos/css/contabilidad.css" rel="stylesheet" type="text/css"/>
     <!--Validacion de campos-->
@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <h2 class="text-center">Bienvenido a SAPito v2.0</h2>
+                    <h2 class="text-center">Bienvenido al SAP</h2>
                     <hr>
                 </div>
             </div>

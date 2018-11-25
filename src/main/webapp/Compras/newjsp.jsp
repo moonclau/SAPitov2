@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="../CSS/compras.css" rel="stylesheet">
+        <link href="../CSS/Compras.css" rel="stylesheet">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="../JS/compras.js"></script>
         <link href="../Recursos/Bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -38,11 +38,9 @@
                             <a class="nav-link" href="List_com.jsp" style="color: white">Lista&nbsp;de&nbsp;Compras</a>
                         </li>                        
                     </ul>
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-item">
-                            <a class="nav-link" href="" style="color: white">Salir</a>
-                        </li>                                              
-                    </ul>
+                    <form class="form-inline my-2 my-lg-0" action="../CerrarSesion">                
+                    <button class="btn-outline-primary barra text-white my-2 my-sm-0" id="cerrarSesion" type="submit">Cerrar Sesi&oacute;n</button>
+                </form>
                 </div> 
             </nav>           
 

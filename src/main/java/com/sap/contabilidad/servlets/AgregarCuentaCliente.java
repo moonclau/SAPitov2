@@ -6,7 +6,6 @@
 package com.sap.contabilidad.servlets;
 
 import com.sap.conexion.Conexion;
-import com.sap.gerencia.clases.usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -17,7 +16,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -39,7 +37,6 @@ public class AgregarCuentaCliente extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
         Conexion c=new Conexion();
-        
         String clave=request.getParameter("claveCuenta");
         System.out.println("clave"+clave);
         String tipocuenta=request.getParameter("tipoCuenta");
@@ -48,11 +45,6 @@ public class AgregarCuentaCliente extends HttpServlet {
         System.out.println("valores:"+valores);
         String campos="clave,idcuentaempresa,idcliente";            
         c.insertar(campos, "cuentacliente",valores);
-        
-        HttpSession sesion=(HttpSession) request.getSession();
-        int usu=Integer.valueOf(sesion.getAttribute("usuario").toString());
-        int i = c.insercionRegistro(usu,  "contabilidad", "Agrego cuenta de cliente");
-
         response.sendRedirect("Contabilidad/CuentasCliente.jsp");
         
     }

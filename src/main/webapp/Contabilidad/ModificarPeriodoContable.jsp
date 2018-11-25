@@ -4,9 +4,11 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Subastas</title>
+<title>Contabilidad</title>
 <!--Enlace a estilos personalizados de COntabilidad-->
 <link href="../Recursos/css/contabilidad.css" rel="stylesheet" type="text/css"/>
+<!--Validacion de campos-->
+<script src="../Recursos/js/Contabilidad.js" type="text/javascript"></script>
 <!-- Bootstrap -->
 <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
@@ -14,8 +16,19 @@
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
-<!--Validacion de campos-->
-<script src="../Recursos/js/Contabilidad.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function() {
+            $('#submit').click(function(event) {
+                    var clavebuscar = $('#clave').val();        
+                    // Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
+                    $.post('../BuscarClave', {
+                            clavep : clavebuscar
+                    }, function(responseText) {                            
+                            $('#tabla').html(responseText);
+                    });
+            });
+    });
+</script>
 </head>
 <body>    
     <header class="sticky-top">
@@ -49,7 +62,7 @@
                         </div>
                     </li>                            
                 </ul>   
-               <form class="form-inline my-2 my-lg-0" action="../index.jsp">                
+               <form class="form-inline my-2 my-lg-0" action="../CerrarSesion">                
                     <button class="btn-outline-primary barra text-white my-2 my-sm-0" id="cerrarSesion" type="submit">Cerrar Sesi&oacute;n</button>
                 </form>
             </div>

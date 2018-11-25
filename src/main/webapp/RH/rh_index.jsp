@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Recusos humanos </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <!-- Bootstrap -->
         <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
@@ -28,7 +29,7 @@
                 <div class="container-fluid">
                     <header class="sticky-top">
                         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-                            <a href="#" class="navbar-brand text-white">Recursos&nbsp;Humanos</a>
+                            <a href="rh_index.jsp" class="navbar-brand text-white">Recursos&nbsp;Humanos</a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#rh_navbar" aria-controls="rh_navbar" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
@@ -53,7 +54,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="../index.jsp" class="nav-link bg-primary text-white">Cerrar&nbsp;sesi&oacute;n</a>
+                                        <a href="../CerrarSesion" class="nav-link bg-primary text-white">Cerrar&nbsp;sesi&oacute;n</a>
                                     </li>
                                 </ul>
                             </div>
@@ -64,7 +65,11 @@
             <br><br>
             <!-- FIN DE NAVBAR -->
             <div class="row"><!-- INICIO DE SECCION PRINCIPAL -->
-                <div class="container-fluid"></div>
+                <div class="container-fluid">
+                    <center>
+                        <h1 class="text-center">¡Bienvenido&nbsp;al&nbsp;M&oacute;dulo&nbsp;de&nbsp;Recursos&nbsp;Humanos!</h1> 
+                    </center>
+                </div>
             </div><!-- FIN DE SECCION PRINCIPAL -->
         </div>
     </body>

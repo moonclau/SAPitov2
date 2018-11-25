@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -41,6 +42,7 @@ public class Modificar_Orden extends HttpServlet {
         String provagr = request.getParameter("provagr");
         
         Conexion c = new Conexion();
+           HttpSession sesion = request.getSession(true);
         
          c.actualizar("fecha_ord,fecha_ent,productos,cantidad,proveedor", "Ordencompra","'"+fech_ord+"','"+fec_ent+"','"
                  +nomprod+"',"+cant+",'"+proveedor+"'");

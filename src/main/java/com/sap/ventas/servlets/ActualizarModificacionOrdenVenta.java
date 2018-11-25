@@ -57,7 +57,7 @@ public class ActualizarModificacionOrdenVenta extends HttpServlet {
                 ",idcliente = "+idCOV+",idproducto = "+idPOV,"orden_de_venta", "idordenventa = "+idov);
                 
         
-            response.sendRedirect("Ventas/Clientes.jsp");
+            response.sendRedirect("Ventas/Orden de Venta.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

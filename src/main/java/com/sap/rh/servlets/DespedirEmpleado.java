@@ -1,14 +1,6 @@
 package com.sap.rh.servlets;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 import com.sap.conexion.Conexion;
-import com.sap.gerencia.clases.usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -20,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -43,16 +36,16 @@ public class DespedirEmpleado extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             String empleado = request.getParameter("despedirIdEmpleado");
             Conexion c = new Conexion();
-            usuario usu = new usuario();
+            HttpSession sesion = request.getSession(true);
             ArrayList lista = c.consulta("id", "empleado", "id = " + empleado, 1);
             if(!lista.isEmpty()){
+                c.insertar("id_emp,area,des", "log", sesion.getAttribute("usuario")+",'"+sesion.getAttribute("area")+"','Despido del empleado "+empleado+"'");
                 c.actualizar("status = 'Despedido'", "empleado", "id = " + empleado);
                 c.actualizar("actividad = ''", "empleado", "id = " + empleado);
-                int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Despido de empleado");
-                response.sendRedirect("RecursosHumanos/DespedirEmpleado.jsp");
+                response.sendRedirect("RH/DespedirEmpleado.jsp");
             }else{
-                int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Intento de despido de empleado");
-                request.getSession().setAttribute("motivo", "El empleado no existe");
+                c.insertar("id_emp,area,des", "log", sesion.getAttribute("usuario")+",'"+sesion.getAttribute("area")+"','Intento de despido del empleado "+empleado+"'");
+                sesion.setAttribute("motivo", "El empleado no existe");
                 response.sendRedirect("RH/Error.jsp");
             }
         }

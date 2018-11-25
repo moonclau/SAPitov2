@@ -7,10 +7,10 @@
         <title>Informacion Gerencial</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="../Recursos/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <script src="../Recursos/bootstrap/librerias/jquery-3.3.1.min.js" type="text/javascript"></script>
-        <script src="../Recursos/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-        <script src="../Recursos/bootstrap/librerias/popper.min.js" type="text/javascript"></script>
+        <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
+        <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
         <script src="../Gerencia/validaciones/validacion.js" type="text/javascript"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js" integrity="sha256-CfcERD4Ov4+lKbWbYqXD6aFM9M51gN4GUEtDhkWABMo=" crossorigin="anonymous"></script>
     </head>
@@ -81,7 +81,7 @@
                         </ul>
                     </li>
                     <li class="nav-item" style="list-style:none">
-                        <a class="nav-link" href="#" style="color: white">Salir</a>
+                        <a class="nav-link" href="../CerrarSesion" style="color: white">Salir</a>
                     </li>
                 </div>
 

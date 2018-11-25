@@ -16,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -48,6 +49,7 @@ public class Generar_ordenCompra extends HttpServlet {
         String provagr = request.getParameter("provagr");
         
         Conexion c = new Conexion();
+           HttpSession sesion = request.getSession(true);
         
          c.insertar("folio_orden,fecha_ord,fecha_ent,productos,cantidad,proveedor,status", "Ordencompra",fol_ord+",'"+fech_ord+"','"+fec_ent+"','"
                  +nomprod+"',"+cant+",'"+proveedor+"','espera'");

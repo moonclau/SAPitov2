@@ -7,7 +7,11 @@
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    ArrayList lista = (ArrayList) request.getSession().getAttribute("nomina");
+    HttpSession sesion = request.getSession(true);
+    ArrayList lista = (ArrayList) sesion.getAttribute("nomina");
+    if(lista.isEmpty()){
+        response.sendRedirect("ConsultarNomina.jsp");
+    }
 %>
 <!DOCTYPE html>
 <html>
@@ -57,7 +61,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="../index.jsp" class="nav-link bg-primary text-white">Cerrar&nbsp;sesi&oacute;n</a>
+                                        <a href="../CerrarSesion" class="nav-link bg-primary text-white">Cerrar&nbsp;sesi&oacute;n</a>
                                     </li>
                                 </ul>
                             </div>

@@ -27,7 +27,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAPP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM calen_contable order by clave asc");
@@ -57,7 +57,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAPP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM cuentasat");
@@ -78,7 +78,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAPP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT ce.id,ce.clave,cs.codigosat,ce.descripcion,ce.naturaleza FROM cuentaempresa as ce, cuentasat as cs where ce.id_sat=cs.id;");
@@ -107,7 +107,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAPP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, nombre FROM proveedores");
@@ -133,7 +133,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAPP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT cp.id,cp.clave,cp.idcuentaempresa,ce.descripcion, p.nombre FROM cuentaempresa as ce,cuentaproveedor as cp, proveedores as p where cp.idproveedor=p.id and cp.idcuentaempresa=ce.id;");
@@ -161,7 +161,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAPP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, nombre FROM cliente");
@@ -187,7 +187,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAPP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT cc.id,cc.clave,cc.idcuentaempresa,ce.descripcion, c.nombre FROM cuentaempresa as ce,cuentacliente as cc, cliente as c where cc.idcliente=c.id and cc.idcuentaempresa=ce.id;");
@@ -215,7 +215,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAPP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM area");
@@ -241,7 +241,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAPP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT ag.id,ag.clave,ar.nombre,ag.idperiodo,ag.fecha,ag.concepto FROM asientogeneral as ag,area as ar where ag.idarea=ar.id;");
@@ -271,7 +271,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAPP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT * FROM factura");
@@ -296,7 +296,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAPP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("select ag.id,ag.clave as asientog,ar.nombre as modulo,cal.clave as periodo,ag.fecha,ag.concepto,ad.monto,f.clave as factu,f.nombrecli,f.nombrepro from asientogeneral as ag,area as ar,\n" +

@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -40,6 +41,7 @@ public class Modificar_producto extends HttpServlet {
         String prov = request.getParameter("prov");
         
         Conexion c= new Conexion();
+           HttpSession sesion = request.getSession(true);
         
         c.actualizar("'"+nom_prod+"',"+precio_com+","+precio_ven+","+prov, "Producto", "id= "+ id_prod);
         

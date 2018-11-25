@@ -53,7 +53,7 @@
                                         </div>
                                     </li>
                                     <li class="nav-item">
-                                        <a href="../index.jsp" class="nav-link bg-primary text-white">Cerrar&nbsp;sesi&oacute;n</a>
+                                        <a href="../CerrarSesion" class="nav-link bg-primary text-white">Cerrar&nbsp;sesi&oacute;n</a>
                                     </li>
                                 </ul>
                             </div>
@@ -86,7 +86,7 @@
                                             <option value="2">Recursos&nbsp;Humanos</option>
                                             <option value="4">Ventas</option>
                                             <option value="5">Compras</option>
-                                            <option value="6">Invetario</option>
+                                            <option value="6">Inventario</option>
                                             <option value="1">Gerencia</option>
                                             <option value="3">Contabilidad</option>
                                         </select>

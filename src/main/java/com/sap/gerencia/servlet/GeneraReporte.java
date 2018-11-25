@@ -9,7 +9,6 @@ import com.sap.conexion.Conexion;
 import com.sap.gerencia.clases.usuario;
 import com.sap.gerencia.pojo.Reporte;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -38,15 +38,12 @@ public class GeneraReporte extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-
-        Conexion con = new Conexion();
+        HttpSession sesion = request.getSession(true);
+        Conexion c = new Conexion();
         Reporte pdf = new Reporte();
-        usuario usu = new usuario();
         
         pdf.generarReporte();
-        
-        int i = con.insercionRegistro(usu.getId_emp(), "Gerencia", "Genero reporte");
-        
+        c.insertar("id_emp,area,des", "log", sesion.getAttribute("usuario")+",'"+sesion.getAttribute("area")+"','Generacion de reporte'");
         response.sendRedirect("Gerencia/InicioGerencia.jsp");
     }
 
