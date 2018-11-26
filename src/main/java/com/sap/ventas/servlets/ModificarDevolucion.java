@@ -38,11 +38,11 @@ public class ModificarDevolucion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        String devolucion = request.getParameter("modificarIdDevolucion");
+        String dev = request.getParameter("modificarIdDevolucion");
         Conexion c = new Conexion();
         HttpSession sesion = request.getSession(true);
         
-         ArrayList lista = c.consulta("iddevolucion,clave_devolucion,fecha,motivo,idordenventa","devolucion", "iddevolucion = "+devolucion,5);
+         ArrayList lista = c.consulta("iddevolucion,clave_devolucion,fecha,motivo,idordenventa","devolucion", "iddevolucion = "+dev,5);
         if(!lista.isEmpty()){
             request.getSession().setAttribute("devolucion",lista);
        
