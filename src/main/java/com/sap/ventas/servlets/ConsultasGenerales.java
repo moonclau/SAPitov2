@@ -36,11 +36,12 @@ public class ConsultasGenerales {
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT id, nombre FROM proveedores");
+        ResultSet rs = stmt.executeQuery("SELECT id, nombre, rfc FROM proveedores");
             while (rs.next()) {
                 Proveedor p=new Proveedor();
                 p.setId(rs.getInt("id"));             
-                p.setNombre(rs.getString("nombre"));                
+                p.setNombre(rs.getString("nombre"));
+                 p.setRfc(rs.getString("rfc"));
                 l.add(p);
             }                    
         conn.close();
@@ -131,6 +132,7 @@ public class ConsultasGenerales {
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, nombre, ape_pat, ape_mat, direccion, cp, municipio, edo, pais, rfc, cuentabancaria, razon FROM cliente");
+        
             while (rs.next()) {
                 Cliente p=new Cliente();
                 p.setId(rs.getInt("id"));             
@@ -188,7 +190,7 @@ public class ConsultasGenerales {
         ResultSet rs = stmt.executeQuery("SELECT iddevolucion, clave_devolucion, fecha, motivo FROM devolucion");
             while (rs.next()) {
                 Devolucion d=new Devolucion();
-                d.setId(rs.getInt("iddevolucion"));             
+                d.setIddevolucion(rs.getInt("iddevolucion"));             
                 d.setClave_devolucion(rs.getString("clave_devolucion"));
                 d.setFecha(rs.getString("fecha"));
                 d.setMotivo(rs.getString("motivo"));       

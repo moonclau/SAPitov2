@@ -47,7 +47,7 @@ public class ActualizarModificacionDevolucion extends HttpServlet {
         
                 
         c.actualizar("clave_devolucion = '"+clave+"', fecha = '"+fecha+"',motivo = '"+motivo+"',"
-                + "idordenventa = "+idOVD+"'","devolucion", "iddevolucion = "+iddev);
+                + "idordenventa = "+idOVD+"","devolucion", "iddevolucion = "+iddev);
        
          response.sendRedirect("Ventas/Devolucion.jsp");
            

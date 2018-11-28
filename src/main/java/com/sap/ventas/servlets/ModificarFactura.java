@@ -42,16 +42,16 @@ public class ModificarFactura extends HttpServlet {
         Conexion c = new Conexion();
         HttpSession sesion = request.getSession(true);
         //usuario usu = new usuario();
-         ArrayList lista = c.consulta("id,clave,fecha,nombrecliente,nombreproveedor,total"
-                 ,"factura", "id = "+factura, 12);
+         ArrayList lista = c.consulta("id,clave,fecha,tipo,nombrecliente,nombreproveedor,total,idordenventa,idproveedor"
+                 ,"factura", "id = "+factura, 9);
         if(!lista.isEmpty()){
             request.getSession().setAttribute("factura",lista);
-        //int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Modifica empleado");
+        
             response.sendRedirect("Ventas/ModificarResultadoFactura.jsp");
         }else{
-            //int i = c.insercionRegistro(usu.getId_emp(),  "rh", "Intento modificar empleado");
-            request.getSession().setAttribute("motivo", "El cliente no existe");
-            response.sendRedirect("Ventas/ErrorCliente.jsp");
+            
+            request.getSession().setAttribute("motivo", "La factura no existe");
+            response.sendRedirect("Ventas/ErrorFactura.jsp");
         }
        
         

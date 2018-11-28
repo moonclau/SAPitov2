@@ -9,7 +9,7 @@
 <%@page import="com.sap.ventas.clases.OrdenVenta"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    ArrayList lista = (ArrayList) request.getSession().getAttribute("cliente");
+    ArrayList lista = (ArrayList) request.getSession().getAttribute("devolucion");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,7 +60,7 @@
                         </div>
                     </li> 
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Otro</a>
+                        <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Entrada de Ventas</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
                             <a class="nav-link text-white" href="Devolucion.jsp">&nbsp;Devolucion</a>
                         </div>
@@ -121,15 +121,13 @@
         <h1 class="text-uppercase text-center">Modificar Devolución</h1>
         <form method="POST" autocomplete="off" action="../ActualizarModificacionDevolucion" id="formDevolucion" name="formDevolucion">
             <div class="row">
-                <div class="col-xs-2 col-md-2">
+                <div class="col-xs-4 col-md-4">
                     <label for="iddevolucion">Id del Devolucion:</label>
                     <input type="text" class="form-control col-12" name="idModificarDevolucion" id="idModificarDevolucion" value="<%= lista.get(0) %>" required="required" readonly="readonly">
                 </div>
                  <div class="col-xs-4 col-md-4">
                     <label for="clavedevolucion">Clave devolución:</label>
                     <input type="text" class="form-control col-12" name="claveDevolucion" id="claveDevolucion" value="<%= lista.get(1) %>" required="required">
-                </div>
-                <div class="col-xs-4 col-md-4">
                 </div>
                 <div class="col-xs-4 col-md-4">
                     <label for="fechadevolucion">Fecha:</label>
@@ -148,8 +146,12 @@
                             <%
                                 LinkedList<OrdenVenta> h =ConsultasGenerales.opcionesOrdenVenta();
                                 for (int i=0;i<h.size();i++)
-                                {                                   
-                                   out.println("<option value='"+h.get(i).getIdordenventa()+"'>"+h.get(i).getClave_ordenventa()+"</option>");                                   
+                                {                                 
+                                    if(lista.get(0).equals(h.get(i).getIdordenventa())){
+                                        out.println("<option selected='selected' value='"+h.get(i).getIdordenventa()+"'>"+h.get(i).getClave_ordenventa()+"</option>");
+                                    }else{
+                                        out.println("<option value='"+h.get(i).getIdordenventa()+"'>"+h.get(i).getClave_ordenventa()+"</option>");
+                                    }                                
                                 }
                             %> 
                         </select>

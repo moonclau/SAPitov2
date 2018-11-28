@@ -16,7 +16,23 @@ public class Devolucion {
     String fecha;
     String motivo; 
 
-    public int getId() {
+    public void setIddevolucion(int iddevolucion) {
+        this.iddevolucion = iddevolucion;
+    }
+
+    public void setClave_devolucion(String clave_devolucion) {
+        this.clave_devolucion = clave_devolucion;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public void setMotivo(String motivo) {
+        this.motivo = motivo;
+    }
+
+    public int getIddevolucion() {
         return iddevolucion;
     }
 
@@ -32,21 +48,6 @@ public class Devolucion {
         return motivo;
     }
 
-    public void setId(int id) {
-        this.iddevolucion = id;
-    }
-
-    public void setClave_devolucion(String clave_devolucion) {
-        this.clave_devolucion = clave_devolucion;
-    }
-
-    public void setFecha(String fecha) {
-        this.fecha = fecha;
-    }
-
-    public void setMotivo(String motivo) {
-        this.motivo = motivo;
-    }
-    
+   
      
 }

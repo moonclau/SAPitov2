@@ -40,18 +40,19 @@ public class Factura extends HttpServlet {
         String clave = request.getParameter("claveFactura");
         String fecha = request.getParameter("fechaFactura");
         String tipo = request.getParameter("tipoFactura");
-        String cliente = request.getParameter("nombredelclienteFactura");
-        String proveedor = request.getParameter("nombredelproveedorFactura");
+        String cliente = request.getParameter("nombreclienteFactura");
+        String proveedor = request.getParameter("nombreproveedorFactura");
         String total = request.getParameter("totalFactura");
-        String idOVF = request.getParameter("idordendeventaFactura");
+        String idOVF = request.getParameter("idordenventaFactura");
+        String idP = request.getParameter("idproveedorFactura");
         HttpSession sesion = request.getSession(true);
         Conexion c = new Conexion();
         
-        c.insertar("clave,fecha,tipo,nombrecliente,nombreproveedor,total,idordenventa","factura","'"+clave+"','"+fecha+"',"+tipo+",'"+cliente+"','"+proveedor+"',"+total+","+idOVF+"");
+        c.insertar("clave,fecha,tipo,nombrecliente,nombreproveedor,total,idordenventa,idproveedor","factura","'"+clave+"','"+fecha+"',"+tipo+",'"+cliente+"','"+proveedor+"',"+total+","+idOVF+","+idP+"");
         
         
         response.sendRedirect("Ventas/Factura.jsp");
-            }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
 
@@ -87,6 +88,6 @@ public class Factura extends HttpServlet {
 
     void setId(int aInt) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+}
 
 }

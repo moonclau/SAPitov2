@@ -18,7 +18,6 @@ public class Factura {
     String nombre_cliente;
     String nombre_proveedor;
     String total;
-    
 
     public int getId() {
         return id;
@@ -76,6 +75,6 @@ public class Factura {
         this.total = total;
     }
     
-   
-
+    
+    
 }

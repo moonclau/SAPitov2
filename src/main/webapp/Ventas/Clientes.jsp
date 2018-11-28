@@ -57,7 +57,7 @@
                         </div>
                     </li> 
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Otro</a>
+                        <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Entrada de Ventas</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
                             <a class="nav-link text-white" href="Devolucion.jsp">&nbsp;Devolucion</a>
                         </div>
@@ -84,7 +84,7 @@
             <div class="panel panel-default">
               <div class="panel-body">
                 <div class="container">
-                    <form action="" method="post">
+                    <form action="../BuscarClave" method="post">
                         <div class="row">                        
                             <div class="col-xs-2">
                                 <input id="clave" name="clave" class="form-control" type="text" placeholder="ingresa clave a buscar"/>

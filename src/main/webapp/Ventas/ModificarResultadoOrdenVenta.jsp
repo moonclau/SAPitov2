@@ -63,7 +63,7 @@
                         </div>
                     </li> 
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Otro</a>
+                        <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Entrada de Ventas</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
                             <a class="nav-link text-white" href="Devolucion.jsp">&nbsp;Devolucion</a>
                         </div>
@@ -149,25 +149,35 @@
                 <div class="col-xs-4 col-md-4">
                     <label for="nombreclienteVenta">Nombre cliente:</label>
                     <Select  class="form-control" id="nombreclienteVenta" name="nombreclienteVenta" value="<%= lista.get(9) %>" required="required">
-                              <option value="x">Seleccione...</option>
+                              <option value="">Seleccione...</option>
                             <%
                                 LinkedList<Cliente> h =ConsultasGenerales.opcionesCliente();
                                 for (int i=0;i<h.size();i++)
-                                {                                   
+                                { 
+                                    if(lista.get(0).equals(h.get(i).getId())){
+                                        out.println("<option selected='selected' value='"+h.get(i).getId()+"'>"+h.get(i).getNombre()+""+" "+""+h.get(i).getApe_pat()+""+" "+""+h.get(i).getApe_mat()+"</option>"); 
+                                    }else{
                                    out.println("<option value='"+h.get(i).getId()+"'>"+h.get(i).getNombre()+""+" "+""+h.get(i).getApe_pat()+""+" "+""+h.get(i).getApe_mat()+"</option>");                                   
                                 }
+                            }
                             %> 
                         </select>
                 </div>
                 <div class="col-xs-8 col-md-8">
                     <label for="clave">Dirección:</label>
                     <Select  class="form-control" id="direccionOrdendeVenta" name="direccionOrdendeVenta" value="<%= lista.get(3) %>" required="required">
-                              <option value="x">Seleccione...</option>
+                              <option value="">Seleccione...</option>
                             <%
                                 LinkedList<Cliente> d =ConsultasGenerales.opcionesCliente();
                                 for (int i=0;i<d.size();i++)
-                                {                                   
-                                   out.println("<option value='"+d.get(i).getDireccion()+"'>"+d.get(i).getDireccion()+"</option>");                                   
+                                { 
+                                    if(lista.get(0).equals(d.get(i).getId())){
+                                        out.println("<option selected='selected' value='"+d.get(i).getDireccion()+"'>"+d.get(i).getDireccion()+"</option>");
+                                    }else{
+                                        
+                                       out.println("<option value='"+d.get(i).getDireccion()+"'>"+d.get(i).getDireccion()+"</option>");                                 
+                                    }
+                                                                     
                                 }
                             %> 
                         </select>
@@ -183,12 +193,18 @@
                 <div class="col-xs-4 col-md-4">
                     <label for="clave">Clave del producto:</label>
                     <Select  class="form-control" id="claveproductoventa" name="claveproductoventa" value="<%= lista.get(10) %>" required="required">
-                              <option value="x">Seleccione...</option>
+                              <option value="">Seleccione...</option>
                             <%
                                 LinkedList<Producto> b =ConsultasGenerales.opcionesProducto();
                                 for (int i=0;i<b.size();i++)
-                                {                                   
-                                   out.println("<option value='"+b.get(i).getId()+"'>"+b.get(i).getClave()+"</option>");                                   
+                                {   
+                                    if(lista.get(0).equals(b.get(i).getId())){
+                                        out.println("<option selected='selected' value='"+b.get(i).getId()+"'>"+b.get(i).getClave()+"</option>");  
+                                    }else{
+                                        
+                                        out.println("<option value='"+b.get(i).getId()+"'>"+b.get(i).getClave()+"</option>");                                 
+                                    }
+                                                                      
                                 }
                             %> 
                         </select>
@@ -196,13 +212,18 @@
                 <div class="col-xs-4 col-md-4">
                           <label for="proveedor">Nombre del Vendedor:</label>
                           <Select  class="form-control" id="vendedorOrdendeVenta" name="vendedorOrdendeVenta" value="<%= lista.get(6) %>" required="required">
-                              <option value="x">Seleccione...</option>
+                              <option value="">Seleccione...</option>
                                <%
                                     LinkedList<Proveedor> a =ConsultasGenerales.opcionesProveedor();
                                     for (int i=0;i<a.size();i++)
-                                    {                                   
+                                    {   
+                                        if(lista.get(0).equals(a.get(i).getId())){
+                                        out.println("<option selected='selected' value='"+a.get(i).getNombre()+"'>"+a.get(i).getNombre()+"</option>"); 
+                                    }else{
+                                        
                                         out.println("<option value='"+a.get(i).getNombre()+"'>"+a.get(i).getNombre()+"</option>");                                   
                                     }
+                               }
                                 %>
                            </select>
                 </div>
@@ -215,13 +236,18 @@
                 <div class="col-xs-4 col-md-4">
                           <label for="preciounitario">Precio Unitario:</label>
                           <Select  class="form-control" id="preciounitarioOrdendeVenta" name="preciounitarioOrdendeVenta" value="<%= lista.get(7) %>" required="required">
-                              <option value="x">Seleccione...</option>
+                              <option value="">Seleccione...</option>
                                <%
                                     LinkedList<Producto> f =ConsultasGenerales.opcionesProducto();
                                     for (int i=0;i<f.size();i++)
-                                    {                                   
+                                    {    
+                                        if(lista.get(0).equals(f.get(i).getId())){
+                                        out.println("<option selected='selected' value='"+f.get(i).getCostounitario()+"'>"+f.get(i).getCostounitario()+"</option>");
+                                    }else{
+                                        
                                         out.println("<option value='"+f.get(i).getCostounitario()+"'>"+f.get(i).getCostounitario()+"</option>");                                   
                                     }
+                               }
                                 %>
                            </select>
                 </div>

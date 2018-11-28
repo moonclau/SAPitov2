@@ -57,7 +57,7 @@
                         </div>
                     </li> 
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Otro</a>
+                        <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Entrada de Ventas</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
                             <a class="nav-link text-white" href="Devolucion.jsp">&nbsp;Devolucion</a>
                         </div>
@@ -128,7 +128,7 @@
                         for (int i=0;i<lista.size();i++)
                         {
                            out.println("<tr>");
-                           out.println("<td>"+lista.get(i).getId()+"</td>");
+                           out.println("<td>"+lista.get(i).getIddevolucion()+"</td>");
                            out.println("<td>"+lista.get(i).getClave_devolucion()+"</td>");
                            out.println("<td>"+lista.get(i).getFecha()+"</td>");                           
                            out.println("<td>"+lista.get(i).getMotivo()+"</td>");   

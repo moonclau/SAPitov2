@@ -53,7 +53,7 @@
                         </div>
                     </li> 
                     <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Otro</a>
+                        <a href="#" class="nav-link dropdown-toggle text-white" id="cuentas" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Entrada de Ventas</a>
                         <div class="dropdown-menu bg-primary" aria-labelledby="cuentas">
                             <a class="nav-link text-white" href="Devolucion.jsp">&nbsp;Devolucion</a>
                         </div>
@@ -78,7 +78,8 @@
             <br>
             <br>
             <br>
-            <h1 class="text-center">¡Bienvenido al M&oacute;dulo de Ventas!</h1>          
+            <h1 class="text-center">¡Bienvenido!</h1>
+            <h1 class="text-center">M&oacute;dulo de Ventas</h1>      
         </div>
         <!--columna de la derecha-->
         <div class="col-xs-3 col-md-3 derecha table-responsive">

@@ -9,6 +9,7 @@ import com.sap.conexion.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -22,7 +23,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author claudia
  */
-@WebServlet(name = "OrdendeVenta1", urlPatterns = {"/OrdendeVenta1"})
+@WebServlet(name = "OrdendeVenta", urlPatterns = {"/OrdendeVenta"})
 public class OrdendeVenta extends HttpServlet {
 
     /**
@@ -49,11 +50,11 @@ public class OrdendeVenta extends HttpServlet {
         String idCOV = request.getParameter("nombreclienteVenta");
         String idPOV = request.getParameter("claveproducto");
         HttpSession sesion = request.getSession(true);
-        
+        ArrayList prod = c.consulta("id,precio_venta", "producto", "id = "+idPOV, 2);
         String campos="clave_ordenventa,fecha,direccion,cantidad,descripcion_venta,vendedor,idcliente,precio_total,precio_unitario,idproducto";
         int cant=Integer.parseInt(cantidad);
-         c.insertardemastablas(campos,"orden_de_venta",
-         "'"+clave+"','"+fecha+"','"+direccion+"',"+cantidad+",'"+descripcion+"','"+vendedor+"',"+idCOV+",p.precio_venta*"+cant+",p.precio_venta,p.id from producto p where p.clave='"+idPOV+"'");
+         c.insertar(campos,"orden_de_venta",
+         "'"+clave+"','"+fecha+"','"+direccion+"',"+cantidad+",'"+descripcion+"','"+vendedor+"',"+idCOV+","+prod.get(1)+"*"+cant+","+prod.get(1)+","+prod.get(0));
 
          response.sendRedirect("Ventas/Orden de Venta.jsp");
     }
