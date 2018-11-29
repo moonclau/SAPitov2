@@ -9,7 +9,7 @@
 <html>
    <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Inventario Requisiscion</title>
+        <title>Inventario Requisicion</title>
         <!----BOOSTRAP---------------------------->
     <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
@@ -18,7 +18,7 @@
 <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
 </head>
-<body>  
+<body>
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <a href="Inventario.jsp" class="navbar-brand text-white">Inventario</a>
@@ -61,7 +61,7 @@
                 </form>
             </div>
         </nav>
-    </header>            
+    </header>      
     <br>
     <br>
     <!---------------BARRA DE LA IZQUIERDA----------------->
@@ -78,8 +78,8 @@
                     <div class="col-xs-10 col-md-10 central">
                         
                      <a href="InventarioRequisicion.jsp"><label>Agregar Requisicion</label></a>
-                     <a href="InventarioProductoModificar.jsp"><label>Mostrar Requisiciones</label></a>
-                    <h4>Reporte</h4>
+                     <a href="InventarioDetalleReq.jsp"><label>Mostrar Requisiciones</label></a>
+                     <h4>Reporte</h4>
                     
                 <input id="generar" type="submit" value="Generar" class="btn btn-success"/><br><br>
                     </div>
@@ -97,15 +97,15 @@
                 <h3 class="card-title" >Requisicion </h3><br><br>
                 <!--INICIO CUESTIONARIO-->
                 <label class="card-text">Ingrese clave de requisicion:</label><br>
-                <input type="text" id="clave" name="clave" class="form-control form-control-sm" required="required" />
+                <input type="text" id="clave" name="clave" minlength="2" maxlength="9" class="form-control form-control-sm" required="required"  />
                 <label class="card-text">Ingrese la clave del producto: </label>
-                <input type="text" id="producto" name="producto"  class="form-control form-control-sm" required="required" /><br>
+                <input type="text" id="producto" minlength="2" maxlength="9" name="producto" required="required"  class="form-control form-control-sm" /><br>
                 <label class="card-text">Ingrese la fecha de entrega: </label>
-                <input type="date" id="fechae" name="fechae"  class="form-control form-control-sm" required="required"/><br>
+                <input type="date" id="fechae" name="fechae" required="required"  class="form-control form-control-sm" /><br>
                 <label class="card-text">Ingrese la cantidad a pedir: </label>
-                <input type="number" id="cantidadp" name="cantidadp"  class="form-control form-control-sm" required="required"/><br>
+                <input type="number" id="cantidadp" name="cantidadp" required="required"   class="form-control form-control-sm" /><br>
                 <label class="card-text">Comentarios: </label>
-                <input type="text" id="comentario" name="comentario"  class="form-control form-control-sm" /><br>
+                <input type="text" id="comentario" maxlength="120"   name="comentario"  class="form-control form-control-sm" /><br>
                 <input id="btn" type="submit" value="Guardar" class="btn btn-success" style="width: 330px;background: #0066cc; margin: auto auto;"/>
                         </form>
             </div>

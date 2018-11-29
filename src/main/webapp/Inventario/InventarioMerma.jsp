@@ -16,8 +16,7 @@
 <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
     </head>
-    
-<body>  
+    <body>
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <a href="Inventario.jsp" class="navbar-brand text-white">Inventario</a>
@@ -61,7 +60,8 @@
             </div>
         </nav>
     </header>      
-    <br/><br/>
+    <br>
+    <br>
     <!--/.Panel-->
     <div class="row">
     <div class="col-sm-3 ">
@@ -70,9 +70,6 @@
                 <label class="card-text">Buscar id de merma</label><br>
                 <input type="text" id="bmerma" name="bmerma" class="form-control form-control-sm" />
                 <input id="bomerma" type="submit" value="Buscar" class="btn btn-success"/><br><br>
-                <p class="card-text">Eliminar producto de merma</p>
-                <input type="text" id="emerma" name="emerma" class="form-control form-control-sm" />
-                <input id="boemerma" type="submit" value="Eliminar" class="btn btn-success"/><br><br>
                 <hr>
                 <a href="InventarioMermaAgregar.jsp"><label class="card-text">Nuevo producto de merma</label></a>
                 <a href="InventarioMermaModificar.jsp"><label class="card-text">Modificar producto de merma</label></a>

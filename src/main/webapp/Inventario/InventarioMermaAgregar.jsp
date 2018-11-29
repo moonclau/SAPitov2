@@ -18,8 +18,7 @@
 <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
     </head>
-<body>  
-    <header class="sticky-top">
+       <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <a href="Inventario.jsp" class="navbar-brand text-white">Inventario</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#inv_navbar" aria-controls="inv_navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,8 +60,9 @@
                 </form>
             </div>
         </nav>
-    </header>         
-    <br/><br/>
+    </header>      
+    <br>
+    <br>
     <!--Panel-->
     <div class="col-sm-5 central" style="width: auto; margin: auto auto;" >
         <div class="card" text-center>
@@ -71,15 +71,15 @@
                 <h3 class="card-title" >Agregar Producto en Merma</h3><br><br>
                 <!--INICIO CUESTIONARIO-->
                 <label class="card-text">Ingrese la clave de merma:</label><br>
-                <input type="text" id="clavem" name="clavem" class="form-control form-control-sm" />
+                <input type="text" id="clavem" required="required"  minlength="2" maxlength="9" name="clavem" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese la clave del producto:</p>
-                <input type="text" id="producto" name="producto" class="form-control form-control-sm" />
+                <input type="text" id="producto" required="required"  name="producto" class="form-control form-control-sm" />
                 <label class="card-text">Ingrese la cantidad:</label><br>
-                <input type="number" id="cantidad" name="cantidad" class="form-control form-control-sm" />
+                <input type="number" id="cantidad" required="required" name="cantidad" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese la motivo</p>
-                <input type="text" id="descripcion" name="descripcion" class="form-control form-control-sm" />
+                <input type="text" id="descripcion" required="required" name="descripcion" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese la fecha</p>
-                <input type="date" id="fecha" name="fecha" class="form-control form-control-sm" />
+                <input type="date" id="fecha" required="required" name="fecha" class="form-control form-control-sm" />
                 <p class="card-text">Ingrese tipo de merma</p>
                 
                 
@@ -97,7 +97,7 @@
     </div>
     <!--/.Panel-->
     
-</div>
+
     
     </body>
 </html>

@@ -7,23 +7,38 @@
 <%@page import="com.sap.inventario.clases.Producto"%>
 <%@page import="com.sap.inventario.clases.Consultas"%>
 <%@page import="java.util.LinkedList"%>
+<%@page import="java.util.LinkedList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
+ 
+<head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Inventario Entrada</title>
 <!-- Bootstrap -->
-
 <link href="../Recursos/Bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="../Recursos/Bootstrap/include/jquery-3.3.1.min.js" type="text/javascript"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed --> 
 <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
+<!--Validacion de campos
+    <script src="../Recursos/js/Inventario.js" type="text/javascript"></script>-->
+<script>
+$(document).ready(function() {
+                $('#buscarentrada').click(function(event) {
+                        var clavebuscar = $('#clave').val();        
+                        // Si en vez de por post lo queremos hacer por get, cambiamos el $.post por $.get
+                        $.post('../Productos', {
+                                clavep : clavebuscar
+                        }, function(responseText) {                            
+                                $('#tablas').html(responseText);
+                        });
+                });
+        });
+        </script>
 </head>
-<body>
-    <header class="sticky-top">
+<body>    <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <a href="Inventario.jsp" class="navbar-brand text-white">Inventario</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#inv_navbar" aria-controls="inv_navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,7 +80,7 @@
                 </form>
             </div>
         </nav>
-    </header>            
+    </header>      
     <br/><br/>
     <!--Panel-->
     <div class="row">
@@ -75,10 +90,10 @@
                 <h4>Consulta</h4>
                  
                     <div class="col-xs-10 col-md-10 central">
-                    <form action="" method="post">
+                        <form action="../Productos" method="post" >
                         <h5>Buscar ID producto</h5>
-                    <input name="clave" type="text" placeholder="ID Compra"/> 
-                    <input type="submit" value="Buscar"/>
+                    <input name="clave" id="clave" type="text" placeholder="producto"/> 
+                    <input type="submit" id="buscarentrada" name="buscarentrada" value="Buscar"/>
                     <h4>Reporte</h4>
                     <input type="submit" value="Generar"/>
                     <hr>
@@ -91,9 +106,9 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-8">
+    <div class="col-sm-8" id="tablas" >
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" >
       <div class="col-xs-offset-6 col-md-offset-6 central">
               <div class="container">
                 <h4>Productos Comprados</h4>

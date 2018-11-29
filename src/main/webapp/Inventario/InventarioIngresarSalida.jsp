@@ -18,8 +18,8 @@
 <script src="../Recursos/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 <script src="../Recursos/Bootstrap/include/popper.min.js" type="text/javascript"></script>
 </head>
-<body>  
-    <header class="sticky-top">
+<body>
+        <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
             <a href="Inventario.jsp" class="navbar-brand text-white">Inventario</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#inv_navbar" aria-controls="inv_navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,8 +61,9 @@
                 </form>
             </div>
         </nav>
-    </header>            
-    <br/><br/>
+    </header>      
+    <br>
+    <br>
     <!---------------------------------------------------------------fin de barra meni-->
     <!--Panel---------------------------------------------------------------------------------->
     <div class="row">
@@ -75,9 +76,9 @@
                 <h3 class="card-title" >Ingresar salida de producto </h3><br><br>
                 <!--INICIO CUESTIONARIO-->
                 <label class="card-text">Ingrese clave de producto:</label><br>
-                <input type="text" id="clave" name="clave" class="form-control form-control-sm" />
+                <input type="text" id="clave" name="clave" class="form-control form-control-sm" minlength="2" maxlength="9" required="required" />
                 <label class="card-text">Ingrese la cantidad: </label>
-                <input type="number" id="cantidad" name="cantidad"  class="form-control form-control-sm" /><br>
+                <input type="number" id="cantidad" name="cantidad"  class="form-control form-control-sm" required="required"/><br>
                 <div>
                 <input id="btn" type="submit" value="Guardar" class="btn btn-success" style=" margin:  auto;"/>
                 <input type="reset" value="Cancelar" class="btn btn-default" style=" margin: auto;"/>                                                        

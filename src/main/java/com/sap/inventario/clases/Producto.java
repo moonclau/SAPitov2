@@ -19,7 +19,28 @@ public class Producto {
     double iva;
     double costototal;
     String fecha;
+    String operacion;
     double montototal;
+    int cantidaddoble;
+    String imagen;
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) 
+    {
+        this.imagen = imagen;
+    }
+    
+
+    public int getCantidaddoble() {
+        return cantidaddoble;
+    }
+
+    public void setCantidaddoble(int cantidaddoble) {
+        this.cantidaddoble = cantidaddoble;
+    }
 
     public String getClave() {
         return clave;
@@ -93,6 +114,13 @@ public class Producto {
         this.fecha = fecha;
     }
 
+    public String getOperacion() {
+        return operacion;
+    }
+
+    public void setOperacion(String operacion) {
+        this.operacion = operacion;
+    }
 
     public double getMontototal() {
         return montototal;

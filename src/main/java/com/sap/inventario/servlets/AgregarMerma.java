@@ -5,10 +5,16 @@
  */
 package com.sap.inventario.servlets;
 
-import com.sap.conexion.Conexion;
+import com.sap.conexion.Conexion;;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;

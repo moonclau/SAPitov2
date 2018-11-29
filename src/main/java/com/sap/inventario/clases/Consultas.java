@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package com.sap.inventario.clases;
-
-
-import com.sap.inventario.clases.Requisicion;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -14,7 +11,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.LinkedList;
 import java.util.Properties;
-//
 
 /**
  *
@@ -148,4 +144,34 @@ public class Consultas {
         return l;
     
     }
+    public static void Existencia() throws SQLException,ClassNotFoundException{
+        Connection conn;
+        Class.forName("org.postgresql.Driver");
+        LinkedList <Producto> l=new LinkedList<Producto>();
+        Properties connProp = new Properties();
+        connProp.put("user", "postgres");
+        connProp.put("password", "root");
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
+        Statement stmt;        
+        stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery("select clave from producto");
+        int count = 0;
+
+        /*
+        
+while (rs.next()) {
+    ++count;
 }
+
+
+        */
+        while (rs.next()) {
+        ++count;
+        }
+        if (count != 0) {
+        
+        }
+        conn.close();
+    }
+}
+    

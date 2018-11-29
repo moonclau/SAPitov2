@@ -10,6 +10,7 @@ import com.sap.inventario.clases.Consultas;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -55,7 +56,7 @@ public class AgregarEntrada extends HttpServlet {
         c.insertardemastablas(detallecampos,"detallecompra", cantidad+",id from producto where clave='"+eclave+"'");
       
          response.sendRedirect("Inventario/InventarioAgregarEntrada.jsp");
-
+          
     }
 
 

@@ -45,13 +45,12 @@ public class ModificaMerma extends HttpServlet {
         String descripcion = request.getParameter("descripcion");
         String fecha= request.getParameter("fecha");
         String tipo= request.getParameter("tipo");
-          int cant=Integer.parseInt(cantidad);
-  
-      String campos="clave_merma='"+merma+"',cantidad="+cantidad+",motivo='"+descripcion+"',fecha='"+fecha+"',tipo_merma='"+tipo+"'";
-      c.actualizar(campos, "merma", "clave_merma='"+mermanterior+"'");
-      c.actualizar("cantidad=cantidad-"+cant, "producto", "clave='"+producto+"'");
-  
-         response.sendRedirect("Inventario/InventarioProductoModificar.jsp");
+        String campos="clave_merma='"+merma+"',cantidad="+cantidad+",motivo='"+descripcion+"',fecha='"+fecha+"',tipo_merma='"+tipo+"'";
+        c.actualizar(campos, "merma", "clave_merma='"+mermanterior+"'");
+       // String campop="producto=(select id from producto where clave='"+producto+"')";
+    //c.actualizar(camposa, "producto", referencia);
+//        
+         response.sendRedirect("Inventario/InventarioMerma.jsp");
     }
 
    

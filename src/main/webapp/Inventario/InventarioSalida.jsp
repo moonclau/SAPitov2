@@ -64,7 +64,8 @@
             </div>
         </nav>
     </header>      
-    <br/><br/>
+    <br>
+    <br>
     <!--Fin de barra-->
     
     <div class="row">
