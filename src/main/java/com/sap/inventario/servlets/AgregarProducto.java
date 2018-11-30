@@ -37,7 +37,7 @@ public class AgregarProducto extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, ClassNotFoundException, SQLException {
         response.setContentType("text/html;charset=UTF-8");
-        //conexion
+       //conexion
         Conexion c = new Conexion();
         //declaracion de campos para obtener lo ingresado en el jsp
         String clave = request.getParameter("clave");
