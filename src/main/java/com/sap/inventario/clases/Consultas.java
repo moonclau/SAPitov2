@@ -54,7 +54,7 @@ public class Consultas {
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select p.clave,p.nombre,d.cantidad,d.precio_unitario,d.precio_total from producto p, detalle_ordendeventa d where d.idproducto=p.id");
+        ResultSet rs = stmt.executeQuery("select p.clave,p.nombre,d.cantidad,d.precio_unitario,d.precio_total from producto p, orden_de_venta d where d.idproducto=p.id");
         while (rs.next()) {
            Producto p=new Producto();
             p.setClave(rs.getString("clave"));
@@ -77,8 +77,8 @@ public class Consultas {
         conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select p.clave,p.nombre,d.cantidad,p.costounitario,p.iva,p.precio_venta"
-                + " from producto p,detallecompra d where p.id=d.id_producto;");
+        ResultSet rs = stmt.executeQuery("select p.clave,p.nombre,d.cant,p.costounitario,p.iva,p.precio_venta"
+                + " from producto p,compra d where p.id=d.producto;");
        
         while (rs.next()) {
             Producto p=new Producto();

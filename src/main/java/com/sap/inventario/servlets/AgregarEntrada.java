@@ -46,14 +46,14 @@ public class AgregarEntrada extends HttpServlet {
 
         //campos para actualizar productos
         //campos que se insertaran en detalle de orden de venta
-        String detallecampos="cantidad,id_producto";
+        String detallecampos="cantidad,producto";
         //campos que se insetaran en orden de venta
         
         
         //actualizar cantidad de productos
         c.actualizar("cantidad=cantidad+"+cant, "producto", "clave='"+eclave+"'");
         //insertar en tabla detalle de orden de venta y de orden de venta
-        c.insertardemastablas(detallecampos,"detallecompra", cantidad+",id from producto where clave='"+eclave+"'");
+        c.insertardemastablas(detallecampos,"compra", cantidad+",id from producto where clave='"+eclave+"'");
       
          response.sendRedirect("Inventario/InventarioAgregarEntrada.jsp");
           
