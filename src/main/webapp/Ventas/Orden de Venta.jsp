@@ -120,8 +120,7 @@
             <div class="scroll-y">
                 <table class="tablas table">
                     <tr>
-                        <th>Id</th>
-                        <th>Clave</th>      
+                        <th>Id</th>   
                         <th>Fecha</th>                            
                         <th>Direccion</th>
                         <th>Cantiad</th>
@@ -136,7 +135,6 @@
                         {
                            out.println("<tr>");
                            out.println("<td>"+lista.get(i).getIdordenventa()+"</td>");
-                           out.println("<td>"+lista.get(i).getClave_ordenventa()+"</td>");
                            out.println("<td>"+lista.get(i).getFecha()+"</td>");                           
                            out.println("<td>"+lista.get(i).getDireccion()+"</td>");
                            out.println("<td>"+lista.get(i).getCantidad()+"</td>");

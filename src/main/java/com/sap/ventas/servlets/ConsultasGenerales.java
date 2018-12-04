@@ -33,7 +33,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, nombre, rfc FROM proveedores");
@@ -44,10 +44,10 @@ public class ConsultasGenerales {
                  p.setRfc(rs.getString("rfc"));
                 l.add(p);
             }                    
-        conn.close();
+        conn.close();    
+
         return l;
-    }
-  
+}
     /**
      * opciones para mostar en un combobox
      * @return
@@ -61,7 +61,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, nombre, ape_pat, ape_mat, direccion FROM cliente");
@@ -85,7 +85,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, clave, nombre, costounitario FROM Producto");
@@ -108,7 +108,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT idordenventa,clave_ordenventa FROM orden_de_venta");
@@ -128,7 +128,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, nombre, ape_pat, ape_mat, direccion, cp, municipio, edo, pais, rfc, cuentabancaria, razon FROM cliente");
@@ -159,7 +159,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT id, clave, fecha, tipo, nombrecliente, nombreproveedor, total FROM factura");
@@ -184,7 +184,7 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery("SELECT iddevolucion, clave_devolucion, fecha, motivo FROM devolucion");
@@ -207,14 +207,13 @@ public class ConsultasGenerales {
         Properties connProp = new Properties();
         connProp.put("user", "postgres");
         connProp.put("password", "root");
-        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/ventas", connProp);
+        conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/SAP", connProp);
         Statement stmt;        
         stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("SELECT idordenventa, clave_ordenventa, fecha, direccion, cantidad, descripcion_venta, vendedor, precio_unitario, precio_total FROM orden_de_venta");
+        ResultSet rs = stmt.executeQuery("SELECT idordenventa, fecha, direccion, cantidad, descripcion_venta, vendedor, precio_unitario, precio_total FROM orden_de_venta");
             while (rs.next()) {
                 OrdenVenta d=new OrdenVenta();
-                d.setIdordenventa(rs.getInt("idordenventa"));             
-                d.setClave_ordenventa(rs.getString("clave_ordenventa"));
+                d.setIdordenventa(rs.getInt("idordenventa"));            
                 d.setFecha(rs.getString("fecha"));
                 d.setDireccion(rs.getString("direccion"));
                 d.setCantidad(rs.getString("cantidad"));

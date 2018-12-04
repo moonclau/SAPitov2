@@ -291,7 +291,7 @@ function valida(){
         return false;
     }
     if(rfc.toLowerCase() !== "no aplica" && curp.toLowerCase() !== "no aplica"){
-        if(rfc.substring(0,10) !== curp.substring(0,10)){
+        if(rfc.substring(0,9) !== curp.substring(0,9)){
             alert("Los primeros 10 caracteres del RFC \n no coinciden con los primeros 10 caracteres del CURP");
             return false;
         }
