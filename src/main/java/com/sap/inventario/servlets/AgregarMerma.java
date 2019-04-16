@@ -5,16 +5,10 @@
  */
 package com.sap.inventario.servlets;
 
-import com.sap.conexion.Conexion;;
+import com.sap.conexion.Conexion;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -22,6 +16,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 
 /**
  *
@@ -54,9 +49,9 @@ public class AgregarMerma extends HttpServlet {
         //campos de la base de datos merma
         String campos="clave_merma,cantidad,motivo,fecha,tipo_merma,producto";
         //guardar las variables obtenidas desde registro jsp
-       String valores="'"+mclave+"',"+mcantidad+",'"+mdescripcion+"','"+mfecha+"','"+mtipo+"',id from producto where clave='"+producto+"'";
+       String valores="'"+mclave+"',"+cant+",'"+mdescripcion+"','"+mfecha+"','"+mtipo+"', id from producto where clave='"+producto+"'";
        //insertar los datos en tabla merma
-        c.insertardemastablas(campos, "merma",valores );
+        c.insertardemastablas(campos,"merma",valores );
                 //actualizar cantidad de productos
         c.actualizar("cantidad=cantidad-"+cant, "producto", "clave='"+producto+"'");
 
