@@ -51,10 +51,12 @@ public class OrdendeVenta extends HttpServlet {
         String idPOV = request.getParameter("claveproducto");
         HttpSession sesion = request.getSession(true);
         ArrayList prod = c.consulta("id,precio_venta", "producto", "id = "+idPOV, 2);
-        String campos="clave_ordenventa,fecha,direccion,cantidad,descripcion_venta,vendedor,idcliente,precio_total,precio_unitario,idproducto";
+        String campos="clave_ordenventa,fecha,direccion,cantidad,descripcion_venta,vendedor,"
+                + "idcliente,precio_total,precio_unitario,idproducto";
         int cant=Integer.parseInt(cantidad);
          c.insertar(campos,"orden_de_venta",
-         "'"+clave+"','"+fecha+"','"+direccion+"',"+cantidad+",'"+descripcion+"','"+vendedor+"',"+idCOV+","+prod.get(1)+"*"+cant+","+prod.get(1)+","+prod.get(0));
+         "'"+clave+"','"+fecha+"','"+direccion+"',"+cantidad+",'"+descripcion+"','"+vendedor+"',"
+                 + ""+idCOV+","+prod.get(1)+"*"+cant+","+prod.get(1)+","+prod.get(0));
 
          response.sendRedirect("Ventas/Orden de Venta.jsp");
     }

@@ -68,7 +68,6 @@
             </div>
         </nav>
     </header>
-    
     <br>
     <br>
     <!--Contenedor principal de la pagina-->

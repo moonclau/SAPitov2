@@ -33,13 +33,16 @@ public class ventaService {
      * Web service operation
      */
     @WebMethod(operationName = "insertVenta")
-    public String insertVenta(@WebParam(name = "fecha") String fecha, @WebParam(name = "direccion") String direccion, @WebParam(name = "cantidad") String cantidad, @WebParam(name = "descripcion_venta") String descripcion_venta, @WebParam(name = "idcliente") int id_cliente, @WebParam(name = "idproducto") int id_producto) throws ClassNotFoundException, SQLException {
+    public String insertVenta(@WebParam(name = "fecha") String fecha, @WebParam(name = "direccion") 
+            String direccion, @WebParam(name = "cantidad") String cantidad, @WebParam(name = "descripcion_venta") 
+            String descripcion_venta, @WebParam(name = "idcliente") int id_cliente, @WebParam(name = "idproducto") 
+            int id_producto) throws ClassNotFoundException, SQLException {
         Conexion c = new Conexion();
+        String campos="fecha,direccion,cantidad,descripcion_venta,vendedor,precio_unitario,"
+                + "precio_total,idcliente,idproducto";
         
-        String campos="clave_ordenventa,fecha,direccion,cantidad,descripcion_venta,vendedor,idcliente,precio_total,precio_unitario,idproducto";
-        int cant=Integer.parseInt(cantidad);
          c.insertar(campos,"orden_de_venta",
-         "'"+fecha+"','"+direccion+"',"+cantidad+",'"+descripcion_venta+"',"+id_cliente+","+id_producto+"");
+         "'"+fecha+"','"+direccion+"',"+cantidad+",'"+descripcion_venta+"','default','default','default',"+id_cliente+","+id_producto+"");
        
         String resultado="Compra exitosa, muchas gracias :)";
         
